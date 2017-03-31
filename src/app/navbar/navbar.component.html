@@ -1,0 +1,39 @@
+<nav>
+  <div class="dropdown-div" id="student-div" dropdown (onToggle)="studentToggled($event)">
+    <a href dropdownToggle>
+      <img [src]="currentStudent?.profilePic">
+    </a>
+    <ul class="dropdown-menu dropdown-menu-left" dropdownMenu aria-labelledby="profile-dropdown">
+      <li *ngFor="let student of user?.students">
+        <a (click)="updateCurrentStudent($event, student)" class="dropdown-item" href="#">
+          {{ student?.firstname }}
+        </a>
+      </li>
+    </ul>
+    <div id="student-info-div">
+      <span id="student-name"> {{ currentStudent?.firstname }} </span>
+      <span id="school-name"> {{ currentStudent?.schoolname }} </span>
+    </div>
+  </div>
+  <div id="center-div">
+    <img [src]="logoImage">
+    <input id="search-bar" type="text" placeholder="Search">
+  </div>
+  <div class="dropdown-div" id="profile-div" dropdown (onToggle)="profileToggled($event)">
+    <a href dropdownToggle>
+      <img [src]="user?.profilePic">
+    </a>
+    <ul class="dropdown-menu dropdown-menu-right" dropdownMenu aria-labelledby="profile-dropdown">
+      <li><a class="dropdown-item" href="#">
+        Account
+      </a></li>
+      <li><a class="dropdown-item" href="#">
+        Settings
+      </a></li>
+      <li class="divider dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">
+        Logout
+      </a></li>
+    </ul>
+  </div>
+</nav>

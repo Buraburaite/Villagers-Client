@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+$page-grey: #e8eef7;
+
+@mixin border($size, $style, $color) {
+  -webkit-border: $size $style $color;
+  -moz-border: $size $style $color;
+  -ms-border: $size $style $color;
+  border: $size $style $color;
+}
+
+@mixin border-right($size, $style, $color) {
+  -webkit-border-right: $size $style $color;
+  -moz-border-right: $size $style $color;
+  -ms-border-right: $size $style $color;
+  border-right: $size $style $color;
+}
+
+@mixin border-top($size, $style, $color) {
+  -webkit-border-top: $size $style $color;
+  -moz-border-top: $size $style $color;
+  -ms-border-top: $size $style $color;
+  border-top: $size $style $color;
+}
+
+@mixin border-bottom($size, $style, $color) {
+  -webkit-border-bottom: $size $style $color;
+  -moz-border-bottom: $size $style $color;
+  -ms-border-bottom: $size $style $color;
+  border-bottom: $size $style $color;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin border-radius-4($nw, $ne, $se, $sw) {
+  -webkit-border-radius: $nw $ne $se $sw;
+  -moz-border-radius: $nw $ne $se $sw;
+  -ms-border-radius: $nw $ne $se $sw;
+  border-radius: $nw $ne $se $sw;
+}
+
+@mixin box-shadow($xPos, $yPos, $blur, $color) {
+  -webkit-box-shadow: $xPos $yPos $blur $color;
+  -moz-box-shadow: $xPos $yPos $blur $color;
+  -ms-box-shadow: $xPos $yPos $blur $color;
+  box-shadow: $xPos $yPos $blur $color;
+}
+
+@mixin color-overlay($color) {
+  -webkit-box-shadow: inset 0 0 0 1000px rgba($color, 0.2);
+  -moz-box-shadow: inset 0 0 0 1000px rgba($color, 0.2);
+  -ms-box-shadow: inset 0 0 0 1000px rgba($color, 0.2);
+  box-shadow: inset 0 0 0 1000px rgba($color, 0.2);
+}
+
+@mixin profile-pic() {
+  @include border-radius(50%);
+}
+
+@mixin forward-leaf() {
+  @include border-radius-4(30%, 0px, 30%, 0px);
+}
+
+@mixin back-leaf() {
+  @include border-radius-4(0px, 30%, 0px, 30%);
+}

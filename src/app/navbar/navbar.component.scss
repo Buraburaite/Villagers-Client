@@ -1,0 +1,107 @@
+@import "src/styles";
+
+nav {
+  height: 12vh;
+  width: 100vw;
+  padding: 0px 6vw 0px 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Modified Japanese Cube pattern, source: http://lea.verou.me/css3patterns/  */
+  background-color: white;
+  background-image: linear-gradient(30deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
+  linear-gradient(150deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
+  linear-gradient(30deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
+  linear-gradient(150deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
+  linear-gradient(60deg, $page-grey 25%, transparent 25.5%, transparent 75%, $page-grey 75%, $page-grey),
+  linear-gradient(60deg, $page-grey 25%, transparent 25.5%, transparent 75%, $page-grey 75%, $page-grey);
+  background-size:80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+  /*-------------------------------------------------------------------*/
+  @include box-shadow(0px, 2px, 10px, black);
+
+  #student-div {
+    flex: 2;
+    display: flex;
+    align-items: center;
+
+    img {
+      @include forward-leaf();
+      @include box-shadow(0.6vw, 0.4vh, 10px, black);
+    }
+
+    #student-info-div {
+      margin-left: 2vw;
+      display: flex;
+      flex-direction: column;
+      color: lighten(black, 10%);
+
+      #student-name {
+        font-size: 2.2vw;
+        font-weight: bold;
+        border-bottom: 0.6vh double black;
+      }
+
+      #school-name {
+        font-size: 1.6vw;
+        font-style: italic;
+      }
+    }
+  }
+
+  #center-div {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 8vh;
+      width: auto;
+    }
+
+    #search-bar {
+      flex: 2;
+      height: auto;
+      padding-left: 0.4vw;
+      margin: 0px 6vw 0px 2vw;
+      @include border-radius(2px);
+      font-size: 1vw;
+      font-weight: bold;
+      font-style: italic;
+      outline: none;
+    }
+
+  }
+
+  #profile-div {
+    flex: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    img {
+      @include back-leaf();
+      @include box-shadow(0.6vw, 0.4vh, 10px, black);
+    }
+
+    .dropdown-item {
+      text-align: right;
+    }
+  }
+
+  .dropdown-div {
+
+    img {
+      height: 10vh;
+      width: 10vh;
+    }
+    .dropdown-menu {
+      min-width: auto;
+    }
+
+    .dropdown-item {
+      font-size: 1.6vw;
+    }
+  }
+}

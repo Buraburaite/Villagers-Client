@@ -1,0 +1,82 @@
+@import "src/styles";
+
+$peeps-black : lighten(black, 6%);
+
+#comp {
+  width: 10vw;
+  height: 88vh;
+  position: fixed;
+  padding: 4px;
+  z-index: 10;
+  left: 0;
+  background-color: $peeps-black;
+  @include box-shadow(2px, 0, 10px, darken($page-grey, 20%));
+  transition: left ease-out 0.5s 0s;
+
+  .scroll-hide {
+    overflow: hidden;
+    height: 90%;
+    margin: 5% 0;
+    box-sizing: content-box;
+
+    #peep-ul {
+      height: 100%;
+      width: 100%;
+      box-sizing: content-box;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow-y: scroll;
+      padding-right: 36px;
+
+      img {
+        width: 8vw;
+        min-width: 80px;
+        height: 8vw;
+        min-height: 80px;
+        margin: 8px 10%;
+        @include forward-leaf();
+        @include box-shadow(6px, 6px, 0, white);
+      }
+    }
+  }
+
+  .slide-btn {
+    width: 50%;
+    height: 4%;
+    margin: 0 25%;
+
+    #up-btn {
+    }
+
+    #down-btn {
+    }
+  }
+
+  #close-btn {
+    all: initial;
+    color: white;
+    font-size: 2vw;
+    font-style: italic;
+    padding: 10px;
+    position: absolute;
+    left: 100%;
+    top: -0.1vh;
+    background-color: $peeps-black;
+    @include border-radius-4(0,0,20%,0);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity ease-in 0.2s;
+
+    &:hover {
+      @include box-shadow(4px, 4px, 2px, yellow);
+      opacity: 1;
+      transition: opacity ease-in 0.2s;
+    }
+  }
+}
+
+
+#comp.closed {
+  left: -10vw;
+}

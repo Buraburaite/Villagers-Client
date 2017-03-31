@@ -1,0 +1,18 @@
+<div id="comp">
+  <div *ngFor="let comment of comments" class="comment">
+    <img [src]="comment?.author.profilePic" [alt]="comment?.author.fullname">
+    <div class="comment-text">
+      <span class="author-name">
+        {{ comment?.author.fullname }}
+      </span>
+      {{ comment?.content }}
+      <p class="date"> {{ comment?.updatedAt | date: 'medium' }} </p>
+    </div>
+  </div>
+  <div class="new-comment">
+    <img id="new-comment-img" [src]="user?.profilePic">
+
+    <textarea [(ngModel)]="newCommentText" class="comment-textarea comment-text" #textarea (keyup.enter)="submitComment(textarea.value)">
+    </textarea>
+  </div>
+</div>

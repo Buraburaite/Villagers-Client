@@ -1,0 +1,14 @@
+$page-grey: #e8eef7;
+
+body, html {
+  font-family: 'Tahoma', 'Arial'
+}
+
+
+#loading-screen {
+  background-color: url("../assets/background.png");
+  -webkit-box-shadow: inset 0 0 0 1000px rgba($page-grey, 0.2);
+  -moz-box-shadow: inset 0 0 0 1000px rgba($page-grey, 0.2);
+  -ms-box-shadow: inset 0 0 0 1000px rgba($page-grey, 0.2);
+  box-shadow: inset 0 0 0 1000px rgba($page-grey, 0.2);
+}

@@ -1,0 +1,16 @@
+<div id="comp">
+  <div class="header-div">
+    <img [src]="post?.author.profilePic">
+    <span class="teacher-name-span">
+      {{ post?.author.fullname }}
+    </span>
+  </div>
+  <div class="content-div">
+    {{ post?.content }}
+  </div>
+  <div class="my-hr"></div>
+  <div class="comments-div">
+    <post-comments [comments]="post?.comments" [user]="user"></post-comments>
+  </div>
+
+</div>
