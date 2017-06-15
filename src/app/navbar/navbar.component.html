@@ -3,7 +3,7 @@
     <a href dropdownToggle>
       <img [src]="currentStudent?.profilePic">
     </a>
-    <ul class="dropdown-menu dropdown-menu-left" dropdownMenu aria-labelledby="profile-dropdown">
+    <ul class="dropdown-menu dropdown-menu-left" *dropdownMenu aria-labelledby="profile-dropdown">
       <li *ngFor="let student of user?.students">
         <a (click)="updateCurrentStudent($event, student)" class="dropdown-item" href="#">
           {{ student?.firstname }}
@@ -23,7 +23,7 @@
     <a href dropdownToggle>
       <img [src]="user?.profilePic">
     </a>
-    <ul class="dropdown-menu dropdown-menu-right" dropdownMenu aria-labelledby="profile-dropdown">
+    <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="profile-dropdown">
       <li><a class="dropdown-item" href="#">
         Account
       </a></li>
