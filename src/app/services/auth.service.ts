@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
 
-  BASE_URL = '';
-  // BASE_URL = 'http://localhost:3000';
+  SERVER_BASE_URL = environment.serverBaseUrl;
   cred = { withCredentials : true };
 
   constructor(private myHttp: Http) { }
@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   login (credentials) {
-    const theOriginalPromise = this.myHttp.post(this.BASE_URL + '/login', credentials, this.cred).toPromise();
+    const theOriginalPromise = this.myHttp.post(this.SERVER_BASE_URL + '/login', credentials, this.cred).toPromise();
 
     const theParsedPromise = theOriginalPromise.then((result) => {
       return result.json();
