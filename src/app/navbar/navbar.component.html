@@ -17,14 +17,14 @@
   </div>
   <div id="center-div">
     <img [src]="logoImage">
-    <input id="search-bar" type="text" placeholder="Search">
+    <!-- <input id="search-bar" type="text" placeholder="Search"> -->
   </div>
   <div class="dropdown-div" id="profile-div" dropdown (onToggle)="profileToggled($event)">
     <a href dropdownToggle>
       <img [src]="user?.profilePic">
     </a>
     <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="profile-dropdown">
-      <li><a class="dropdown-item" href="#">
+      <!-- <li><a class="dropdown-item" href="#">
         Account
       </a></li>
       <li><a class="dropdown-item" href="#">
@@ -33,7 +33,7 @@
       <li class="divider dropdown-divider"></li>
       <li><a class="dropdown-item" href="#">
         Logout
-      </a></li>
+      </a></li> -->
     </ul>
   </div>
 </nav>

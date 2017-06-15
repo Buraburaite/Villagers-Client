@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BsDropdownModule } from 'ng2-bootstrap/dropdown';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { PeepsComponent } from './peeps/peeps.component';
