@@ -14,16 +14,16 @@ export class AppComponent implements OnInit {
     this.login();
   }
 
+  // Hard-coded credentials for testing
   loginInfo = { "username" : "parent1", "password" : "super" };
   signupInfo = {};
 
   user: any;
   error: string;
-  myData: any;
-
-  currentStudent: any;
+  currentStudent: any; // the user's currently selected student
   posts: any[];
 
+  // Logging methods (perhaps these should be wrapped up in its own component?)
   login() {
     const thePromise = this.session.login(this.loginInfo);
 

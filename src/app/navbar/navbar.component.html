@@ -1,8 +1,12 @@
 <nav>
+  <!-- LEFT -->
+  <!-- Student dropdown, using 'dropdown' directive from ngx-bootstrap -->
   <div class="dropdown-div" id="student-div" dropdown (onToggle)="studentToggled($event)">
+    <!-- button showing the current student -->
     <a href dropdownToggle>
       <img [src]="currentStudent?.profilePic">
     </a>
+    <!-- dropdown items, each is a student of the parent user -->
     <ul class="dropdown-menu dropdown-menu-left" *dropdownMenu aria-labelledby="profile-dropdown">
       <li *ngFor="let student of user?.students">
         <a (click)="updateCurrentStudent($event, student)" class="dropdown-item" href="#">
@@ -10,19 +14,25 @@
         </a>
       </li>
     </ul>
+    <!-- information appearing next to the current student's dropdown image  -->
     <div id="student-info-div">
       <span id="student-name"> {{ currentStudent?.firstname }} </span>
       <span id="school-name"> {{ currentStudent?.schoolname }} </span>
     </div>
   </div>
+  <!-- CENTER -->
   <div id="center-div">
     <img [src]="logoImage">
     <!-- <input id="search-bar" type="text" placeholder="Search"> -->
   </div>
+  <!-- RIGHT -->
+  <!-- User profile dropdown -->
   <div class="dropdown-div" id="profile-div" dropdown (onToggle)="profileToggled($event)">
+    <!-- button showing the user -->
     <a href dropdownToggle>
       <img [src]="user?.profilePic">
     </a>
+    <!-- dropdown items -->
     <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="profile-dropdown">
       <!-- <li><a class="dropdown-item" href="#">
         Account

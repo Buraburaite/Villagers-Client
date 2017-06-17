@@ -2,6 +2,8 @@ import {
   Component, OnInit, Input, Output, EventEmitter
 } from '@angular/core';
 
+// Navbar for the parent user's / route
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -20,17 +22,16 @@ export class NavbarComponent implements OnInit {
     // this.currentStudent = this.user.students[0];
   }
 
+  // Change the current student variable in the app component
   updateCurrentStudent(e: Event, selectedStudent: any) {
     this.currentStudent = selectedStudent;
     this.onCurrentStudentChange.emit(this.currentStudent);
-  }
+  } // why not just call the event and have that propagate down?
 
-
-  studentToggled(open:boolean):void {
-  }
-
-
-  profileToggled(open:boolean):void {
-  }
+  // Dropdown selection events, left here for later reference
+  // studentToggled(open:boolean):void {
+  // }
+  // profileToggled(open:boolean):void {
+  // }
 
 }
