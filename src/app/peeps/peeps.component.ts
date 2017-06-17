@@ -1,3 +1,5 @@
+
+
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -5,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './peeps.component.html',
   styleUrls: ['./peeps.component.scss']
 })
+
 export class PeepsComponent implements OnInit {
 
   @Input() currentStudent: any;

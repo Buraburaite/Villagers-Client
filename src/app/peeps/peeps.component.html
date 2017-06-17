@@ -1,11 +1,14 @@
 <div id="comp" [ngClass]="{ 'closed' : isClosed }">
+  <!-- Button for revealing the sidebar -->
   <a id="close-btn" (click)="isClosed = !isClosed;">
     Teachers
   </a>
+  <!-- Button for scrolling upwards -->
   <a href="#">
     <img class="slide-btn" id="up-btn"
     src="../../assets/up-arrow.png">
   </a>
+  <!-- Entries -->
   <div class="scroll-hide">
     <ul id="peep-ul">
       <li *ngFor="let teacher of currentStudent?.teachers">
@@ -15,6 +18,7 @@
       </li>
     </ul>
   </div>
+  <!-- Button for scrolling downwards -->
   <a href="#">
     <img class="slide-btn" id="down-btn"
     src="../../assets/down-arrow.png">
