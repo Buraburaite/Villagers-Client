@@ -23,17 +23,19 @@ export class AppComponent implements OnInit {
   currentStudent: any; // the user's currently selected student
   posts: any[];
 
-  // Logging methods
+  // Authentication methods
+
   login() {
+    // Get a promise for the user's object
     const thePromise = this.session.login(this.loginInfo);
 
-    thePromise.then((userInfo) => {
+    thePromise
+    .then((userInfo) => {
       this.user = userInfo;
       this.error = null;
       this.changeCurrentStudent(this.user.students[0]);
-    });
-
-    thePromise.catch((err) => {
+    })
+    .catch((err) => {
       this.user = null;
       this.error = err;
     });
@@ -49,14 +51,15 @@ export class AppComponent implements OnInit {
   }
 
   signup() {
+    // Get a promise for the new user's object
     const thePromise = this.session.signup(this.signupInfo);
 
-    thePromise.then((userInfo) => {
+    thePromise
+    .then((userInfo) => {
       this.user = userInfo;
       this.error = null;
-    });
-
-    thePromise.catch((err) => {
+    })
+    .catch((err) => {
       this.user = null;
       this.error = err;
     });
@@ -66,7 +69,8 @@ export class AppComponent implements OnInit {
   changeCurrentStudent(selectedStudent: any) {
     this.currentStudent = selectedStudent;
 
-    let newPosts = [];
+    // Update the posts that appear
+    const newPosts = [];
     selectedStudent.teachers.forEach((teacher) => {
       teacher.posts.forEach((post) => {
         newPosts.push(post);

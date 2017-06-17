@@ -1,14 +1,18 @@
+<!-- NAVBAR -->
 <div id="navbar-div">
   <app-navbar
   [user]="user"
   [currentStudent]="currentStudent"
   (onCurrentStudentChange)="changeCurrentStudent($event);"></app-navbar>
 </div>
-<div style="height:12vh;"></div>
+<div style="height:12vh;"></div> <!-- pushes content below navbar -->
+<!-- MAIN CONTENT -->
 <div id="content-div">
+  <!-- PEEPS (sidebar) -->
   <div id="peeps-div">
     <app-peeps [currentStudent]="currentStudent"></app-peeps>
   </div>
+  <!-- EVERYTHING ELSE -->
   <div id="page-div">
     <app-page [user]="user" [posts]="posts"></app-page>
   </div>

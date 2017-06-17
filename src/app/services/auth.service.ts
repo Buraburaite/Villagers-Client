@@ -3,22 +3,29 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { environment } from '../../environments/environment';
 
+/* ===
+This class holds various methods related to authentication
+and communicating with the API
+=== */
+
 @Injectable()
 export class AuthService {
 
+  // Get the server's address
   SERVER_BASE_URL = environment.serverBaseUrl;
   cred = { withCredentials : true };
 
   constructor(private myHttp: Http) { }
 
   signup (user) {
-    const theOriginalPromise = this.myHttp.post('/signup', user).toPromise();
+    // Get a promise for the new user object
+    const thePromise = this.myHttp.post('/signup', user).toPromise();
 
-    const theParsedPromise = theOriginalPromise.then((result) => {
+    // Return a promise that collapses to the json object
+    return thePromise
+    .then(result => {
       return result.json();
-    });
-
-    return theParsedPromise;
+    })
   }
 
   login (credentials) {
