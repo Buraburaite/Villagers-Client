@@ -13,15 +13,18 @@ export class AuthService {
 
   // Get the server's address
   SERVER_BASE_URL = environment.serverBaseUrl;
-  cred = { withCredentials : true };
+  postOptions = { withCredentials : true };
 
   constructor(private myHttp: Http) { }
 
-  signup (user) {
+  signup (newUserInfo) {
     // Get a promise for the new user object
-    const thePromise = this.myHttp.post('/signup', user).toPromise();
+    const thePromise = this.myHttp.post(
+      this.SERVER_BASE_URL + '/signup',
+      newUserInfo)
+      .toPromise();
 
-    // Return a promise that collapses to the json object
+    // Return a promise that collapses to json
     return thePromise
     .then(result => {
       return result.json();
@@ -29,13 +32,19 @@ export class AuthService {
   }
 
   login (credentials) {
-    const theOriginalPromise = this.myHttp.post(this.SERVER_BASE_URL + '/login', credentials, this.cred).toPromise();
+    // Get a promise for the appropriate user object
+    const thePromise = this.myHttp.post(
+      this.SERVER_BASE_URL + '/login', // address
+      credentials, // login information
+      this.postOptions // object containing a required option
+    ).toPromise();
 
-    const theParsedPromise = theOriginalPromise.then((result) => {
+
+    // Return a promise that collapses to json
+    return thePromise
+    .then(result => {
       return result.json();
     });
-
-    return theParsedPromise;
   }
 
   logout () {
