@@ -24,9 +24,9 @@ export class NavbarComponent implements OnInit {
 
   // Change the current student variable in the app component
   updateCurrentStudent(e: Event, selectedStudent: any) {
-    this.currentStudent = selectedStudent;
+    this.currentStudent = selectedStudent; // this line needed?
     this.onCurrentStudentChange.emit(this.currentStudent);
-  } // why not just call the event and have that propagate down?
+  }
 
   // Dropdown selection events, left here for later reference
   // studentToggled(open:boolean):void {

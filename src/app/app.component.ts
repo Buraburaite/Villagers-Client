@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   currentStudent: any; // the user's currently selected student
   posts: any[];
 
-  // Logging methods (perhaps these should be wrapped up in its own component?)
+  // Logging methods
   login() {
     const thePromise = this.session.login(this.loginInfo);
 
@@ -31,20 +31,6 @@ export class AppComponent implements OnInit {
       this.user = userInfo;
       this.error = null;
       this.changeCurrentStudent(this.user.students[0]);
-    });
-
-    thePromise.catch((err) => {
-      this.user = null;
-      this.error = err;
-    });
-  }
-
-  signup() {
-    const thePromise = this.session.signup(this.signupInfo);
-
-    thePromise.then((userInfo) => {
-      this.user = userInfo;
-      this.error = null;
     });
 
     thePromise.catch((err) => {
@@ -62,17 +48,30 @@ export class AppComponent implements OnInit {
     .catch(err => this.error = err);
   }
 
-  changeCurrentStudent(selectedStudent: any) {
-    this.currentStudent = selectedStudent;
-    this.changePosts(this.currentStudent);
+  signup() {
+    const thePromise = this.session.signup(this.signupInfo);
+
+    thePromise.then((userInfo) => {
+      this.user = userInfo;
+      this.error = null;
+    });
+
+    thePromise.catch((err) => {
+      this.user = null;
+      this.error = err;
+    });
   }
 
-  changePosts(selectedStudent: any) {
-    this.posts = [];
+  // Update the page when current student changes
+  changeCurrentStudent(selectedStudent: any) {
+    this.currentStudent = selectedStudent;
+
+    let newPosts = [];
     selectedStudent.teachers.forEach((teacher) => {
       teacher.posts.forEach((post) => {
-        this.posts.push(post);
+        newPosts.push(post);
       });
     });
+    this.posts = newPosts;
   }
 }
