@@ -1,4 +1,6 @@
-
+/*====
+Component for a scrolling sidebar of users
+====*/
 
 import { Component, OnInit, Input } from '@angular/core';
 

@@ -1,3 +1,7 @@
+/*====
+Component containing everything besides the navbar and sidebar
+====*/
+
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
