@@ -10,8 +10,8 @@
   width: 100%;
   height: auto;
   display: flex;
-  background-color: url("../assets/background.png");
-  @include color-overlay($page-grey);
+  // background-color: url("../assets/background.png");
+  // @include color-overlay($page-grey);
 
   #peeps-div {
     width: auto;

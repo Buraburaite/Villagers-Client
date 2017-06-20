@@ -3,7 +3,7 @@
   <!-- Student dropdown, using 'dropdown' directive from ngx-bootstrap -->
   <div class="dropdown-div" id="student-div" dropdown (onToggle)="studentToggled($event)">
     <!-- button showing the current student -->
-    <a href dropdownToggle>
+    <a href="#" dropdownToggle>
       <img *ngIf="currentStudent" [src]="currentStudent.profilePic">
     </a>
     <!-- dropdown items, each is a student of the parent user -->
@@ -29,7 +29,7 @@
   <!-- User profile dropdown -->
   <div class="dropdown-div" id="profile-div" dropdown (onToggle)="profileToggled($event)">
     <!-- button showing the user -->
-    <a href dropdownToggle>
+    <a href="#" dropdownToggle>
       <img *ngIf="user" [src]="user.profilePic">
     </a>
     <!-- dropdown items -->
