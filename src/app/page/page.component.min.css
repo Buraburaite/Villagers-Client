@@ -1,1 +1,1 @@
-#comp{width:100%;height:100%;padding-left:120px;display:flex;align-items:center;flex-direction:column}#comp .scrolling-bg{width:100%;height:200%;position:absolute;z-index:-5;background-color:black}#comp #feed{position:relative;z-index:0}#comp #feed .post{height:auto;width:auto}
+#comp{width:100%;height:100%;display:flex;align-items:center;flex-direction:column}#comp .scrolling-bg{width:100%;height:200%;background-color:black}#comp #feed .post{height:auto;width:auto}
