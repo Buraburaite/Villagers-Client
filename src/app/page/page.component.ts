@@ -2,15 +2,9 @@
 Component containing everything besides the navbar and sidebar
 ====*/
 
-import { Component, OnInit, Input, Directive, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 
-@Directive({ selector: 'infinite-scroll' })
-class infiniteScroll {
-  @HostListener('window:scroll', ['$event']) onScrollEvent($event){
-  console.log($event);
-  console.log("scrolling");
-}
-}
+
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
@@ -26,5 +20,10 @@ export class PageComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  @HostListener('scroll', ['$event'])
+  onScroll($event) {
+      console.log("scrolling");
+    }
 
 }
