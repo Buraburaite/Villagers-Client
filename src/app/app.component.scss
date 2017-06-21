@@ -11,7 +11,12 @@
   height: auto;
   display: flex;
   // background-color: url("../assets/background.png");
-  // @include color-overlay($page-grey);
+  // @include color-overlay($page-grey)
+  overflow: hidden;
+  
+  div {
+    overflow-x: hidden;
+  }
 
   #peeps-div {
     width: auto;

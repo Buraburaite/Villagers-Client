@@ -5,15 +5,21 @@
   [currentStudent]="currentStudent"
   (onCurrentStudentChange)="changeCurrentStudent($event);"></app-navbar>
 </div>
-<div style="height:12vh;"></div> <!-- pushes content below navbar -->
+<div style="height:12vh;">
+</div> <!-- pushes content below navbar -->
+
 <!-- MAIN CONTENT -->
 <div id="content-div">
+
   <!-- PEEPS (sidebar) -->
   <div id="peeps-div">
-    <app-peeps [currentStudent]="currentStudent"></app-peeps>
+    <app-peeps
+    [currentStudent]="currentStudent"></app-peeps>
   </div>
+
   <!-- EVERYTHING ELSE -->
   <div id="page-div">
-    <app-page [user]="user" [posts]="posts"></app-page>
+    <app-page [user]="user"
+    [posts]="posts"></app-page>
   </div>
 </div>
