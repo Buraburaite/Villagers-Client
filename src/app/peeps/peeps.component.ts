@@ -3,6 +3,7 @@ Component for a scrolling sidebar of users
 ====*/
 
 import { Component, OnInit, Input } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-peeps',

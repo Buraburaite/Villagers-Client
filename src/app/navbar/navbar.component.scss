@@ -30,6 +30,11 @@ nav {
       @include box-shadow(0.6vw, 0.4vh, 10px, black);
     }
 
+    // aligns menu with button
+    .dropdown-menu {
+      margin-left: 6vw;
+    }
+
     #student-info-div {
       margin-left: 2vw;
       display: flex;
@@ -101,7 +106,7 @@ nav {
     }
 
     .dropdown-item {
-      font-size: 1.6vw;
+      font-size: 16px;
     }
   }
 }
