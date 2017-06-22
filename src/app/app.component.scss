@@ -10,7 +10,7 @@
 
 #content-div {
   width: 100vw;
-  height: auto;
+  height: 88vh;
   display: flex;
   // background-color: url("../assets/background.png");
   // @include color-overlay($page-grey)
@@ -27,11 +27,11 @@
 
   #avabar-div {
     width: 100px;
-    height: 88vh;
+    height: 100%;
   }
 
   #page-div {
     width: calc(100% - 100px);
-    height: 88vh;
+    height: 100%;
   }
 }

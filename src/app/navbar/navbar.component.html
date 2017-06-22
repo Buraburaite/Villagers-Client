@@ -10,16 +10,16 @@
       <!-- dropdown items, each is a student of the parent user -->
       <ul *dropdownMenu class="dropdown-menu" aria-labelledby="student-dropdown" role="menu">
         <li *ngFor="let student of user?.students">
-          <a (click)="updateCurrentStudent($event, student)" class="dropdown-item" href="#">
+          <a class="dropdown-item" (click)="updateCurrentStudent($event, student)" href="#">
             {{ student?.firstname }}
           </a>
         </li>
       </ul>
     </div>
     <!-- information appearing next to the current student's dropdown image  -->
-    <div id="student-info-div">
-      <span id="student-name"> {{ currentStudent?.firstname  }} </span>
-      <span id="school-name">  {{ currentStudent?.schoolname }} </span>
+    <div id="student-info">
+      <span id="top-info"> {{ currentStudent?.firstname  }} </span>
+      <span id="bottom-info">  {{ currentStudent?.schoolname }} </span>
     </div>
   </section>
   <!-- CENTERED -->
