@@ -1,49 +1,55 @@
-<nav>
-  <!-- LEFT -->
-  <!-- Student dropdown, using 'dropdown' directive from ngx-bootstrap -->
-  <div class="dropdown-div" id="student-div" dropdown (onToggle)="studentToggled($event)">
-    <!-- button showing the current student -->
-    <a dropdownToggle href="#">
-      <img *ngIf="currentStudent" [src]="currentStudent.profilePic">
-    </a>
-    <!-- dropdown items, each is a student of the parent user -->
-    <ul *dropdownMenu class="dropdown-menu" aria-labelledby="student-dropdown" role="menu">
-      <li *ngFor="let student of user?.students">
-        <a (click)="updateCurrentStudent($event, student)" class="dropdown-item" href="#">
-          {{ student?.firstname }}
-        </a>
-      </li>
-    </ul>
+<nav id="comp">
+  <!-- LEFT-ALIGNED -->
+  <section id="left-section">
+    <!-- Student dropdown, using 'dropdown' directive from ngx-bootstrap -->
+    <div class="dropdown-div" dropdown (onToggle)="studentToggled($event)">
+      <!-- button showing the current student -->
+      <a dropdownToggle href="#">
+        <img *ngIf="currentStudent" [src]="currentStudent.profilePic">
+      </a>
+      <!-- dropdown items, each is a student of the parent user -->
+      <ul *dropdownMenu class="dropdown-menu" aria-labelledby="student-dropdown" role="menu">
+        <li *ngFor="let student of user?.students">
+          <a (click)="updateCurrentStudent($event, student)" class="dropdown-item" href="#">
+            {{ student?.firstname }}
+          </a>
+        </li>
+      </ul>
+    </div>
     <!-- information appearing next to the current student's dropdown image  -->
     <div id="student-info-div">
       <span id="student-name"> {{ currentStudent?.firstname  }} </span>
       <span id="school-name">  {{ currentStudent?.schoolname }} </span>
     </div>
-  </div>
-  <!-- CENTER -->
-  <div id="center-div">
+  </section>
+  <!-- CENTERED -->
+  <section id="center-section">
     <img [src]="logoImage">
     <!-- <input id="search-bar" type="text" placeholder="Search"> -->
-  </div>
-  <!-- RIGHT -->
-  <!-- User profile dropdown -->
-  <div class="dropdown-div" id="profile-div" dropdown (onToggle)="profileToggled($event)">
-    <!-- button showing the user -->
-    <a href="#" dropdownToggle>
-      <img *ngIf="user" [src]="user.profilePic">
-    </a>
-    <!-- dropdown items -->
-    <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown" role="menu">
-      <!-- <li><a class="dropdown-item" href="#">
-        Account
-      </a></li>
-      <li><a class="dropdown-item" href="#">
-        Settings
-      </a></li>
-      <li class="divider dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">
-        Logout
-      </a></li> -->
-    </ul>
-  </div>
+  </section>
+  <!-- RIGHT-ALIGNED -->
+  <section id="right-section">
+    <!-- User profile dropdown -->
+    <div class="dropdown-div" dropdown (onToggle)="profileToggled($event)">
+      <!-- button showing the user -->
+      <a href="#" dropdownToggle>
+        <img *ngIf="user" [src]="user.profilePic">
+      </a>
+      <!-- dropdown items -->
+      <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown" role="menu">
+        <!--
+        <li><a class="dropdown-item" href="#">
+          Account
+        </a></li>
+        <li><a class="dropdown-item" href="#">
+          Settings
+        </a></li>
+        <li class="divider dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">
+          Logout
+        </a></li>
+      -->
+      </ul>
+    </div>
+  </section>
 </nav>

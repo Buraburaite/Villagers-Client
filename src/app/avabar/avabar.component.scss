@@ -1,9 +1,3 @@
-/*===
-Styles for the avabar component
-
-#entries-container: 
-===*/
-
 @import "src/styles";
 
 $avabar-black: lighten(black, 6%);
@@ -15,11 +9,11 @@ $avabar-black: lighten(black, 6%);
   background-color: $avabar-black;
   // @include box-shadow(2px, 0, 10px, darken($page-grey, 20%));
 
-  #entries-container {
+  #avatar-container {
     height: 100%;
     width: 100%;
 
-    #peep-ul {
+    #avatar-ul {
       height: 100%;
       width: 100%;
 

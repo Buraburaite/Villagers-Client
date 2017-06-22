@@ -14,8 +14,6 @@ export class AvabarComponent implements OnInit {
 
   @Input() currentStudent: any;
 
-  isClosed: boolean = false;
-
   constructor() { }
 
   ngOnInit() {
