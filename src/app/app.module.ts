@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { NavbarComponent } from './navbar/navbar.component';
-import { PeepsComponent } from './peeps/peeps.component';
+import { AvabarComponent } from './avabar/avabar.component';
 import { PageComponent } from './page/page.component';
 import { PostComponent } from './page/post/post.component';
 import { CommentsComponent } from './page/post/comments/comments.component';
@@ -19,7 +19,7 @@ import { AuthService } from './services/auth.service';
   declarations: [
     AppComponent,
     NavbarComponent,
-    PeepsComponent,
+    AvabarComponent,
     PageComponent,
     PostComponent,
     CommentsComponent,

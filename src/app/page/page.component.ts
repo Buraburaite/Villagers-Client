@@ -21,10 +21,4 @@ export class PageComponent implements OnInit {
 
   }
 
-  // trying to implement infinite scrolling but only in the element
-  @HostListener('window:scroll', ['$event'])
-  onScroll($event) {
-      console.log("scrolling");
-    }
-
 }

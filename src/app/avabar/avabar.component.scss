@@ -1,12 +1,18 @@
+/*===
+Styles for the avabar component
+
+#entries-container: 
+===*/
+
 @import "src/styles";
 
-$peeps-black: lighten(black, 6%);
+$avabar-black: lighten(black, 6%);
 
 #comp {
   width: 100%;
   height: auto;
   min-height: 100%;
-  background-color: $peeps-black;
+  background-color: $avabar-black;
   // @include box-shadow(2px, 0, 10px, darken($page-grey, 20%));
 
   #entries-container {
@@ -18,10 +24,8 @@ $peeps-black: lighten(black, 6%);
       width: 100%;
 
       img {
-        width: 8vw;
-        min-width: 80px;
-        height: 8vw;
-        min-height: 80px;
+        width: 80%;
+        height: 80%;
         margin: 8px 10%;
         @include forward-leaf();
         @include box-shadow(2px, 2px, 0, white);
