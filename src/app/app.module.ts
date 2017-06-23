@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
@@ -14,7 +15,9 @@ import { PostComponent } from './page/post/post.component';
 import { CommentsComponent } from './page/post/comments/comments.component';
 
 import { AuthService } from './services/auth.service';
-import { LandingPageComponent } from './landing-page/landing-page.component';
+
+import { HomeRouteComponent } from './routes/home-route/home-route.component';
+import { IndexRouteComponent } from './routes/index-route/index-route.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     PageComponent,
     PostComponent,
     CommentsComponent,
-    LandingPageComponent,
+    HomeRouteComponent,
+    IndexRouteComponent,
   ],
   imports: [
     BrowserModule,

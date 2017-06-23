@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { IndexRouteComponent } from './routes/index-route/index-route.component';
+import { HomeRouteComponent }  from './routes/home-route/home-route.component';
+
 const routes: Routes = [
   {
     path: '',
-    children: []
+    component: IndexRouteComponent
+  },{
+    path: 'home',
+    component: HomeRouteComponent
   }
 ];
 
