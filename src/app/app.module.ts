@@ -14,6 +14,7 @@ import { PostComponent } from './page/post/post.component';
 import { CommentsComponent } from './page/post/comments/comments.component';
 
 import { AuthService } from './services/auth.service';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AuthService } from './services/auth.service';
     PageComponent,
     PostComponent,
     CommentsComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,

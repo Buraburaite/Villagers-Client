@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
 
   constructor (private session : AuthService) { }
 
+  showLanding: boolean = false;
+
   ngOnInit() {
     this.login();
   }

@@ -1,25 +1,27 @@
-<!-- NAVBAR -->
-<div id="navbar-div">
-  <app-navbar
-  [user]="user"
-  [currentStudent]="currentStudent"
-  (onCurrentStudentChange)="changeCurrentStudent($event);"></app-navbar>
-</div>
-<div style="height:12vh;">
-</div> <!-- pushes content below navbar -->
-
-<!-- MAIN CONTENT -->
-<div id="content-div">
-
-  <!-- avabar (sidebar) -->
-  <div id="avabar-div">
-    <app-avabar
-    [currentStudent]="currentStudent"></app-avabar>
+<div *ngIf="showLanding" id="comp">
+  <!-- NAVBAR -->
+  <div id="navbar-div">
+    <app-navbar
+    [user]="user"
+    [currentStudent]="currentStudent"
+    (onCurrentStudentChange)="changeCurrentStudent($event);"></app-navbar>
   </div>
+  <div style="height:12vh;">
+  </div> <!-- pushes content below navbar -->
 
-  <!-- EVERYTHING ELSE -->
-  <div id="page-div">
-    <app-page [user]="user"
-    [posts]="posts"></app-page>
+  <!-- MAIN CONTENT -->
+  <div id="content-div">
+
+    <!-- avabar (sidebar) -->
+    <div id="avabar-div">
+      <app-avabar
+      [currentStudent]="currentStudent"></app-avabar>
+    </div>
+
+    <!-- EVERYTHING ELSE -->
+    <div id="page-div">
+      <app-page [user]="user"
+      [posts]="posts"></app-page>
+    </div>
   </div>
 </div>
