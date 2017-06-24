@@ -12,8 +12,8 @@
   width: 100vw;
   height: 88vh;
   display: flex;
-  // background-color: url("../assets/background.png");
-  // @include color-overlay($page-grey)
+  background-image: url('../../../assets/background.png');
+  @include color-overlay($page-grey);
 
   // Hide scrollbars
   ::-webkit-scrollbar {
@@ -30,7 +30,7 @@
     height: 100%;
   }
 
-  #page-div {
+  #feed-div {
     width: calc(100% - 100px);
     height: 100%;
   }

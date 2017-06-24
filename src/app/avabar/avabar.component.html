@@ -3,7 +3,7 @@
   <div id="avatar-container">
     <ul id="avatar-ul">
       <li *ngFor="let teacher of currentStudent?.teachers">
-        <a href="#">
+        <a>
           <img *ngIf="teacher" [src]="teacher.profilePic">
         </a>
     </ul>

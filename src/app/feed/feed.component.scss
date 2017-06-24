@@ -6,11 +6,9 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-image: url('../../assets/background.png');
-  @include color-overlay($page-grey);
 
   #feed {
-    
+
     .post {
       height: auto;
       width: auto;

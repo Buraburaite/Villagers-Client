@@ -10,9 +10,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { AvabarComponent } from './avabar/avabar.component';
-import { PageComponent } from './page/page.component';
-import { PostComponent } from './page/post/post.component';
-import { CommentsComponent } from './page/post/comments/comments.component';
+import { FeedComponent } from './feed/feed.component';
+import { PostComponent } from './feed/post/post.component';
+import { CommentsComponent } from './feed/post/comments/comments.component';
 
 import { AuthService } from './services/auth.service';
 
@@ -24,7 +24,7 @@ import { IndexRouteComponent } from './routes/index-route/index-route.component'
     AppComponent,
     NavbarComponent,
     AvabarComponent,
-    PageComponent,
+    FeedComponent,
     PostComponent,
     CommentsComponent,
     HomeRouteComponent,
