@@ -76,7 +76,7 @@ may be used.
     .dropdown-div {
 
       .dropdown-menu {
-        margin-left: 6vw; // aligns dropdown menu with button
+        left: 6vw; // aligns dropdown menu with button
       }
     }
 
@@ -133,8 +133,15 @@ may be used.
       @include box-shadow(0.6vw, 0.4vh, 10px, black);
     }
 
-    .dropdown-item {
-      text-align: right;
+    .dropdown-div {
+
+      .dropdown-menu {
+        right: 6vw; // aligns dropdown menu with button
+      }
+
+      .dropdown-item {
+        text-align: right;
+      }
     }
   }
 }
