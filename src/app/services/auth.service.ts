@@ -27,7 +27,7 @@ export class AuthService {
       userCred,                        // login credentials
       this.enableCors                  // options object for CORS
     ).toPromise()                      // convert observable into a promise
-    .then(res => res.json())          // collapse promise to json
+    .then(res => res.json())           // collapse promise to json
     .catch(err => this.handleError(err));
   }
 

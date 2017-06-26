@@ -25,13 +25,15 @@
     input[type="text"].ng-touched.ng-invalid {
       border-left: 3px solid red;
       outline-color: red;
+      color: red;
     }
 
     input[type="text"].ng-touched.ng-valid {
       border-left: 3px solid green;
+      outline-color: green;
     }
 
-    #loginSubmitBtn {
+    #submitBtn {
       width: auto;
       height: auto;
       font-size: 12px;
