@@ -1,0 +1,25 @@
+<!-- Login form -->
+<div id="comp">
+  <!-- # is an element ref, it gives you the relevant object from the ngForm object, is different than [(ngModel)] -->
+  <!-- novalidate prevents the default browser checks, which only happen on submit anyway -->
+  <form #loginForm="ngForm"(ngSubmit)="submitForm(loginForm)" novalidate>
+    <div id="form-container">
+      <input type="text" name="username" placeholder="Username..."
+      [(ngModel)]="username" #usernameRef="ngModel" required minlength="6" />
+      <!-- Error message is invisible if the value hasn't been visited or if the input is valid -->
+      <div class="error" [ngClass]="{ 'invisible': (usernameRef.valid || usernameRef.untouched) }">
+        *Error message
+      </div>
+
+      <input type="text" name="password" placeholder="Password..."
+      [(ngModel)]="password" #passwordRef="ngModel" required />
+      <div class="error" [ngClass]="{ 'invisible': (passwordRef.valid || passwordRef.untouched) }">
+        *Error message
+      </div>
+
+      <button id="loginSubmitBtn" class="btn" type="submit"
+      [disabled]="!loginForm.valid" [ngClass]="{ 'btn-success': loginForm.valid, 'btn-danger': !loginForm.valid }"
+      > Submit </button>
+    </div>
+  </form>
+</div>

@@ -18,6 +18,7 @@ import { AuthService } from './services/auth.service';
 
 import { HomeRouteComponent } from './routes/home-route/home-route.component';
 import { IndexRouteComponent } from './routes/index-route/index-route.component';
+import { LoginFormComponent } from './forms/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { IndexRouteComponent } from './routes/index-route/index-route.component'
     CommentsComponent,
     HomeRouteComponent,
     IndexRouteComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,

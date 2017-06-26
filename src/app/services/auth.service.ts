@@ -14,40 +14,48 @@ export class AuthService {
   SERVER_BASE_URL = environment.serverBaseUrl;
   enableCors = { withCredentials : true }; // options object for CORS
 
-  constructor(private myHttp: Http) {}
+  constructor(private http: Http) {}
+
+  handleError(err) {
+    throw err.json().message; // need to test this out
+  }
 
   login (userCred) {
     // Return a promise that collapses to the server's response as json
-    return this.myHttp.post(
+    return this.http.post(
       this.SERVER_BASE_URL + '/login', // POST url
       userCred,                        // login credentials
       this.enableCors                  // options object for CORS
     ).toPromise()                      // convert observable into a promise
-    .then(res => res.json());          // collapse promise to json
+    .then(res => res.json())          // collapse promise to json
+    .catch(err => this.handleError(err));
   }
 
   logout () {
-    return this.myHttp.post( // can this be a get?
+    return this.http.post( // can this be a get?
       this.SERVER_BASE_URL + '/logout',
       {} // do I need to pass the username, or are cookies handling this?
     ).toPromise()
-    .then(res => res.json());
+    .then(res => res.json())
+    .catch(err => this.handleError(err));
   }
 
   isLoggedIn () {
-    return this.myHttp.get(
+    return this.http.get(
       this.SERVER_BASE_URL + '/loggedin'
     ).toPromise()
-    .then(res => res.json());
+    .then(res => res.json())
+    .catch(err => this.handleError(err));
   }
 
   signup (newUserCred) {
-    return this.myHttp.post(
+    return this.http.post(
       this.SERVER_BASE_URL + '/signup',
       newUserCred, // signup credentials
       this.enableCors
     ).toPromise()
-    .then(res => res.json());
+    .then(res => res.json())
+    .catch(err => this.handleError(err));
   }
 
 }
