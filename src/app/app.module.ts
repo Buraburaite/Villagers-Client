@@ -14,7 +14,7 @@ import { FeedComponent } from './feed/feed.component';
 import { PostComponent } from './feed/post/post.component';
 import { CommentsComponent } from './feed/post/comments/comments.component';
 
-import { AuthService } from './services/auth.service';
+import { SessionService } from './services/session.service';
 
 import { HomeRouteComponent } from './routes/home-route/home-route.component';
 import { IndexRouteComponent } from './routes/index-route/index-route.component';
@@ -39,7 +39,7 @@ import { LoginFormComponent } from './forms/login-form/login-form.component';
     AppRoutingModule,
     BsDropdownModule.forRoot()
   ],
-  providers: [AuthService],
+  providers: [SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
