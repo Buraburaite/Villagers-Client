@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { SessionService } from '../../services/session.service';
 
 @Component({
@@ -6,33 +6,24 @@ import { SessionService } from '../../services/session.service';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent implements OnInit {
-
-  @Output() onLogin = new EventEmitter<any>();
+export class LoginFormComponent {
 
   error: string;
 
-  username: string;
-  password: string;
+  username: string = 'parent1';
+  password: string = 'super';
 
   constructor(private session: SessionService) { }
 
-  ngOnInit() {
-  }
-
-  submitForm(loginForm) {
+  submitForm(form) {
     // Get a promise for the user's object
+    console.log('here - login');
     this.session.login({
-      'username': loginForm.username,
-      'password': loginForm.password
-    })
-    .then((userInfo) => {
-      this.user = userInfo;
-      this.error = null;
-      this.changeCurrentStudent(this.user.students[0]);
+      'username': this.username,
+      'password': this.password
     })
     .catch((err) => {
-      this.user = null;
+      console.log('here - login catch');
       this.error = err;
     });
 

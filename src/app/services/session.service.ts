@@ -26,7 +26,8 @@ export class SessionService {
       this.enableCors                  // options object for CORS
     ).toPromise()                      // convert observable into a promise
     .then(res => {
-      console.log(res.json());
+      console.log('here3');
+      console.log(res);
     });
   }
 
@@ -51,6 +52,10 @@ export class SessionService {
       newUserCred, // signup credentials
       this.enableCors
     ).toPromise()
+    .then(res => {
+      console.log(res);
+      return res;
+    })
     .then(res => res.json());
   }
 

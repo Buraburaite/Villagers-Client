@@ -1,4 +1,4 @@
-<!-- Login form -->
+<!-- Signup form -->
 <div id="comp">
   <!-- # is an element ref, it gives you the relevant object from the ngForm object, is different than [(ngModel)] -->
   <!-- novalidate prevents the default browser checks, which only happen on submit anyway -->
@@ -19,7 +19,7 @@
 
       <button id="submitBtn" class="btn" type="submit"
       [disabled]="!f.valid" [ngClass]="{ 'btn-success': f.valid, 'btn-danger': !f.valid }"
-      > Login </button>
+      > Sign Up </button>
     </div>
   </form>
 </div>

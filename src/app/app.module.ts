@@ -16,9 +16,10 @@ import { CommentsComponent } from './feed/post/comments/comments.component';
 
 import { SessionService } from './services/session.service';
 
-import { HomeRouteComponent } from './routes/home-route/home-route.component';
 import { IndexRouteComponent } from './routes/index-route/index-route.component';
+import { HomeRouteComponent } from './routes/home-route/home-route.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
+import { SignupFormComponent } from './forms/signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { LoginFormComponent } from './forms/login-form/login-form.component';
     FeedComponent,
     PostComponent,
     CommentsComponent,
-    HomeRouteComponent,
     IndexRouteComponent,
+    HomeRouteComponent,
     LoginFormComponent,
+    SignupFormComponent,
   ],
   imports: [
     BrowserModule,
