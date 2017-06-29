@@ -15,6 +15,7 @@ import { PostComponent } from './feed/post/post.component';
 import { CommentsComponent } from './feed/post/comments/comments.component';
 
 import { SessionService } from './services/session.service';
+import { StateService } from './services/state.service';
 
 import { IndexRouteComponent } from './routes/index-route/index-route.component';
 import { HomeRouteComponent } from './routes/home-route/home-route.component';
@@ -41,7 +42,7 @@ import { SignupFormComponent } from './forms/signup-form/signup-form.component';
     AppRoutingModule,
     BsDropdownModule.forRoot()
   ],
-  providers: [SessionService],
+  providers: [SessionService, StateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

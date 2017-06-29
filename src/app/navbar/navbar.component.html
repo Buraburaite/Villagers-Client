@@ -5,12 +5,12 @@
     <div class="dropdown-div" dropdown (onToggle)="studentToggled($event)">
       <!-- button showing the current student -->
       <a dropdownToggle>
-        <img *ngIf="currentStudent" [src]="currentStudent.profilePic">
+        <img [src]="currentStudent.profilePic">
       </a>
       <!-- dropdown items, each is a student of the parent user -->
       <ul *dropdownMenu class="dropdown-menu" aria-labelledby="student-dropdown" role="menu">
         <li *ngFor="let student of user?.students">
-          <a class="dropdown-item">
+          <a class="dropdown-item" (click)="updateCurrentStudent($event, student)">
             {{ student?.firstname }}
           </a>
         </li>

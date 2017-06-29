@@ -2,7 +2,8 @@
 Component containing everything besides the navbar and sidebar
 ====*/
 
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StateService } from '../services/state.service';
 
 
 @Component({
@@ -12,13 +13,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
-  // @Input() user: any;
-  // @Input() posts: any[];
+  currentStudent: any;
 
-  constructor() { }
+  constructor(private state: StateService) { }
 
   ngOnInit() {
-
+    this.currentStudent = this.state.currentStudent;
   }
 
 }

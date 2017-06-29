@@ -2,7 +2,8 @@
 Component for a scrolling sidebar of users
 ====*/
 
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StateService } from '../services/state.service';
 
 @Component({
   selector: 'app-avabar',
@@ -12,11 +13,12 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class AvabarComponent implements OnInit {
 
-  // @Input() currentStudent: any;
+  currentStudent: any;
 
-  constructor() { }
+  constructor(private state: StateService) { }
 
   ngOnInit() {
+    this.currentStudent = this.state.currentStudent;
   }
 
 }
