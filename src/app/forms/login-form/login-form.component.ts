@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { SessionService } from '../../services/session.service';
 
 @Component({
@@ -13,17 +14,21 @@ export class LoginFormComponent {
   username: string = 'parent1';
   password: string = 'super';
 
-  constructor(private session: SessionService) { }
+  constructor(
+    private session: SessionService,
+    private router: Router
+  ) { }
 
   submitForm(form) {
     // Get a promise for the user's object
-    console.log('here - login');
     this.session.login({
       'username': this.username,
       'password': this.password
     })
+    .then((user) => {
+      this.router.navigate(['home']);
+    })
     .catch((err) => {
-      console.log('here - login catch');
       this.error = err;
     });
 

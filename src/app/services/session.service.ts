@@ -26,9 +26,10 @@ export class SessionService {
       this.enableCors                  // options object for CORS
     ).toPromise()                      // convert observable into a promise
     .then(res => {
-      console.log('here3');
-      console.log(res);
+      this.user = res.json();          // extract the user information
+      return this.user;
     });
+
   }
 
   logout () {

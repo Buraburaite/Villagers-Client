@@ -12,7 +12,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class AvabarComponent implements OnInit {
 
-  @Input() currentStudent: any;
+  // @Input() currentStudent: any;
 
   constructor() { }
 

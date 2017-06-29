@@ -1,9 +1,6 @@
 <!-- NAVBAR -->
 <div id="navbar-div">
-  <app-navbar
-  [user]="user"
-  [currentStudent]="currentStudent"
-  (onCurrentStudentChange)="changeCurrentStudent($event);"></app-navbar>
+  <app-navbar></app-navbar>
 </div>
 <div style="height:12vh;">
 </div> <!-- pushes content below navbar -->
@@ -13,13 +10,11 @@
 
   <!-- avabar (sidebar) -->
   <div id="avabar-div">
-    <app-avabar
-    [currentStudent]="currentStudent"></app-avabar>
+    <app-avabar></app-avabar>
   </div>
 
   <!-- EVERYTHING ELSE -->
   <div id="feed-div">
-    <app-feed [user]="user"
-    [posts]="posts"></app-feed>
+    <app-feed></app-feed>
   </div>
 </div>

@@ -17,13 +17,11 @@ export class SignupFormComponent {
 
   submitForm(form) {
     // Get a promise for the new user's object
-    console.log('here - signup');
     this.session.signup({
       'username': this.username,
       'password': this.password
     })
     .catch((err) => {
-      console.log('here - signup catch');
       this.error = err;
     });
   }

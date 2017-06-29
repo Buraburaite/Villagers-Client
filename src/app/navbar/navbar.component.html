@@ -10,7 +10,7 @@
       <!-- dropdown items, each is a student of the parent user -->
       <ul *dropdownMenu class="dropdown-menu" aria-labelledby="student-dropdown" role="menu">
         <li *ngFor="let student of user?.students">
-          <a class="dropdown-item" (click)="updateCurrentStudent($event, student)">
+          <a class="dropdown-item">
             {{ student?.firstname }}
           </a>
         </li>

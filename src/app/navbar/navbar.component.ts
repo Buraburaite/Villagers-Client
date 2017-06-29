@@ -5,6 +5,7 @@ Component for the navbar
 import {
   Component, OnInit, Input, Output, EventEmitter
 } from '@angular/core';
+import { SessionService } from '../services/session.service';
 
 // Navbar for the parent user's / route
 
@@ -14,13 +15,15 @@ import {
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  @Input() user: any;
   @Input() currentStudent: any;
   @Output() onCurrentStudentChange = new EventEmitter<any>();
 
+  user: any;
   logoImage: string = "assets/logo.png";
 
-  constructor() { }
+  constructor(private session: SessionService) {
+    this.user = session.user;
+  }
 
   ngOnInit() {
     // this.currentStudent = this.user.students[0];

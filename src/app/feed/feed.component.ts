@@ -12,8 +12,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
-  @Input() user: any;
-  @Input() posts: any[];
+  // @Input() user: any;
+  // @Input() posts: any[];
 
   constructor() { }
 
