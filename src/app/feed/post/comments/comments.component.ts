@@ -6,9 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
+
   @Input() user: any;
   @Input() comments: any[];
-
 
   newCommentText: string;
 

@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
     private session: SessionService,
     private state: StateService
   ) {
-    this.user = session.user;
+    this.user = state.user;
   }
 
   ngOnInit() {
