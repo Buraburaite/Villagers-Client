@@ -22,15 +22,34 @@
       border-radius: 2px;
     }
 
-    input[type="text"].ng-touched.ng-invalid {
+    input[type="text"].ng-touched.ng-invalid,
+    input[type="password"].ng-touched.ng-invalid {
       border-left: 3px solid red;
       outline-color: red;
       color: red;
     }
 
-    input[type="text"].ng-touched.ng-valid {
+    input[type="text"].ng-touched.ng-valid,
+    input[type="password"].ng-touched.ng-valid {
       border-left: 3px solid green;
       outline-color: green;
+    }
+
+    input[type="radio"] {
+      margin-right: 4px;
+    }
+
+    .radio-group {
+
+      label {
+        display: flex;
+        font-size: 14px;
+        margin-bottom: 8px;
+        font-weight: normal;
+      }
+    }
+
+    #kinds {
     }
 
     #submitBtn {

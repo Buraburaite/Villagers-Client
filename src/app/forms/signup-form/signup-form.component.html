@@ -4,17 +4,37 @@
   <!-- novalidate prevents the default browser checks, which only happen on submit anyway -->
   <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
     <div id="form-container">
-      <input type="text" name="username" placeholder="Username..."
+      <label>Username</label>
+      <input type="text" name="username" placeholder="DynamicDana"
       [(ngModel)]="username" #usernameRef="ngModel" required minlength="4" />
       <!-- Error message is invisible if the value hasn't been visited or if the input is valid -->
       <div class="error" [ngClass]="{ 'invisible': (usernameRef.valid || usernameRef.untouched) }">
         *Error message
       </div>
 
-      <input type="password" name="password" placeholder="Password..."
+      <label>Password</label>
+      <input type="password" name="password" placeholder="..."
       [(ngModel)]="password" #passwordRef="ngModel" required />
       <div class="error" [ngClass]="{ 'invisible': (passwordRef.valid || passwordRef.untouched) }">
         *Error message
+      </div>
+
+      <label>Full Name</label>
+      <input type="text" name="fullname" placeholder="Dana Holmes"
+      [(ngModel)]="fullname" #fullnameRef="ngModel" required />
+      <!-- Error message is invisible if the value hasn't been visited or if the input is valid -->
+      <div class="error" [ngClass]="{ 'invisible': (fullnameRef.valid || fullnameRef.untouched) }">
+        *Error message
+      </div>
+
+      <label>What kind of user are you?</label>
+      <div id="kinds">
+        <div *ngFor="let kind of kindsOfUsers" class="radio-group">
+          <label>
+            <input type="radio" name="kindOfUser" [(ngModel)]="kindOfUser" [value]="kind.value" required />
+            {{ kind.display }}
+          </label>
+        </div>
       </div>
 
       <button id="submitBtn" class="btn" type="submit"
