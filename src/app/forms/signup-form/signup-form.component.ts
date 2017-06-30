@@ -8,30 +8,18 @@ import { SessionService } from '../../services/session.service';
 })
 export class SignupFormComponent {
 
-  private error : string;
+  private error: string;
 
-  private username    : string;
-  private password    : string = 'super';
-  private fullname    : string = 'Dana Holmes';
-  private kindOfUser  : string;
-  private profPic     : string = 'assets/dana.jpg';
-
-  private kindsOfUsers = [
-    { value: 'Parent',  display: 'Parent'  },
-    { value: 'Student', display: 'Student' },
-    { value: 'Teacher', display: 'Teacher' }
-  ];
+  private username: string;
+  private password: string = 'super';
 
   constructor(private session: SessionService) { }
 
   submitForm(form) {
     // Get a promise for the new user's object
     this.session.signup({
-      'username'   : this.username,
-      'password'   : this.password,
-      'fullname'   : this.fullname,
-      'kindOfUser' : this.kindOfUser,
-      'profPic'    : this.profPic
+      'username': this.username,
+      'password': this.password
     })
     .catch((err) => {
       this.error = err;

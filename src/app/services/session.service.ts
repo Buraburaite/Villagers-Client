@@ -62,10 +62,6 @@ export class SessionService {
       newUserCred, // signup credentials
       this.enableCors
     ).toPromise()
-    .then(res => {
-      console.log(res);
-      return res;
-    })
     .then(res => res.json());
   }
 

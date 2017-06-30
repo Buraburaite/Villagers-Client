@@ -4,14 +4,16 @@
   <!-- novalidate prevents the default browser checks, which only happen on submit anyway -->
   <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
     <div id="form-container">
-      <input type="text" name="username" placeholder="Username..."
+      <label for="username">Username</label>
+      <input id="username" type="text" name="username" placeholder="Username..."
       [(ngModel)]="username" #usernameRef="ngModel" required minlength="4" />
       <!-- Error message is invisible if the value hasn't been visited or if the input is valid -->
       <div class="error" [ngClass]="{ 'invisible': (usernameRef.valid || usernameRef.untouched) }">
         *Error message
       </div>
 
-      <input type="password" name="password" placeholder="Password..."
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" placeholder="Password..."
       [(ngModel)]="password" #passwordRef="ngModel" required />
       <div class="error" [ngClass]="{ 'invisible': (passwordRef.valid || passwordRef.untouched) }">
         *Error message

@@ -29,6 +29,9 @@ export class LoginFormComponent {
       this.router.navigate(['', this.username]);
     })
     .catch((err) => {
+      // Clear the password field on each attempt
+      this.password = '';
+      
       this.error = err;
     });
   }

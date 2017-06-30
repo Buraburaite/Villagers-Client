@@ -19,24 +19,6 @@
         *Error message
       </div>
 
-      <label for="fullname">Full Name</label>
-      <input id="fullname" type="text" name="fullname" placeholder="Dana Holmes"
-      [(ngModel)]="fullname" #fullnameRef="ngModel" required />
-      <!-- Error message is invisible if the value hasn't been visited or if the input is valid -->
-      <div class="error" [ngClass]="{ 'invisible': (fullnameRef.valid || fullnameRef.untouched) }">
-        *Error message
-      </div>
-
-      <label>What kind of user are you?</label>
-      <div id="kinds">
-        <div *ngFor="let kind of kindsOfUsers" class="radio-group">
-          <label>
-            <input type="radio" name="kindOfUser" [(ngModel)]="kindOfUser" [value]="kind.value" required />
-            {{ kind.display }}
-          </label>
-        </div>
-      </div>
-
       <button id="submitBtn" class="btn" type="submit"
       [disabled]="!f.valid" [ngClass]="{ 'btn-success': f.valid, 'btn-danger': !f.valid }"
       > Sign Up </button>
