@@ -4,6 +4,7 @@ Service for communcating authentication information
 
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/toPromise';
 
@@ -18,6 +19,7 @@ export class SessionService {
 
   constructor(
     private http: Http,
+    private router: Router,
     private state: StateService
   ) { }
 
@@ -36,9 +38,13 @@ export class SessionService {
   }
 
   logout () {
-    return this.http.post( // can this be a get?
-      this.SERVER_BASE_URL + '/logout',
-      {} // do I need to pass the username, or are cookies handling this?
+    // Logout the user on the client side
+    this.state.user = null;
+    this.router.navigate(['']);
+
+    // Tell the server to end the session
+    return this.http.get(
+      this.SERVER_BASE_URL + '/logout'
     ).toPromise()
     .then(res => res.json());
   }

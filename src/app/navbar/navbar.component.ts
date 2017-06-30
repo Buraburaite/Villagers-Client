@@ -37,6 +37,10 @@ export class NavbarComponent implements OnInit {
     // this.onCurrentStudentChange.emit(this.currentStudent);
   }
 
+  logout(e: Event) {
+    this.session.logout();
+  }
+
   // Dropdown selection events, left here for later reference
   // studentToggled(open:boolean):void {
   // }

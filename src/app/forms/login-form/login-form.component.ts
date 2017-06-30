@@ -9,10 +9,10 @@ import { SessionService } from '../../services/session.service';
 })
 export class LoginFormComponent {
 
-  error: string;
+  private error: string;
 
-  username: string = 'parent1';
-  password: string = 'super';
+  private username: string = 'parent1';
+  private password: string = 'super';
 
   constructor(
     private session: SessionService,
@@ -26,14 +26,11 @@ export class LoginFormComponent {
       'password': this.password
     })
     .then((user) => {
-      this.router.navigate(['home']);
+      this.router.navigate(['', this.username]);
     })
     .catch((err) => {
       this.error = err;
     });
-
-    // this.session.login()
-    // .catch(err => console.log(err));
   }
 
 }

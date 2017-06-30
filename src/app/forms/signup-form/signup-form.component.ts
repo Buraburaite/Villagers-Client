@@ -8,16 +8,16 @@ import { SessionService } from '../../services/session.service';
 })
 export class SignupFormComponent {
 
-  error: string;
+  private error : string;
 
-  username: string;
-  password: string = 'super';
-  fullname: string = 'Dana Holmes';
-  kindOfUser: string;
-  profPic: string = 'assets/dana.jpg';
+  private username    : string;
+  private password    : string = 'super';
+  private fullname    : string = 'Dana Holmes';
+  private kindOfUser  : string;
+  private profPic     : string = 'assets/dana.jpg';
 
-  kindsOfUsers = [
-    { value: 'Parent', display: 'Parent'  },
+  private kindsOfUsers = [
+    { value: 'Parent',  display: 'Parent'  },
     { value: 'Student', display: 'Student' },
     { value: 'Teacher', display: 'Teacher' }
   ];
@@ -27,11 +27,11 @@ export class SignupFormComponent {
   submitForm(form) {
     // Get a promise for the new user's object
     this.session.signup({
-      'username': this.username,
-      'password': this.password,
-      'fullname': this.fullname,
-      'kindOfUser': this.kindOfUser,
-      'profPic': this.profPic
+      'username'   : this.username,
+      'password'   : this.password,
+      'fullname'   : this.fullname,
+      'kindOfUser' : this.kindOfUser,
+      'profPic'    : this.profPic
     })
     .catch((err) => {
       this.error = err;
