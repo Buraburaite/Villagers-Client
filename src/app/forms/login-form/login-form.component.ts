@@ -26,6 +26,7 @@ export class LoginFormComponent {
       'password': this.password
     })
     .then((user) => {
+      console.log(user);
       this.router.navigate(['', user.username]);
     })
     .catch((err) => {
