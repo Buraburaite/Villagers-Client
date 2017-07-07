@@ -26,8 +26,7 @@ export class LoginFormComponent {
       'password': this.password
     })
     .then((user) => {
-      console.log('here2', user);
-      this.router.navigate(['', this.username]);
+      this.router.navigate(['', user.username]);
     })
     .catch((err) => {
       // Clear the password field on each attempt

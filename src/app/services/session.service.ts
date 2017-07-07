@@ -23,48 +23,49 @@ export class SessionService {
     private state: StateService
   ) { }
 
-  login (userCred) {
-    console.log('here');
+  login (userCred): any {
     // Return a promise that collapses to the server's response as json
     return this.http.post(
       this.SERVER_BASE_URL + '/login', // POST url
       userCred,                        // login credentials
       this.enableCors                  // options object for CORS
-    ).toPromise()                      // convert observable into a promise
+    )
+    .toPromise() // convert observable into a promise
     .then(res => {
-      console.log('here1');
       this.state.user = res.json();    // save the user's information into state
       return this.state.user;
     });
 
   }
 
-  logout () {
+  logout (): any {
     // Logout the user on the client side
     this.state.user = null;
     this.router.navigate(['']);
 
     // Tell the server to end the session
-    return this.http.get(
-      this.SERVER_BASE_URL + '/logout'
-    ).toPromise()
+    return this.http.get(this.SERVER_BASE_URL + '/logout')
+    .toPromise()
     .then(res => res.json());
   }
 
-  isLoggedIn () {
-    return this.http.get(
-      this.SERVER_BASE_URL + '/loggedin'
-    ).toPromise()
+  isLoggedIn (): any {
+    return this.http.get(this.SERVER_BASE_URL + '/loggedin')
+    .toPromise()
     .then(res => res.json());
   }
 
-  signup (newUserCred) {
+  signup (newUserCred): any {
     return this.http.post(
       this.SERVER_BASE_URL + '/signup',
       newUserCred, // signup credentials
-      this.enableCors
-    ).toPromise()
-    .then(res => res.json());
+      this.enableCors // do I need this? If not sending user back here
+    )
+    .toPromise()
+    .then((res) => {
+      if (res.status !== 200) { throw new Error('POST signup failed'); }
+      return newUserCred;
+    });
   }
 
 }

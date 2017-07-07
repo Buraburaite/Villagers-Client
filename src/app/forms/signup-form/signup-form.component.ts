@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { SessionService } from '../../services/session.service';
 
 @Component({
@@ -13,15 +14,24 @@ export class SignupFormComponent {
   private username: string;
   private password: string = 'super';
 
-  constructor(private session: SessionService) { }
+  constructor(
+    private session: SessionService,
+    private router: Router
+  ) { }
 
   submitForm(form) {
-    // Get a promise for the new user's object
-    this.session.signup({
+    const userCred = {
       'username': this.username,
       'password': this.password
+    };
+
+    this.session.signup(userCred) // try to create the user
+    .then((userCred) => this.session.login(userCred)) // log them in
+    .then((user) => {
+      this.router.navigate(['', user.username]);
     })
     .catch((err) => {
+      console.log(err);
       this.error = err;
     });
   }
