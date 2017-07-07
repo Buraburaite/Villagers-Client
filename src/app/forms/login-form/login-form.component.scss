@@ -13,7 +13,8 @@
     height: 100%;
     padding-left: 15%;
 
-    input[type="text"], input[type="password"] {
+    input[type="text"],
+    input[type="password"] {
       width: 70%;
       height: auto;
       padding: 0 4px 0 4px;
@@ -22,13 +23,15 @@
       border-radius: 2px;
     }
 
-    input[type="text"].ng-touched.ng-invalid {
+    input[type="text"].ng-touched.ng-invalid,
+    input[type="password"].ng-touched.ng-invalid {
       border-left: 3px solid red;
       outline-color: red;
       color: red;
     }
 
-    input[type="text"].ng-touched.ng-valid {
+    input[type="text"].ng-touched.ng-valid,
+    input[type="password"].ng-touched.ng-valid {
       border-left: 3px solid green;
       outline-color: green;
     }

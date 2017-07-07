@@ -11,8 +11,8 @@ export class LoginFormComponent {
 
   private error: string;
 
-  private username: string = 'parent1';
-  private password: string = 'super';
+  private username: string = 'test';
+  private password: string = 'test';
 
   constructor(
     private session: SessionService,
@@ -26,12 +26,13 @@ export class LoginFormComponent {
       'password': this.password
     })
     .then((user) => {
+      console.log('here2', user);
       this.router.navigate(['', this.username]);
     })
     .catch((err) => {
       // Clear the password field on each attempt
       this.password = '';
-      
+
       this.error = err;
     });
   }

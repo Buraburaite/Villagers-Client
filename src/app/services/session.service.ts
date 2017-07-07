@@ -24,6 +24,7 @@ export class SessionService {
   ) { }
 
   login (userCred) {
+    console.log('here');
     // Return a promise that collapses to the server's response as json
     return this.http.post(
       this.SERVER_BASE_URL + '/login', // POST url
@@ -31,6 +32,7 @@ export class SessionService {
       this.enableCors                  // options object for CORS
     ).toPromise()                      // convert observable into a promise
     .then(res => {
+      console.log('here1');
       this.state.user = res.json();    // save the user's information into state
       return this.state.user;
     });
