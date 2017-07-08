@@ -1,3 +1,5 @@
+import { Post } from './post-model';
+
 export class Villager {
 
   vilname: string;
@@ -12,6 +14,7 @@ export class Villager {
   parents: any[];
   students: any[];
   teachers: any[];
+  posts: Post[] = [];
 
   constructor(vilInfo: any, village: any) {
     // Add the villager to the village

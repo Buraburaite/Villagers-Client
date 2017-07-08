@@ -19,6 +19,6 @@ export class IndexRouteComponent implements OnInit {
     .then((user) => {
       console.log(user);
     })
-  }
+  };
 
 }

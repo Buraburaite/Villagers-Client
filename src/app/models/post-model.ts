@@ -11,18 +11,16 @@ export class Post {
     this.author = postInfo.author;
     this.content = postInfo.content;
 
-    console.log(postInfo);
-
     postInfo.comments.forEach(this.addComment);
   }
 
-  addComment(com) {
+  addComment = (com) => { // this has to be an arrow function for some reason, apparently
     this.comments.push(
       new Comment({
         author: com.author,
         content: com.content
       })
     );
-  }
+  };
 
 }

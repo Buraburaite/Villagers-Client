@@ -9,4 +9,7 @@ export class StateService {
 
   constructor() { }
 
+  visit(vil) {
+
+  }
 }
