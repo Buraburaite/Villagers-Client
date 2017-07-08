@@ -1,7 +1,5 @@
 export class Villager {
 
-  private static village: any = {};
-
   vilname: string;
   password: string;
   kind: string;
@@ -11,15 +9,22 @@ export class Villager {
   school: string;
   subject: string;
   profilePic: string;
-  students: any[];
   parents: any[];
+  students: any[];
   teachers: any[];
 
-  private vilInfo: any;
-
-  constructor(vilInfo: any) {
+  constructor(vilInfo: any, village: any) {
     // Add the villager to the village
-    Villager.village[vilInfo.vilname] = this;
+    village[vilInfo.vilname] = this;
+
+    // Ensures json came out as a list
+    const assertList = (x) => {
+      if (typeof x === 'string') {
+        if (x.length) { return [x]; }
+        else          { return []; }
+      }
+      return x;
+    };
 
     // Fields
     this.vilname    = vilInfo.vilname;
@@ -31,9 +36,9 @@ export class Villager {
     this.school     = vilInfo.school;
     this.subject    = vilInfo.subject;
     this.profilePic = vilInfo.profilePic;
-    this.parents    = vilInfo.parents;
-    this.students   = vilInfo.students;
-    this.teachers   = vilInfo.teachers;
+    this.parents    = assertList(vilInfo.parents);
+    this.students   = assertList(vilInfo.students);
+    this.teachers   = assertList(vilInfo.teachers);
 
   }
 }
