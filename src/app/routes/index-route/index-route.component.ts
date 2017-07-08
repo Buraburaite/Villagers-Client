@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SessionService } from '../../services/session.service';
+
 @Component({
   selector: 'index-route',
   templateUrl: './index-route.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexRouteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private session: SessionService) { }
 
   ngOnInit() {
+    this.session.login({
+      username: 'test',
+      password: 'test'
+    })
+    .then((user) => {
+      console.log(user);
+    })
   }
 
 }

@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/toPromise';
 
+import { User } from '../models/user-model';
+
 import { StateService } from '../services/state.service';
 
 @Injectable()
@@ -32,7 +34,7 @@ export class SessionService {
     )
     .toPromise() // convert observable into a promise
     .then(res => {
-      this.state.user = res.json();    // save the user's information into state
+      this.state.user = new User(res.json()); // save the user's information into state
       return this.state.user;
     });
 
