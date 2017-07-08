@@ -3,10 +3,10 @@ Component for a scrolling sidebar of users
 ====*/
 
 import { Component, OnInit } from '@angular/core';
-import { StateService } from '../services/state.service';
+import { StateService } from '../../../../services/state.service';
 
 @Component({
-  selector: 'app-avabar',
+  selector: 'home-avabar',
   templateUrl: './avabar.component.html',
   styleUrls: ['./avabar.component.scss']
 })

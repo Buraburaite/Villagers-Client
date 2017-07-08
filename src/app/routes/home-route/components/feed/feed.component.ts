@@ -3,11 +3,11 @@ Component containing everything besides the navbar and sidebar
 ====*/
 
 import { Component, OnInit } from '@angular/core';
-import { StateService } from '../services/state.service';
+import { StateService } from '../../../../services/state.service';
 
 
 @Component({
-  selector: 'app-feed',
+  selector: 'home-feed',
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.scss']
 })

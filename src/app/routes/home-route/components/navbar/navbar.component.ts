@@ -3,11 +3,11 @@ Component for the navbar
 ====*/
 
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../services/session.service';
-import { StateService } from '../services/state.service';
+import { SessionService } from '../../../../services/session.service';
+import { StateService } from '../../../../services/state.service';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'home-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
@@ -30,7 +30,6 @@ export class NavbarComponent implements OnInit {
     this.currentStudent = this.state.currentStudent = this.user.students[0];
   }
 
-  // Change the current student variable in the app component
   updateCurrentStudent(e: Event, selectedStudent: any) {
     this.state.currentStudent = selectedStudent;
     // this.state.currentStudent = selectedStudent;
