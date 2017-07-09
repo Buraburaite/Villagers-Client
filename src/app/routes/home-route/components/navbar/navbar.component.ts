@@ -16,7 +16,7 @@ import { User } from '../../../../models/user-model';
 export class NavbarComponent implements OnInit {
 
   user: User;
-  logoImage: string = "assets/logo.png";
+  logoImage: string = "logo.png";
 
   constructor(
     private session: SessionService,

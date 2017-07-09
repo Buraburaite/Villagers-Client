@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { User } from '../../../../../../models/user-model';
+import { Comment } from '../../../../../../models/comment-model';
+
 @Component({
   selector: 'post-comments',
   templateUrl: './comments.component.html',
@@ -7,8 +10,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
-  @Input() user: any;
-  @Input() comments: any[];
+  @Input() user: User;
+  @Input() comments: Comment[];
 
   newCommentText: string;
 
@@ -18,12 +21,12 @@ export class CommentsComponent implements OnInit {
   }
 
   submitComment(value: string){
-    this.comments.push({
+    this.comments.push(
+      new Comment({
       author: this.user,
-      content: value,
-      createdAt: new Date(Date.now()),
-      updatedAt: new Date(Date.now())
-    });
+      content: value
+    })
+  );
 
     this.newCommentText = '';
   }
