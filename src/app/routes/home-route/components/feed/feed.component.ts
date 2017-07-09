@@ -23,7 +23,6 @@ export class FeedComponent implements OnInit {
   ngOnInit() {
     this.avil = this.state.activeVillager;
     this.posts = this.state.posts;
-    console.log(this.posts);
   }
 
 }

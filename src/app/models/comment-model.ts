@@ -3,7 +3,7 @@ import { Post } from './post-model';
 
 export class Comment {
 
-  author: any;
+  author: Villager;
   content: string;
 
   constructor(comInfo: any) {

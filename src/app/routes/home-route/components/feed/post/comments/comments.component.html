@@ -1,6 +1,6 @@
 <div id="comp">
   <div *ngFor="let comment of comments" class="comment">
-    <img [src]="comment.author.profilePic" [alt]="comment.author.fullname">
+    <img [src]="picPath + comment.author.profilePic" [alt]="comment.author.fullname">
     <div class="comment-text">
       <span class="author-name">
         {{ comment?.author.fullname }}
@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="new-comment">
-    <img id="new-comment-img" [src]="avil.profilePic">
+    <img id="new-comment-img" [src]="picPath + avil.profilePic">
 
     <textarea [(ngModel)]="newCommentText" class="comment-textarea comment-text" #textarea (keyup.enter)="submitComment(textarea.value)">
     </textarea>

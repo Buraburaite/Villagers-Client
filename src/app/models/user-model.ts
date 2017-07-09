@@ -1,5 +1,6 @@
 import { Villager } from './villager-model';
 import { Post } from './post-model';
+import { Comment } from './comment-model';
 
 export class User {
 
@@ -21,7 +22,10 @@ export class User {
     // create posts, create comments, distributing them to their authors
     userInfo.posts.forEach((post) => {
       post.author = this.getVillager(post.author);
-      post.comments.forEach((com) => this.getVillager(com.author));
+      post.comments.forEach((comInfo) => {
+        comInfo.author = this.getVillager(comInfo.author);
+        comInfo = new Comment(comInfo);
+      });
       this.village[post.author.vilname].posts.push(new Post(post));
     });
   }
