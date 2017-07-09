@@ -1,6 +1,6 @@
 <div id="comp">
   <div class="header-div">
-    <img *ngIf="post" [src]="post.author.profilePic">
+    <img *ngIf="post" [src]="picPath + post.author.profilePic">
     <span class="teacher-name-span">
       {{ post?.author.fullname }}
     </span>

@@ -18,9 +18,11 @@ export class User {
       this.villagers.push(villager);
     });
 
-    // create posts, distributing them to their authors
+    // create posts, create comments, distributing them to their authors
     userInfo.posts.forEach((post) => {
-      this.village[post.author].posts.push(new Post(post));
+      post.author = this.getVillager(post.author);
+      post.comments.forEach((com) => this.getVillager(com.author));
+      this.village[post.author.vilname].posts.push(new Post(post));
     });
   }
 

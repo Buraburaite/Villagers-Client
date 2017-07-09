@@ -36,7 +36,7 @@ export class SessionService {
     .then(res => {
       this.state.user = new User(res.json()); // save the user's information into state
       this.state.visit('timonGomez'); // NOTE: temporary, for testing
-      return this.state.user;
+      return this.state.activeVillager;
     });
 
   }

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { User } from '../models/user-model';
 import { Villager } from '../models/villager-model';
@@ -23,7 +24,7 @@ export class StateService {
     );
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   getVillager(vilname: string): Villager {
     return this.user.getVillager(vilname);
@@ -31,5 +32,6 @@ export class StateService {
 
   visit(vilname): void {
     this.activeVillager = this.user.getVillager(vilname);
+    this.router.navigate(['', vilname]);
   }
 }

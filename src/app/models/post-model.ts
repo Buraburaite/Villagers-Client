@@ -3,7 +3,7 @@ import { Comment } from './comment-model';
 
 export class Post {
 
-  author: any;
+  author: Villager;
   content: string;
   comments: any[] = [];
 
@@ -11,7 +11,7 @@ export class Post {
     this.author = postInfo.author;
     this.content = postInfo.content;
 
-    postInfo.comments.forEach(this.addComment);
+    this.comments = postInfo.comments;
   }
 
   addComment = (com) => { // this has to be an arrow function for some reason, apparently

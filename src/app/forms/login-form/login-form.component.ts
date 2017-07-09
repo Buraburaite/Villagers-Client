@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { SessionService } from '../../services/session.service';
+import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'app-login-form',
@@ -16,7 +16,7 @@ export class LoginFormComponent {
 
   constructor(
     private session: SessionService,
-    private router: Router
+    private state: StateService
   ) { }
 
   submitForm(form) {
@@ -25,8 +25,8 @@ export class LoginFormComponent {
       'username': this.username,
       'password': this.password
     })
-    .then((user) => {
-      this.router.navigate(['', user.username]);
+    .then((avil) => {
+      this.state.visit(avil.vilname);
     })
     .catch((err) => {
       // Clear the password field on each attempt

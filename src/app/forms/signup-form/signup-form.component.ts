@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { SessionService } from '../../services/session.service';
+import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -16,7 +16,7 @@ export class SignupFormComponent {
 
   constructor(
     private session: SessionService,
-    private router: Router
+    private state: StateService
   ) { }
 
   submitForm(form) {
@@ -27,8 +27,8 @@ export class SignupFormComponent {
 
     this.session.signup(userCred) // try to create the user
     .then((userCred) => this.session.login(userCred)) // log them in
-    .then((user) => {
-      this.router.navigate(['', user.username]);
+    .then((avil) => {
+      this.state.visit(avil.vilname);
     })
     .catch((err) => {
       console.log(err);
