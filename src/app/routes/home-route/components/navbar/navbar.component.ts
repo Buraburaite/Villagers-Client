@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../../../services/session.service';
 import { StateService } from '../../../../services/state.service';
 
-import { User } from '../../../../models/user-model';
+import { Villager } from '../../../../models/villager-model';
 
 @Component({
   selector: 'home-navbar',
@@ -15,14 +15,15 @@ import { User } from '../../../../models/user-model';
 })
 export class NavbarComponent implements OnInit {
 
-  user: User;
-  logoImage: string = "logo.png";
+  avil: Villager;
+  logoImage: string = "assets/logo.png";
+  picPath: string = 'assets/profile-pictures/';
 
   constructor(
     private session: SessionService,
     private state: StateService
   ) {
-    this.user = this.state.user;
+    this.avil = this.state.activeVillager;
   }
 
   ngOnInit() {

@@ -33,6 +33,7 @@ export class LoginFormComponent {
       this.password = '';
 
       this.error = err;
+      console.log(err);
     });
   }
 

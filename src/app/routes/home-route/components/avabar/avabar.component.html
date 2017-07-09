@@ -2,9 +2,9 @@
   <!-- Entries -->
   <div id="avatar-container">
     <ul id="avatar-ul">
-      <li *ngFor="let teacher of state.activeVillager.teachers">
+      <li *ngFor="let vil of vilList">
         <a>
-          <img *ngIf="teacher" [src]="teacher.profilePic">
+          <img *ngIf="vil" [src]="picPath + vil.profilePic">
         </a>
     </ul>
   </div>

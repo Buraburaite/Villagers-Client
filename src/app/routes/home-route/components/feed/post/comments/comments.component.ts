@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { User } from '../../../../../../models/user-model';
+import { Villager } from '../../../../../../models/villager-model';
 import { Comment } from '../../../../../../models/comment-model';
 
 @Component({
@@ -10,10 +10,11 @@ import { Comment } from '../../../../../../models/comment-model';
 })
 export class CommentsComponent implements OnInit {
 
-  @Input() user: User;
+  @Input() avil: Villager;
   @Input() comments: Comment[];
 
   newCommentText: string;
+  picPath: string = 'assets/profile-pictures/';
 
   constructor() { }
 
@@ -23,7 +24,7 @@ export class CommentsComponent implements OnInit {
   submitComment(value: string){
     this.comments.push(
       new Comment({
-      author: this.user,
+      author: this.avil,
       content: value
     })
   );

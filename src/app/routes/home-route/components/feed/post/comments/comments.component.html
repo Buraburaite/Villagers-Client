@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="new-comment">
-    <img id="new-comment-img" [src]="user?.profilePic">
+    <img id="new-comment-img" [src]="avil.profilePic">
 
     <textarea [(ngModel)]="newCommentText" class="comment-textarea comment-text" #textarea (keyup.enter)="submitComment(textarea.value)">
     </textarea>

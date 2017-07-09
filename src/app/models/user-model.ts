@@ -5,13 +5,18 @@ export class User {
 
   username: string;
   village: any = {};
+  villagers: Villager[] = [];
 
   constructor(userInfo: any) {
 
     this.username = userInfo.username;
-    
+
     // create villagers; passing instance populates this.village
-    userInfo.villagers.forEach((vil) => new Villager(vil, this));
+    userInfo.villagers.forEach((vil) => {
+      let villager = new Villager(vil, this);
+      this.village[vil.vilname] = villager;
+      this.villagers.push(villager);
+    });
 
     // create posts, distributing them to their authors
     userInfo.posts.forEach((post) => {

@@ -5,7 +5,7 @@ Component for a scrolling sidebar of users
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../../../services/state.service';
 
-import { User } from '../../../../models/user-model';
+import { Villager } from '../../../../models/villager-model';
 
 @Component({
   selector: 'home-avabar',
@@ -15,12 +15,15 @@ import { User } from '../../../../models/user-model';
 
 export class AvabarComponent implements OnInit {
 
-  user: User;
+  avil: Villager;
+  vilList: Villager[];
+  picPath: string = 'assets/profile-pictures/';
 
   constructor(private state: StateService) { }
 
   ngOnInit() {
-    this.user = this.state.user;
+    this.avil = this.state.activeVillager;
+    this.vilList = this.avil.students.reduce((acc, s) => acc.concat(s.teachers), []);
   }
 
 }

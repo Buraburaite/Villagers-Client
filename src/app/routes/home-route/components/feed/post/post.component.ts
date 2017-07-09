@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { User } from '../../../../../models/user-model';
+import { Villager } from '../../../../../models/villager-model';
 import { Post } from '../../../../../models/post-model';
 
 @Component({
@@ -10,8 +10,10 @@ import { Post } from '../../../../../models/post-model';
 })
 export class PostComponent implements OnInit {
 
-  @Input() user: User;
+  @Input() avil: Villager;
   @Input() post: Post;
+
+  picPath: string = 'assets/profile-pictures/';
 
   constructor() { }
 
