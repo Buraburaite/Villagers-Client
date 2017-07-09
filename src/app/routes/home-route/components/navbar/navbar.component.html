@@ -1,26 +1,6 @@
 <nav id="comp">
   <!-- LEFT-ALIGNED -->
   <section id="left-section">
-    <!-- Student dropdown, using 'dropdown' directive from ngx-bootstrap -->
-    <div class="dropdown-div" dropdown (onToggle)="studentToggled($event)">
-      <!-- button showing the current student -->
-      <a dropdownToggle>
-        <img [src]="currentStudent.profilePic">
-      </a>
-      <!-- dropdown items, each is a student of the parent user -->
-      <ul *dropdownMenu class="dropdown-menu" aria-labelledby="student-dropdown" role="menu">
-        <li *ngFor="let student of user?.students">
-          <a class="dropdown-item" (click)="updateCurrentStudent($event, student)">
-            {{ student?.firstname }}
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- information appearing next to the current student's dropdown image  -->
-    <div id="student-info">
-      <span id="top-info"> {{ currentStudent?.firstname  }} </span>
-      <span id="bottom-info">  {{ currentStudent?.schoolname }} </span>
-    </div>
   </section>
   <!-- CENTERED -->
   <section id="center-section">

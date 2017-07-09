@@ -5,6 +5,8 @@ Component containing everything besides the navbar and sidebar
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../../../services/state.service';
 
+import { User } from '../../../../models/user-model';
+import { Post } from '../../../../models/post-model';
 
 @Component({
   selector: 'home-feed',
@@ -13,17 +15,14 @@ import { StateService } from '../../../../services/state.service';
 })
 export class FeedComponent implements OnInit {
 
-  user: any;
-  currentStudent: any;
-
-  posts: any[];
+  user: User;
+  posts: Post[];
 
   constructor(private state: StateService) { }
 
   ngOnInit() {
     this.user = this.state.user;
-    this.currentStudent = this.state.currentStudent;
-    this.posts = this.currentStudent.teachers[0].posts;
+    this.posts = this.user.getVillager('blueberry').posts;
   }
 
 }

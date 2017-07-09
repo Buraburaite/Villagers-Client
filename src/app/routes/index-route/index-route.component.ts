@@ -14,13 +14,13 @@ export class IndexRouteComponent implements OnInit {
   ngOnInit() {
 
   // for inspecting the resulting user object
-    this.session.login({
-      username: 'test',
-      password: 'test'
-    })
-    .then((user) => {
-      console.log(user);
-    })
+    // this.session.login({
+    //   username: 'test',
+    //   password: 'test'
+    // })
+    // .then((user) => {
+    //   console.log(user);
+    // });
   }
 
 }

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../../../services/session.service';
 import { StateService } from '../../../../services/state.service';
 
+import { User } from '../../../../models/user-model';
+
 @Component({
   selector: 'home-navbar',
   templateUrl: './navbar.component.html',
@@ -13,27 +15,17 @@ import { StateService } from '../../../../services/state.service';
 })
 export class NavbarComponent implements OnInit {
 
-  // @Output() onCurrentStudentChange = new EventEmitter<string>();
-
-  user: any;
-  currentStudent: any;
+  user: User;
   logoImage: string = "assets/logo.png";
 
   constructor(
     private session: SessionService,
     private state: StateService
   ) {
-    this.user = state.user;
+    this.user = this.state.user;
   }
 
   ngOnInit() {
-    this.currentStudent = this.state.currentStudent = this.user.students[0];
-  }
-
-  updateCurrentStudent(e: Event, selectedStudent: any) {
-    this.state.currentStudent = selectedStudent;
-    // this.state.currentStudent = selectedStudent;
-    // this.onCurrentStudentChange.emit(this.currentStudent);
   }
 
   logout(e: Event) {

@@ -2,7 +2,7 @@
   <!-- Entries -->
   <div id="avatar-container">
     <ul id="avatar-ul">
-      <li *ngFor="let teacher of currentStudent?.teachers">
+      <li *ngFor="let teacher of state.activeVillager.teachers">
         <a>
           <img *ngIf="teacher" [src]="teacher.profilePic">
         </a>

@@ -5,6 +5,8 @@ Component for a scrolling sidebar of users
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../../../services/state.service';
 
+import { User } from '../../../../models/user-model';
+
 @Component({
   selector: 'home-avabar',
   templateUrl: './avabar.component.html',
@@ -13,12 +15,12 @@ import { StateService } from '../../../../services/state.service';
 
 export class AvabarComponent implements OnInit {
 
-  currentStudent: any;
+  user: User;
 
   constructor(private state: StateService) { }
 
   ngOnInit() {
-    this.currentStudent = this.state.currentStudent;
+    this.user = this.state.user;
   }
 
 }
