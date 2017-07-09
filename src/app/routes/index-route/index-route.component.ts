@@ -12,6 +12,8 @@ export class IndexRouteComponent implements OnInit {
   constructor(private session: SessionService) { }
 
   ngOnInit() {
+
+  // for inspecting the resulting user object
     this.session.login({
       username: 'test',
       password: 'test'
@@ -19,6 +21,6 @@ export class IndexRouteComponent implements OnInit {
     .then((user) => {
       console.log(user);
     })
-  };
+  }
 
 }

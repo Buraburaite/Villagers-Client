@@ -1,7 +1,9 @@
+import { User } from './user-model';
 import { Post } from './post-model';
 
 export class Villager {
 
+  user: User;
   vilname: string;
   password: string;
   kind: string;
@@ -11,14 +13,23 @@ export class Villager {
   school: string;
   subject: string;
   profilePic: string;
-  parents: any[];
-  students: any[];
-  teachers: any[];
   posts: Post[] = [];
 
-  constructor(vilInfo: any, village: any) {
-    // Add the villager to the village
-    village[vilInfo.vilname] = this;
+  /*====
+  Because Villager instances contain references to other instances that may not
+  yet exist, these references are instead implemented with a getter.
+  ====*/
+  private _parents: string[];
+  private _students: string[];
+  private _teachers: string[];
+
+  get parents() :Villager[] { return this._parents.map( this.user.getVillager); }
+  get students():Villager[] { return this._students.map(this.user.getVillager); }
+  get teachers():Villager[] { return this._teachers.map(this.user.getVillager); }
+
+  constructor(vilInfo: any, user: User) {
+    this.user = user;
+    this.user.village[vilInfo.vilname] = this;
 
     // Ensures json came out as a list
     const assertList = (x) => {
@@ -39,9 +50,9 @@ export class Villager {
     this.school     = vilInfo.school;
     this.subject    = vilInfo.subject;
     this.profilePic = vilInfo.profilePic;
-    this.parents    = assertList(vilInfo.parents);
-    this.students   = assertList(vilInfo.students);
-    this.teachers   = assertList(vilInfo.teachers);
+    this._parents    = assertList(vilInfo.parents);
+    this._students   = assertList(vilInfo.students);
+    this._teachers   = assertList(vilInfo.teachers);
 
   }
 }
