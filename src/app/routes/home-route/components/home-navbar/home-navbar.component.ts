@@ -10,10 +10,10 @@ import { Villager } from '../../../../models/villager-model';
 
 @Component({
   selector: 'home-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  templateUrl: './home-navbar.component.html',
+  styleUrls: ['./home-navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class HomeNavbarComponent implements OnInit {
 
   avil: Villager;
   logoImage: string = "assets/logo.png";
