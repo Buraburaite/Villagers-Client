@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { IndexRouteComponent } from './routes/index-route/index-route.component';
-import { IndexNavbarComponent } from './routes/index-route/components/index-navbar/index-navbar.component';
 
 import { HomeRouteComponent } from './routes/home-route/home-route.component';
 import { HomeNavbarComponent } from './routes/home-route/components/home-navbar/home-navbar.component';
@@ -29,7 +28,6 @@ import { SignupFormComponent } from './forms/signup-form/signup-form.component';
   declarations: [
     AppComponent,
     IndexRouteComponent,
-    IndexNavbarComponent,
     HomeRouteComponent,
     HomeNavbarComponent,
     AvabarComponent,
