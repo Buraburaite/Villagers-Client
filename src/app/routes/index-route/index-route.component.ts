@@ -10,6 +10,7 @@ import { SessionService } from '../../services/session.service';
 })
 export class IndexRouteComponent implements OnInit {
   @ViewChild('infoModal') private infoModal:ModalDirective;
+  @ViewChild('authModal') private authModal:ModalDirective;
 
   private step1: boolean = false;
   private step2: boolean = false;
@@ -18,7 +19,7 @@ export class IndexRouteComponent implements OnInit {
 
   ngOnInit() {
 
-  // for inspecting the resulting user object
+    // for inspecting the resulting user object
     // this.session.login({
     //   username: 'test',
     //   password: 'test'
@@ -30,6 +31,9 @@ export class IndexRouteComponent implements OnInit {
 
   showInfoModal():void { this.infoModal.show(); }
   hideInfoModal():void { this.infoModal.hide(); }
+
+  showAuthModal():void { this.authModal.show(); }
+  hideAuthModal():void { this.authModal.hide(); }
 
 
 }

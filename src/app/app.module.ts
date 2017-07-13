@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { AppComponent } from './app.component';
 
@@ -44,6 +45,7 @@ import { SignupFormComponent } from './forms/signup-form/signup-form.component';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
+    TabsModule.forRoot(),
   ],
   providers: [SessionService, StateService],
   bootstrap: [AppComponent]

@@ -1,3 +1,19 @@
+<!-- authModal - Shown when pressing 'Login/Signup' or from the infoModal button -->
+<div bsModal #authModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <tabset>
+        <tab heading="LOGIN">
+          <app-login-form></app-login-form>
+        </tab>
+        <tab heading="SIGNUP">
+          <app-signup-form></app-signup-form>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</div>
+
 <!-- infoModal - Shown when pressing 'What?' -->
 <div bsModal #infoModal="bs-modal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-sm">
@@ -43,27 +59,9 @@
   </div>
 </div>
 
-<!-- Login/Signup tabbed modal -->
-<button type="button" class="btn btn-primary" (click)="showChildModal()">Open child modal</button>
-<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title pull-left">Child modal</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="hideChildModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        I am a child modal, opened from parent component!
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- Hero -->
 <section class="hero">
-  <a id="login" href="#">
+  <a id="login" href="#" (click)="showAuthModal()">
     Login / Signup
   </a>
   <div class="background-image" style="background-image: url(assets/splash.jpg);"></div>
