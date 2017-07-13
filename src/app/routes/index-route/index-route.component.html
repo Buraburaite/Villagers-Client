@@ -1,3 +1,4 @@
+<!-- infoModal - Shown when pressing 'What?' -->
 <div bsModal #infoModal="bs-modal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -11,36 +12,56 @@
         <div class="modal-text">
           &nbsp;&nbsp;&nbsp;&nbsp;
           Villagers is a social network targeted at primary and secondary education.
-          However, it is not a real company, and this site is not a real product.
-          Instead, this site merely seeks to explore what such a social network
-          would look like.
+          However, it does not represent a real company, and this site is not a
+          real commercial product. Instead, this site merely seeks to explore
+          what such a social network would look like, and the purposes it would
+          serve for its users.
         </div>
-        <a class="next-link">But if it's not a real site, then what does it do?</a>
+        <a class="next-link" (click)="step1 = true;">But if it's not a real site, then what does it do?</a>
       </div>
-      <div class="modal-body">
+      <div *ngIf="step1" class="modal-body">
         <div class="modal-text">
           &nbsp;&nbsp;&nbsp;&nbsp;
           Villagers simulates a social network by providing you, the user, access to
           a collection of pre-made ficitious accounts, belonging to imaginary people
           (let's call them villagers).
         </div>
-        <a class="next-link">So this is just...pretend?</a>
+        <a class="next-link" (click)="step2 = true;">So this is just...pretend?</a>
       </div>
-      <div class="modal-body">
+      <div *ngIf="step2" class="modal-body">
         <div class="modal-text">
           &nbsp;&nbsp;&nbsp;&nbsp;
           Yes, essentially. Unlike a real network, a user can visit the account
           of any villager they come across. Once you are in their account,
           you will see everything as they see it, and be able to do everything
-          they can, as if it were your own. With only one account, you may gain
-          the perspective of teachers, parents, and their students.
+          they can, as if it were your own. With only one account, it is possible
+          to gain the perspective of teachers, parents, and their students.
         </div>
-        <a class="next-link">Sign me up</a>
+        <a class="btn">Sign me up</a>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Login/Signup tabbed modal -->
+<button type="button" class="btn btn-primary" (click)="showChildModal()">Open child modal</button>
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Child modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        I am a child modal, opened from parent component!
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
 <section class="hero">
   <a id="login" href="#">
     Login / Signup
@@ -53,6 +74,7 @@
   <a class="btn" (click)="showInfoModal()">What?</a>
 </section>
 
+<!-- Footer -->
 <footer>
   <h3>about Javier</h3>
   <ul>

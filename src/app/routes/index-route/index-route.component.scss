@@ -103,8 +103,11 @@ Modals
 ================*/
 
 .modal {
+  overflow-y: scroll;
 
   .modal-dialog {
+    margin: 40px auto;
+    width: 80%;
 
     .modal-content {
 
@@ -113,6 +116,7 @@ Modals
         align-items: center;
 
         .modal-title {
+          font-size: 20px;
           margin: 4px auto;
           font-weight: bolder;
         }
@@ -125,9 +129,11 @@ Modals
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 10px;
 
         .modal-text {
           font-size: 16px;
+          margin-bottom: 10px;
         }
 
         .next-link {
@@ -135,6 +141,10 @@ Modals
           text-decoration: underline;
           color: $my-purple;
           padding: 4px;
+        }
+
+        .btn {
+          padding: 10px 20px;
         }
 
       }
@@ -254,17 +264,16 @@ footer {
     }
 
     li {
-      margin: 4px 12px;
+      border: 10px solid $footer-purple;
+      @include forward-leaf();
+      padding: 10px;
+      margin: 8px 12px;
 
       a {
         color: $footer-purple;
         font-size: 20px;
         font-weight: bold;
         text-transform: uppercase;
-        padding: 6px;
-        border: 10px solid $footer-purple;
-        @include forward-leaf();
-        padding: 10px;
 
         i {
           margin-right: 4px;

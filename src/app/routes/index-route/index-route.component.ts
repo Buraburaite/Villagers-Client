@@ -11,6 +11,9 @@ import { SessionService } from '../../services/session.service';
 export class IndexRouteComponent implements OnInit {
   @ViewChild('infoModal') private infoModal:ModalDirective;
 
+  private step1: boolean = false;
+  private step2: boolean = false;
+
   constructor(private session: SessionService) { }
 
   ngOnInit() {
