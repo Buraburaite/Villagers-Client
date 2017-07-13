@@ -1,10 +1,56 @@
-<a id="login" href="#">Login / Signup</a>
+<div bsModal #infoModal="bs-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Welcome to Villagers!</h4>
+        <button type="button" class="close" (click)="hideInfoModal()">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-text">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          Villagers is a social network targeted at primary and secondary education.
+          However, it is not a real company, and this site is not a real product.
+          Instead, this site merely seeks to explore what such a social network
+          would look like.
+        </div>
+        <a class="next-link">But if it's not a real site, then what does it do?</a>
+      </div>
+      <div class="modal-body">
+        <div class="modal-text">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          Villagers simulates a social network by providing you, the user, access to
+          a collection of pre-made ficitious accounts, belonging to imaginary people
+          (let's call them villagers).
+        </div>
+        <a class="next-link">So this is just...pretend?</a>
+      </div>
+      <div class="modal-body">
+        <div class="modal-text">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          Yes, essentially. Unlike a real network, a user can visit the account
+          of any villager they come across. Once you are in their account,
+          you will see everything as they see it, and be able to do everything
+          they can, as if it were your own. With only one account, you may gain
+          the perspective of teachers, parents, and their students.
+        </div>
+        <a class="next-link">Sign me up</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section class="hero">
+  <a id="login" href="#">
+    Login / Signup
+  </a>
   <div class="background-image" style="background-image: url(assets/splash.jpg);"></div>
   <h1>Villagers</h1>
-  <h3>a <b>simulated</b> social network <br> by Javier Cueto</h3>
-  <a class="btn">What?</a>
+  <h3>
+    a <b>simulated</b> social network <br> by Javier Cueto
+  </h3>
+  <a class="btn" (click)="showInfoModal()">What?</a>
 </section>
 
 <footer>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
 
 import { SessionService } from '../../services/session.service';
 
@@ -8,6 +9,7 @@ import { SessionService } from '../../services/session.service';
   styleUrls: ['./index-route.component.scss']
 })
 export class IndexRouteComponent implements OnInit {
+  @ViewChild('infoModal') private infoModal:ModalDirective;
 
   constructor(private session: SessionService) { }
 
@@ -22,5 +24,9 @@ export class IndexRouteComponent implements OnInit {
     //   console.log(user);
     // });
   }
+
+  showInfoModal():void { this.infoModal.show(); }
+  hideInfoModal():void { this.infoModal.hide(); }
+
 
 }
