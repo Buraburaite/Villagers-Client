@@ -5,7 +5,7 @@ import { StateService } from '../../services/state.service';
 @Component({
   selector: 'app-signup-form',
   templateUrl: './signup-form.component.html',
-  styleUrls: ['./signup-form.component.scss']
+  styleUrls: ['../form-parts.scss', './signup-form.component.scss']
 })
 export class SignupFormComponent {
 

@@ -102,12 +102,21 @@ ul.grid {
 Modals
 ================*/
 
+.modal-open {
+  // overflow-y: scroll;
+}
+
 .modal {
-  overflow-y: scroll;
+  // overflow-y: scroll;
 
   .modal-dialog {
     margin: 40px auto;
-    width: 80%;
+    width: 460px;
+    height: auto;
+
+    @media (max-width: 600px) {
+      width: 80%;
+    }
 
     .modal-content {
 
@@ -116,13 +125,15 @@ Modals
         align-items: center;
 
         .modal-title {
-          font-size: 20px;
           margin: 4px auto;
+          font-size: 20px;
           font-weight: bolder;
+          text-align: center;
         }
 
         .close {
           margin-right: 8px;
+          outline: none;
         }
       }
       .modal-body {

@@ -14,6 +14,7 @@ export class IndexRouteComponent implements OnInit {
 
   private step1: boolean = false;
   private step2: boolean = false;
+  private switching: boolean = false;
 
   constructor(private session: SessionService) { }
 
@@ -35,5 +36,10 @@ export class IndexRouteComponent implements OnInit {
   showAuthModal():void { this.authModal.show(); }
   hideAuthModal():void { this.authModal.hide(); }
 
+  onInfoModalHidden():void {
+    if (this.switching) { this.authModal.show(); }
+    this.switching = false;
+    this.step1 = this.step2 = false;
+  }
 
 }
