@@ -2,7 +2,7 @@
 
 #navbar-div {
   width: 100vw;
-  height: 12vh;
+  height: 16vh;
   position: fixed;
   z-index: 100000000;
   background-color: white;
@@ -10,7 +10,7 @@
 
 #content-div {
   width: 100vw;
-  height: 88vh;
+  height: 84vh;
   display: flex;
   background-image: url('../../../assets/background.png');
   @include color-overlay($page-grey);
