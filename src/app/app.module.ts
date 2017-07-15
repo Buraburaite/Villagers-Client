@@ -24,6 +24,7 @@ import { StateService } from './services/state.service';
 
 import { LoginFormComponent } from './shared/forms/login-form/login-form.component';
 import { SignupFormComponent } from './shared/forms/signup-form/signup-form.component';
+import { VisitDirective } from './shared/directives/visit.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SignupFormComponent } from './shared/forms/signup-form/signup-form.comp
     CommentsComponent,
     LoginFormComponent,
     SignupFormComponent,
+    VisitDirective,
   ],
   imports: [
     BrowserModule,

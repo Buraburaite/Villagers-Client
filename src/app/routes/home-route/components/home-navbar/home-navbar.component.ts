@@ -15,16 +15,14 @@ import { Villager } from '../../../../models/villager-model';
 })
 export class HomeNavbarComponent implements OnInit {
 
-  avil: Villager;
-  logoImage: string = "assets/logo.png";
+  get avil(): Villager { return this.state.activeVillager; }
+  logoImage: string = 'assets/logo.png';
   picPath: string = 'assets/profile-pictures/';
 
   constructor(
     private session: SessionService,
     private state: StateService
-  ) {
-    this.avil = this.state.activeVillager;
-  }
+  ) { }
 
   ngOnInit() {
   }
