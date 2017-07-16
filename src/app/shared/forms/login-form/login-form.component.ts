@@ -11,8 +11,8 @@ export class LoginFormComponent {
 
   private error: string;
 
-  private username: string = 'test';
-  private password: string = 'testtest';
+  private username: string;// = 'test';
+  private password: string;// = 'testtest';
 
   constructor(
     private session: SessionService,

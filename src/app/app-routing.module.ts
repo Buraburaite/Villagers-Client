@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoggedInGuard } from './services/loggedin.guard';
-import { LoggedOutGuard } from './services/loggedout.guard';
+import { LoggedInGuard } from './guards/loggedin.guard';
+import { LoggedOutGuard } from './guards/loggedout.guard';
 
 import { IndexRouteComponent } from './routes/index-route/index-route.component';
 import { HomeRouteComponent }  from './routes/home-route/home-route.component';
