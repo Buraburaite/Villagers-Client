@@ -24,11 +24,13 @@ export class CommentsComponent implements OnInit {
   submitComment(value: string){
     this.comments.push(
       new Comment({
-      author: this.avil,
-      content: value
-    })
-  );
-
+        author: this.avil,
+        content: value,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      })
+    );
+    
     this.newCommentText = '';
   }
 

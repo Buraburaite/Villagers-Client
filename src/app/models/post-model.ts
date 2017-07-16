@@ -6,6 +6,8 @@ export class Post {
   author: Villager;
   content: string;
   comments: any[] = [];
+  createdAt: Date;
+  updatedAt: Date;
 
   constructor(postInfo: any) {
     this.author = postInfo.author;
@@ -18,7 +20,9 @@ export class Post {
     this.comments.push(
       new Comment({
         author: com.author,
-        content: com.content
+        content: com.content,
+        createdAt: com.createdAt,
+        updatedAt: com.updatedAt
       })
     );
   };
