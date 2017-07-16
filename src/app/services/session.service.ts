@@ -33,6 +33,7 @@ export class SessionService {
       this.enableCors                  // options object for CORS
     )
     .toPromise() // convert observable into a promise
+    .then(() => { console.log('here') })
     .then(res => {
       this.state.user = new User(res.json()); // save the user's information into state
       this.state.visit('timonGomez'); // NOTE: temporary, for testing
