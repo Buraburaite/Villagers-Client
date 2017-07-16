@@ -27,6 +27,7 @@ export class SessionService {
 
   login (userCred): any {
     // Return a promise that collapses to the server's response as json
+    console.log(environment.serverBaseUrl);
     return this.http.post(
       this.SERVER_BASE_URL + '/login', // POST url
       userCred,                        // login credentials
