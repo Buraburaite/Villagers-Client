@@ -35,7 +35,7 @@ export class SessionService {
     .toPromise() // convert observable into a promise
     .then((passme) => { console.log('here'); return passme; })
     .then(res => {
-      resData = res.json();
+      let resData = res.json();
       this.state.user = new User(resData); // save the user's information into state
       this.state.visit('timonGomez'); // NOTE: temporary, for testing
       return resData;
