@@ -15,14 +15,12 @@ import { Post } from '../../../../models/post-model';
 })
 export class FeedComponent implements OnInit {
 
-  avil: Villager;
-  posts: Post[];
+  get avil(): Villager { return this.state.activeVillager; }
+  get posts(): Post[] { return this.state.posts; }
 
   constructor(private state: StateService) { }
 
   ngOnInit() {
-    this.avil = this.state.activeVillager;
-    this.posts = this.state.posts;
   }
 
 }

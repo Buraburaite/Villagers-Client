@@ -1,12 +1,10 @@
 @import "src/styles";
 
-$avabar-black: lighten(black, 6%);
-
 #comp {
   width: 100%;
   height: auto;
   min-height: 100%;
-  background-color: $avabar-black;
+  background-color: $off-black;
   // @include box-shadow(2px, 0, 10px, darken($page-grey, 20%));
 
   #avatar-container {

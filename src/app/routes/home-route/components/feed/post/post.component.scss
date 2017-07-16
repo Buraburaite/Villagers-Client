@@ -1,7 +1,7 @@
 @import "src/styles";
 
 #comp {
-  width: 70vw;
+  width: 600px;
   height: auto;
   margin: 50px;
   display: flex;
@@ -31,7 +31,7 @@
     }
 
     .teacher-name-span {
-      font-size: 6vw;
+      font-size: 40px;
       font-weight: bold;
     }
   }
@@ -39,7 +39,7 @@
   .content-div {
     width: 90%;
     padding: 10px;
-    font-size: 2vw;
+    font-size: 18px;
   }
 
   .my-hr {

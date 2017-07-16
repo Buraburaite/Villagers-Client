@@ -1,12 +1,12 @@
 <div id="comp">
   <div *ngFor="let comment of comments" class="comment">
-    <img [src]="picPath + comment.author.profilePic" [alt]="comment.author.fullname">
+    <img [src]="picPath + comment.author.profilePic" [alt]="comment.author.fullname" [canVisit]="comment.author.vilname">
     <div class="comment-text">
-      <span class="author-name">
-        {{ comment?.author.fullname }}
-      </span>
-      {{ comment?.content }}
-      <!-- <p class="date"> {{ comment?.updatedAt | date: 'medium' }} </p> -->
+      <a class="author-name" [canVisit]="comment.author.vilname">
+        {{ comment.author.fullname }}
+      </a>
+      {{ comment.content }}
+      <p class="date"> {{ comment?.updatedAt | date: 'medium' }} </p>
     </div>
   </div>
   <div class="new-comment">

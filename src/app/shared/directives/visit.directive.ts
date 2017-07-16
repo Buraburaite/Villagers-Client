@@ -2,14 +2,22 @@ import { Directive, HostListener, Input } from '@angular/core';
 import { StateService } from '../../services/state.service';
 
 @Directive({
-  selector: '[visit]'
+  selector: '[canVisit]'
 })
 export class VisitDirective {
-  @Input() visit; // I think this is just a default if no input?
+  @Input() canVisit; // I think this is just a default if no input?
 
   @HostListener('click', ['$event'])
   visitVil(event: Event) {
-    this.state.visit(this.visit);
+
+    // If would visit the activeVillager, do nothing
+    if (this.canVisit === this.state.activeVillager.vilname) { return null; }
+
+    let confirmed = window.confirm(`Visit ${this.canVisit}?`);
+
+    if (confirmed) {
+      this.state.visit(this.canVisit);
+    }
   }
 
   constructor(private state: StateService) { }

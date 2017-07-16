@@ -23,7 +23,7 @@ export class AvabarComponent implements OnInit {
 
   ngOnInit() {
     this.avil = this.state.activeVillager;
-    this.vilList = this.avil.students.reduce((acc, s) => acc.concat(s.teachers), []);
+    this.vilList = this.state.user.villagers;
   }
 
 }
