@@ -1,5 +1,5 @@
-import { Villager } from './villager-model';
-import { Post } from './post-model';
+import { Villager } from './villager.model';
+import { Post } from './post.model';
 
 export class Comment {
 

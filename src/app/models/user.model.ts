@@ -1,6 +1,6 @@
-import { Villager } from './villager-model';
-import { Post } from './post-model';
-import { Comment } from './comment-model';
+import { Villager } from './villager.model';
+import { Post } from './post.model';
+import { Comment } from './comment.model';
 
 export class User {
 

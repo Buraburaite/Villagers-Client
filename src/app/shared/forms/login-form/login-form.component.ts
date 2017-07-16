@@ -12,7 +12,7 @@ export class LoginFormComponent {
   private error: string;
 
   private username: string = 'test';
-  private password: string = 'test';
+  private password: string = 'testtest';
 
   constructor(
     private session: SessionService,

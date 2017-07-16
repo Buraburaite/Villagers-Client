@@ -9,16 +9,16 @@
       [(ngModel)]="username" #usernameRef="ngModel" required minlength="4" />
       <!-- Error message is invisible if the value hasn't been visited or if the input is valid -->
       <div class="error" [ngClass]="{ 'invisible': (usernameRef.valid || usernameRef.untouched) }">
-        *Error message
+        Username must be at least four characters
       </div>
 
       <label for="password">Password</label>
       <input id="password" type="password" name="password" placeholder="Password..."
-      [(ngModel)]="password" #passwordRef="ngModel" required />
+      [(ngModel)]="password" #passwordRef="ngModel" required minlength="8" />
       <div class="error" [ngClass]="{ 'invisible': (passwordRef.valid || passwordRef.untouched) }">
-        *Error message
+        Username must be at least eight characters
       </div>
-
+      
       <button id="submitBtn" class="btn" type="submit"
       [disabled]="!f.valid" [ngClass]="{ 'btn-success': f.valid, 'btn-danger': !f.valid }"
       > Login </button>

@@ -5,7 +5,7 @@ Component for a scrolling sidebar of users
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../../../services/state.service';
 
-import { Villager } from '../../../../models/villager-model';
+import { Villager } from '../../../../models/villager.model';
 
 @Component({
   selector: 'home-avabar',

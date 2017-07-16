@@ -1,5 +1,5 @@
-import { User } from './user-model';
-import { Post } from './post-model';
+import { User } from './user.model';
+import { Post } from './post.model';
 
 export class Villager {
 

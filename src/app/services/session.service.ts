@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/toPromise';
 
-import { User } from '../models/user-model';
+import { User } from '../models/user.model';
 
 import { StateService } from '../services/state.service';
 
@@ -43,8 +43,8 @@ export class SessionService {
 
   logout (): any {
     // Logout the user on the client side
-    this.state.user = null;
     this.router.navigate(['']);
+    this.state.user = null;
 
     // Tell the server to end the session
     return this.http.get(this.SERVER_BASE_URL + '/logout')

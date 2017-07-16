@@ -12,7 +12,7 @@ export class SignupFormComponent {
   private error: string;
 
   private username: string;
-  private password: string = 'super';
+  private password: string = 'testtest';
 
   constructor(
     private session: SessionService,

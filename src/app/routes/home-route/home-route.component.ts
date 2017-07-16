@@ -14,13 +14,13 @@ export class HomeRouteComponent implements OnInit {
     private state : StateService
   ) {
 
-      this.session.login({
-        username: 'test',
-        password: 'test'
-      })
-      .then((avil) => {
-        this.state.visit(avil.vilname);
-      });
+      // this.session.login({
+      //   username: 'test',
+      //   password: 'test'
+      // })
+      // .then((avil) => {
+      //   this.state.visit(avil.vilname);
+      // });
   }
 
   ngOnInit() {

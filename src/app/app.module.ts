@@ -21,6 +21,8 @@ import { CommentsComponent } from './routes/home-route/components/feed/post/comm
 
 import { SessionService } from './services/session.service';
 import { StateService } from './services/state.service';
+import { LoggedInGuard } from './services/loggedin.guard';
+import { LoggedOutGuard } from './services/loggedout.guard';
 
 import { LoginFormComponent } from './shared/forms/login-form/login-form.component';
 import { SignupFormComponent } from './shared/forms/signup-form/signup-form.component';
@@ -49,7 +51,12 @@ import { VisitDirective } from './shared/directives/visit.directive';
     ModalModule.forRoot(),
     TabsModule.forRoot(),
   ],
-  providers: [SessionService, StateService],
+  providers: [
+    SessionService,
+    StateService,
+    LoggedInGuard,
+    LoggedOutGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
