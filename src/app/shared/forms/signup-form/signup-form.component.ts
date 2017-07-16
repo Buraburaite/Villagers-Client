@@ -27,9 +27,6 @@ export class SignupFormComponent {
 
     this.session.signup(userCred) // try to create the user
     .then((userCred) => this.session.login(userCred)) // log them in
-    .then((avil) => {
-      this.state.visit(avil.vilname);
-    })
     .catch((err) => {
       console.log(err);
       this.error = err;

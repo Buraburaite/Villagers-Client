@@ -25,9 +25,6 @@ export class LoginFormComponent {
       'username': this.username,
       'password': this.password
     })
-    .then((avil) => {
-      this.state.visit(avil.vilname);
-    })
     .catch((err) => {
       // Clear the password field on each attempt
       this.password = '';
