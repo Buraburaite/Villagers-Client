@@ -31,7 +31,7 @@ export class SessionService {
     return this.http.post(
       this.SERVER_BASE_URL + '/login', // POST url
       userCred,                        // login credentials
-      this.enableCors                  // options object for CORS
+      // this.enableCors                  // options object for CORS
     )
     .toPromise() // convert observable into a promise
     .then((passme) => { console.log('here'); return passme; })
