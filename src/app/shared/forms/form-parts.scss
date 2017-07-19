@@ -6,6 +6,7 @@ input[type="password"] {
   font-size: 12px;
   text-overflow: ellipsis;
   border-radius: 2px;
+  outline-color: transparent;
 }
 
 input[type="text"].ng-touched.ng-invalid,

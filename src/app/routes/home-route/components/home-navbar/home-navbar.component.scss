@@ -1,4 +1,4 @@
-@import "src/styles";
+@import "../../../../../../src/styles";
 
 /*===
 #left-section: contains the left dropdown and accompanying info div
@@ -152,7 +152,8 @@ may be used.
 
   #bottom-bar {
     width: 100%;
-    height: 25%;
+    height: auto;
+    min-height: 25%;
     padding: 0 10px;
     color: lightgreen;
     background-color: $off-black;

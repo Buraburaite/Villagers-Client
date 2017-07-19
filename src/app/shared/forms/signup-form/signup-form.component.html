@@ -5,7 +5,7 @@
   <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
     <div id="form-container">
       <label for="username">Username</label>
-      <input id="username" type="text" name="username" placeholder="DynamicDana"
+      <input id="username" type="text" name="username"
       [(ngModel)]="username" #usernameRef="ngModel" required minlength="4" pattern="^\S*$" />
       <!-- Error message is invisible if the value hasn't been visited or if the input is valid -->
       <div class="error" [ngClass]="{ 'invisible': (usernameRef.valid || usernameRef.untouched) }">
@@ -13,7 +13,7 @@
       </div>
 
       <label for="password">Password</label>
-      <input id="password" type="password" name="password" placeholder="..."
+      <input id="password" type="password" name="password"
       [(ngModel)]="password" #passwordRef="ngModel" required minlength="8"/>
       <div class="error" [ngClass]="{ 'invisible': (passwordRef.valid || passwordRef.untouched) }">
         Username must be at least eight characters

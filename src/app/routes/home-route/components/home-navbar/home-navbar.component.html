@@ -23,13 +23,11 @@
     </section>
   </div>
   <div id="bottom-bar">
-    <p>
-      Username: {{ state.user.username }} --
-      Current Villager: {{ avil.fullname }},
-      signed in as {{ avil.vilname }},
-      a {{ avil.kind }}
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="#" (click)="logout($event)">Logout of Villagers</a>
-    </p>
+    Username: {{ state.user.username }} --
+    Current Villager: {{ avil.fullname }},
+    signed in as {{ avil.vilname }},
+    a {{ avil.kind }}
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#" (click)="logout($event)">Logout of Villagers</a>
   </div>
 </nav>
