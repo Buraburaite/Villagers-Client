@@ -5,5 +5,5 @@
 
 export const environment = {
   production: true,
-  serverBaseUrl: 'http://villagers-staging.herokuapp.com' // Note: don't forget 'http' part!
+  serverBaseUrl: 'http://villagers-staging.herokuapp.com'
 };
