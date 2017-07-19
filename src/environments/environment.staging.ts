@@ -4,6 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
-  serverBaseUrl: 'http://villagers-staging.herokuapp.com' // Note: don't forget 'http' part!
+  production: true,
+  serverBaseUrl: '' // Note: don't forget 'http' part!
 };
