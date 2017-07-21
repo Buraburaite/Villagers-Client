@@ -2,7 +2,7 @@
 Component for a scrolling sidebar of users
 ====*/
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { StateService } from '../../../../services/state.service';
 
 import { Villager } from '../../../../models/villager.model';
@@ -15,6 +15,8 @@ import { Villager } from '../../../../models/villager.model';
 
 export class AvabarComponent implements OnInit {
 
+  @Output() onVisitModalRequested: EventEmitter<Villager> = new EventEmitter<Villager>();
+
   avil: Villager;
   vilList: Villager[];
   picPath: string = 'assets/profile-pictures/';
@@ -24,6 +26,10 @@ export class AvabarComponent implements OnInit {
   ngOnInit() {
     this.avil = this.state.activeVillager;
     this.vilList = this.state.user.villagers;
+  }
+
+  fireVisitModalRequested(vil: Villager) {
+    this.onVisitModalRequested.emit(vil);
   }
 
 }

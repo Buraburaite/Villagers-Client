@@ -2,14 +2,7 @@
 <div bsModal #visitModal="bs-modal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <tabset>
-        <tab heading="SIGNUP">
-          <app-signup-form></app-signup-form>
-        </tab>
-        <tab heading="LOGIN">
-          <app-login-form></app-login-form>
-        </tab>
-      </tabset>
+      {{ vilToVisit?.vilname }}
     </div>
   </div>
 </div>
@@ -25,7 +18,7 @@
 
   <!-- avabar (sidebar) -->
   <div id="avabar-div">
-    <home-avabar></home-avabar>
+    <home-avabar (onVisitModalRequested)="onVisitModalRequested($event)"></home-avabar>
   </div>
 
   <!-- EVERYTHING ELSE -->
