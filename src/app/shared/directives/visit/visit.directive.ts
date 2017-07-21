@@ -1,11 +1,20 @@
-import { Directive, HostListener, Input } from '@angular/core';
-import { StateService } from '../../services/state.service';
+import {
+  Directive,
+  HostListener,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import { StateService } from '../../../services/state.service';
+
+import { Villager } from '../../../models/villager.model';
 
 @Directive({
   selector: '[canVisit]'
 })
 export class VisitDirective {
   @Input() canVisit; // I think this is just a default if no input?
+  @Output() onVisitRequest: EventEmitter<Villager> = new EventEmitter<Villager>();
 
   @HostListener('click', ['$event'])
   visitVil(event: Event) {

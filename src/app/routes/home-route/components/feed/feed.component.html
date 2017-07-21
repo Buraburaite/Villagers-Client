@@ -1,6 +1,14 @@
 <div #comp id="comp">
-  <span class="scrolling-bg"></span>
+  <!-- visit modal -->
+  <div bsModal #visitModal="bs-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        Hello
+      </div>
+    </div>
+  </div>
   <div id="feed">
+    <button (click)="showVisitModal()">Show Visit Modal</button>
     <div *ngFor="let post of posts" class="post">
       <page-post [post]="post" [avil]="avil"></page-post>
     </div>
