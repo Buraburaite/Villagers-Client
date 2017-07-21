@@ -14,7 +14,6 @@ import { Villager } from '../../../models/villager.model';
 })
 export class VisitDirective {
   @Input() canVisit; // I think this is just a default if no input?
-  @Output() onVisitRequest: EventEmitter<Villager> = new EventEmitter<Villager>();
 
   @HostListener('click', ['$event'])
   visitVil(event: Event) {
@@ -22,11 +21,14 @@ export class VisitDirective {
     // If would visit the activeVillager, do nothing
     if (this.canVisit === this.state.activeVillager.vilname) { return null; }
 
-    let confirmed = window.confirm(`Visit ${this.canVisit}?`);
+    const vilToVisit = this.state.getVillager(this.canVisit);
+    console.log('directive: ' + this.canVisit);
 
-    if (confirmed) {
-      this.state.visit(this.canVisit);
-    }
+    // let confirmed = window.confirm(`Visit ${this.canVisit}?`);
+    //
+    // if (confirmed) {
+    //   // this.state.visit(this.canVisit);
+    // }
   }
 
   constructor(private state: StateService) { }

@@ -2,7 +2,7 @@
 Component containing everything besides the navbar and sidebar
 ====*/
 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { StateService } from '../../../../services/state.service';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 
@@ -16,7 +16,6 @@ import { Post } from '../../../../models/post.model';
 })
 export class FeedComponent implements OnInit {
 
-  @ViewChild('visitModal') private visitModal:ModalDirective;
 
   get avil(): Villager { return this.state.activeVillager; }
   get posts(): Post[] { return this.state.posts; }
@@ -25,8 +24,5 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  showVisitModal():void { this.visitModal.show(); }
-  hideVisitModal():void { this.visitModal.hide(); }
 
 }

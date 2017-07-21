@@ -1,6 +1,6 @@
 <div id="comp">
   <div *ngFor="let comment of comments" class="comment">
-    <img [src]="picPath + comment.author.profilePic" [alt]="comment.author.fullname" [canVisit]="comment.author.vilname">
+    <img [src]="picPath + comment.author.profilePic" [alt]="comment.author.fullname">
     <div class="comment-text">
       <a class="author-name" [canVisit]="comment.author.vilname">
         {{ comment.author.fullname }}
