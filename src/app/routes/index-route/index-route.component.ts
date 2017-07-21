@@ -36,6 +36,8 @@ export class IndexRouteComponent implements OnInit {
   showAuthModal():void { this.authModal.show(); }
   hideAuthModal():void { this.authModal.hide(); }
 
+  // Allow navigating from infoModal to authModal
+  // Also resets infoModal
   onInfoModalHidden():void {
     if (this.switching) { this.authModal.show(); }
     this.switching = false;

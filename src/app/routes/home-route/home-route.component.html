@@ -1,11 +1,3 @@
-<!-- visitModal -->
-<div bsModal #visitModal="bs-modal" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      {{ vilToVisit?.vilname }}
-    </div>
-  </div>
-</div>
 <!-- NAVBAR -->
 <div id="navbar-div">
   <home-navbar></home-navbar>
@@ -24,5 +16,13 @@
   <!-- EVERYTHING ELSE -->
   <div id="feed-div">
     <home-feed></home-feed>
+  </div>
+</div>
+<!-- visitModal -->
+<div bsModal #visitModal="bs-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      {{ vilToVisit?.vilname }}
+    </div>
   </div>
 </div>
