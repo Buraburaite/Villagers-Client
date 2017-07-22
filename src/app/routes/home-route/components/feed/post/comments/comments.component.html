@@ -2,7 +2,7 @@
   <div *ngFor="let comment of comments" class="comment">
     <img [src]="picPath + comment.author.profilePic" [alt]="comment.author.fullname">
     <div class="comment-text">
-      <a class="author-name" [canVisit]="comment.author.vilname">
+      <a class="author-name">
         {{ comment.author.fullname }}
       </a>
       {{ comment.content }}

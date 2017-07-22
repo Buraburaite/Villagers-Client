@@ -26,7 +26,6 @@ import { LoggedOutGuard } from './guards/loggedout.guard';
 
 import { LoginFormComponent } from './shared/forms/login-form/login-form.component';
 import { SignupFormComponent } from './shared/forms/signup-form/signup-form.component';
-import { VisitDirective } from './shared/directives/visit/visit.directive';
 
 @NgModule({
   declarations: [
@@ -40,7 +39,6 @@ import { VisitDirective } from './shared/directives/visit/visit.directive';
     CommentsComponent,
     LoginFormComponent,
     SignupFormComponent,
-    VisitDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SessionService } from '../../services/session.service';
 import { StateService } from '../../services/state.service';
 
@@ -22,22 +22,23 @@ export class HomeRouteComponent implements OnInit {
     private state : StateService
   ) {
 
-      // this.session.login({
-      //   username: 'test',
-      //   password: 'test'
-      // })
-      // .then((avil) => {
-      //   this.state.visit(avil.vilname);
-      // });
+    // this.session.login({
+    //   username: 'test',
+    //   password: 'test'
+    // })
+    // .then((avil) => {
+    //   this.state.visit(avil.vilname);
+    // });
   }
 
   ngOnInit() {
   }
 
   onVisitModalRequested(vil: Villager) {
-    if (vil.vilname === this.state.activeVillager.vilname) { return; }
-
-    this.vilToVisit = vil;
-    this.visitModal.show();
+    if (vil.vilname !== this.state.activeVillager.vilname) {
+      this.vilToVisit = vil;
+      this.visitModal.show();
+      this.state.visit(vil.vilname);
+    }
   }
 }

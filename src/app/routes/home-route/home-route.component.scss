@@ -36,7 +36,15 @@
   }
 }
 
-.modal-content {
-  color: $matrix;
-  background-color: $off-black;
+.modal-dialog {
+  width: 80%;
+  height: auto;
+
+  .modal-content {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    color: $matrix;
+    background-color: $off-black;
+  }
 }
