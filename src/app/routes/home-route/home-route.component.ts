@@ -16,6 +16,7 @@ export class HomeRouteComponent implements OnInit {
   @ViewChild('visitModal') private visitModal:ModalDirective;
 
   private vilToVisit: Villager;
+  private picPath: String = 'src/assets/profile-pictures/'
 
   constructor (
     private session : SessionService,
@@ -35,10 +36,7 @@ export class HomeRouteComponent implements OnInit {
   }
 
   onVisitModalRequested(vil: Villager) {
-    if (vil.vilname !== this.state.activeVillager.vilname) {
-      this.vilToVisit = vil;
-      this.visitModal.show();
-      this.state.visit(vil.vilname);
-    }
+    this.vilToVisit = vil;
+    this.visitModal.show();
   }
 }

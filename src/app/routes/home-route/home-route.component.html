@@ -22,7 +22,23 @@
 <div bsModal #visitModal="bs-modal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      {{ vilToVisit?.vilname }}
+      <div class="fluid-container">
+        <div id="visit-header" class="row">
+          <div class="col col-sm-4">
+            <img class="profile-pic" [src]="picPath + vilToVisit?.vilname + '.jpg'">
+          </div>
+          <div class="col col-sm-8">
+            <h1> {{ vilToVisit?.vilname }} </h1>
+            <h3>
+              {{ vilToVisit?.lastname + ', ' + vilToVisit?.firstname }}
+            </h3>
+          </div>
+        </div>
+        <div id="blurb" class="row">
+
+        </div>
+      </div>
+      <a class="btn btn-lg btn-success" (click)="state.visit(vilToVisit.vilname); visitModal.hide();">Visit</a>
     </div>
   </div>
 </div>
