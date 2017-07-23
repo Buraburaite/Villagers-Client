@@ -26,8 +26,7 @@
       width: 14vh;
       height: 14vh;
       margin-right: 20px;
-      @include forward-leaf();
-      @include box-shadow(0.6vw, 0.4vh, 10px, black);
+      @include profile-pic();
     }
 
     .teacher-name-span {

@@ -73,8 +73,7 @@ may be used.
       justify-content: flex-start;
 
       img {
-        @include forward-leaf();
-        @include box-shadow(0.6vw, 0.4vh, 10px, black);
+        @include profile-pic();
       }
 
       .dropdown-div {
@@ -133,8 +132,7 @@ may be used.
       justify-content: flex-end;
 
       img {
-        @include back-leaf();
-        @include box-shadow(0.6vw, 0.4vh, 10px, black);
+        @include profile-pic-reverse();
       }
 
       .dropdown-div {

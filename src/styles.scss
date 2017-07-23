@@ -4,6 +4,11 @@ $page-grey: #e8eef7;
 $matrix: #02E148;
 $off-black: lighten(black, 6%);
 
+.user-level {
+  color: $matrix;
+  background-color: $off-black;
+}
+
 @mixin border($size, $style, $color) {
   -webkit-border: $size $style $color;
   -moz-border: $size $style $color;
@@ -60,14 +65,20 @@ $off-black: lighten(black, 6%);
   box-shadow: inset 0 0 0 1000px rgba($color, 0.2);
 }
 
-@mixin profile-pic() {
-  @include border-radius(50%);
-}
-
 @mixin forward-leaf() {
   @include border-radius-4(30%, 0px, 30%, 0px);
 }
 
 @mixin back-leaf() {
   @include border-radius-4(0px, 30%, 0px, 30%);
+}
+
+@mixin profile-pic() {
+  @include forward-leaf();
+  @include box-shadow(0.6vw, 0.4vh, 10px, black);
+}
+
+@mixin profile-pic-reverse() {
+  @include back-leaf();
+  @include box-shadow(0.6vw, 0.4vh, 10px, black);
 }

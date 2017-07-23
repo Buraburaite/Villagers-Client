@@ -21,8 +21,7 @@
       width: 10vh;
       height: 10vh;
       margin: 4px;
-      @include forward-leaf();
-      @include box-shadow(0.6vw, 0.4vh, 10px, black);
+      @include profile-pic();
     }
 
     .comment-text {
@@ -58,8 +57,7 @@
     #new-comment-img {
       height: 6vh;
       width: 6vh;
-      @include forward-leaf();
-      @include box-shadow(0.6vw, 0.4vh, 10px, black);
+      @include profile-pic();
     }
 
     textarea {

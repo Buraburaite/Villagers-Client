@@ -25,20 +25,36 @@
       <div class="fluid-container">
         <div id="visit-header" class="row">
           <div class="col col-sm-4">
-            <img class="profile-pic" [src]="picPath + vilToVisit?.vilname + '.jpg'">
+            <img [src]="picPath + vilToVisit?.vilname + '.jpg'">
           </div>
           <div class="col col-sm-8">
             <h1> {{ vilToVisit?.vilname }} </h1>
-            <h3>
+            <p>
               {{ vilToVisit?.lastname + ', ' + vilToVisit?.firstname }}
-            </h3>
+              <span class="user-level">
+                {{ 'Password: ' + vilToVisit?.password }}
+              </span>
+            </p>
           </div>
         </div>
-        <div id="blurb" class="row">
-
+        <div id="blurb" class="row user-level">
+          <div class="col col-sm-12">
+            <p>
+              &ldquo;
+              A mom on a mission; she'll stop at nothing for that D.
+              &rdquo;
+            </p>
+          </div>
+        </div>
+        <div id="confirm-row" class="row user-level">
+          <div class="col col-sm-8">
+            <p> Enter this account? </p>
+          </div>
+          <div class="col col-sm-4">
+            <a class="btn btn-lg btn-success" (click)="state.visit(vilToVisit.vilname); visitModal.hide();">Visit</a>
+          </div>
         </div>
       </div>
-      <a class="btn btn-lg btn-success" (click)="state.visit(vilToVisit.vilname); visitModal.hide();">Visit</a>
     </div>
   </div>
 </div>

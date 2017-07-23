@@ -37,26 +37,18 @@
 }
 
 .modal-dialog {
-  width: 40%;
+  width: 460px;
   height: auto;
 
   .modal-content {
     width: 100%;
     height: auto;
     padding: 30px;
-    color: $matrix;
-    background-color: $off-black;
+    background-color: $page-grey;
 
     .fluid-container {
 
       .row {
-
-        .col {
-
-        }
-      }
-
-      #visit-header {
 
         .col {
           display: flex;
@@ -65,13 +57,51 @@
           justify-content: center;
         }
       }
-    }
 
-    .profile-pic {
-      width: 100%;
-      height: auto;
-      @include forward-leaf();
-      @include border(2px, solid, white);
+      #visit-header {
+
+        .col {
+          display: flex;
+          flex-direction: column;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          @include profile-pic();
+        }
+
+        p {
+          font-size: 14px;
+
+          span {
+            padding: 2px 4px;
+          }
+        }
+      }
+
+      #blurb {
+        padding: 20px;
+        margin: 20px 0;
+
+        .col {
+          text-align: justify;
+          font-size: 30px;
+          font-style: italic;
+          font-weight: bold;
+          line-height: 1;
+          // @include border-radius(20%);
+        }
+      }
+
+      #confirm-row {
+        padding: 10px;
+
+        p {
+          font-size: 24px;
+          font-weight: bold;
+        }
+      }
     }
   }
 }
