@@ -1,8 +1,5 @@
 input[type="text"],
 input[type="password"] {
-  width: 70%;
-  height: auto;
-  padding: 0 4px 0 4px;
   font-size: 12px;
   text-overflow: ellipsis;
   border-radius: 2px;
@@ -46,9 +43,6 @@ input[type="radio"] {
 }
 
 .error {
-  width: 70%;
-  height: auto;
-  margin: 0 0 8px 8px;
   color: red;
   font-size: 12px;
   font-weight: bold;
