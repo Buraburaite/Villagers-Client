@@ -34,6 +34,10 @@ export class SignupFormComponent {
     });
   }
 
+  clearConfirm(): void {
+    this.confirmPassword = '';
+  }
+
   pwMatch(): boolean {
     // this.pas
     return this.password === this.confirmPassword;
