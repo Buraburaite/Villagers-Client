@@ -15,10 +15,10 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.session.login({
-      username: 'test',
-      password: 'testtest'
-    })
+    // this.session.login({
+    //   username: 'test',
+    //   password: 'testtest'
+    // })
   }
 
   title: string = 'Villagers';

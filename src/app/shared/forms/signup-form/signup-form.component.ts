@@ -13,13 +13,14 @@ export class SignupFormComponent {
 
   private username: string;
   private password: string;// = 'testtest';
+  private confirmPassword: string;// = 'testtest';
 
   constructor(
     private session: SessionService,
     private state: StateService
   ) { }
 
-  submitForm(form) {
+  submitForm(form): void {
     const userCred = {
       'username': this.username,
       'password': this.password
@@ -31,6 +32,10 @@ export class SignupFormComponent {
       console.log(err);
       this.error = err;
     });
+  }
+
+  pwMatch(): boolean {
+    return this.password === this.confirmPassword;
   }
 
 }
