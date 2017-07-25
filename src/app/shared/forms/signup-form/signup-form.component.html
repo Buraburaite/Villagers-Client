@@ -10,7 +10,8 @@
         </div>
         <div class="col col-sm-8">
           <input id="username" type="text" name="username" placeholder="Username >= 4 characters"
-          [(ngModel)]="username" #usernameRef="ngModel" required minlength="4" pattern="^\S*$" />
+          [(ngModel)]="username" #usernameRef="ngModel"
+          required minlength="4" pattern="^\S*$" />
           <!-- Error message is invisible if the value hasn't been visited or if the input is valid -->
           <div class="error" [ngClass]="{ 'invisible': (usernameRef.untouched || usernameRef.valid) }">
             Username must be at least four characters long
@@ -25,8 +26,9 @@
         </div>
         <div class="col col-sm-8">
           <input id="password" type="password" name="password" placeholder="Password >= 8 characters"
-          [(ngModel)]="password" #passwordRef="ngModel" required minlength="8"
-          (ngModelChange)="clearConfirm()"/>
+          [(ngModel)]="password" #passwordRef="ngModel"
+          (ngModelChange)="clearConfirm()"
+          required minlength="8" />
           <div class="error" [ngClass]="{ 'invisible': (passwordRef.untouched || passwordRef.valid) }">
             Password must be at least eight characters long
           </div>
@@ -35,11 +37,13 @@
 
       <div class="row">
         <div class="col col-sm-4">
+          <label for="confirm-password">Confirm</label>
         </div>
         <div class="col col-sm-8">
           <input id="confirm-password" type="password" name="confirm-password" placeholder="Confirm password"
-          [(ngModel)]="confirmPassword" #confirmPasswordRef="ngModel" required minlength="8"/>
-          <div class="error" [ngClass]="{ 'invisible': (confirmPasswordRef.untouched || pwMatch()) }">
+          [(ngModel)]="confirmPassword" #confirmPasswordRef="ngModel"
+          mustMatch="password" /> <!-- mustMatch is a custom validator -->
+          <div class="error" [ngClass]="{ 'invisible': (confirmPasswordRef.untouched || confirmPasswordRef.valid) }">
             Does not match password field
           </div>
         </div>
@@ -47,7 +51,7 @@
 
       <div class="row">
         <button id="submitBtn" class="btn" type="submit"
-        [disabled]="!f.valid || !pwMatch()" [ngClass]="{ 'btn-success': (f.valid && pwMatch()), 'btn-danger': (!f.valid || !pwMatch()) }"
+        [disabled]="!f.valid || !pwMatch()" [ngClass]="{ 'btn-success': f.valid, 'btn-danger': !f.valid }"
         > Sign Up </button>
       </div>
     </div>

@@ -39,7 +39,6 @@ export class SignupFormComponent {
   }
 
   pwMatch(): boolean {
-    // this.pas
     return this.password === this.confirmPassword;
   }
 

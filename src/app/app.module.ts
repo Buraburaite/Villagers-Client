@@ -26,6 +26,7 @@ import { LoggedOutGuard } from './guards/loggedout.guard';
 
 import { LoginFormComponent } from './shared/forms/login-form/login-form.component';
 import { SignupFormComponent } from './shared/forms/signup-form/signup-form.component';
+import { MustMatchValidator } from './shared/forms/must-match.validator';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { SignupFormComponent } from './shared/forms/signup-form/signup-form.comp
     CommentsComponent,
     LoginFormComponent,
     SignupFormComponent,
+    MustMatchValidator,
   ],
   imports: [
     BrowserModule,

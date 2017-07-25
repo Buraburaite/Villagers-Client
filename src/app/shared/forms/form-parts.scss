@@ -17,6 +17,7 @@ input[type="text"].ng-touched.ng-valid,
 input[type="password"].ng-touched.ng-valid {
   border-left: 3px solid green;
   outline-color: green;
+  color: black;
 }
 
 input[type="radio"] {
