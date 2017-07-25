@@ -44,11 +44,15 @@
     width: 100%;
     height: auto;
     padding: 30px;
-    background-color: $page-grey;
+    // background-color: $page-grey;
+    @include japanese-cubes-bg();
 
     .container {
+      width: 100%;
+      height: auto;
 
       .row {
+        margin-bottom: 10px;
 
         .col {
           display: flex;
@@ -94,8 +98,25 @@
         }
       }
 
+      #students {
+
+        .pic-container {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          .visit-pic {
+            height: 60px;
+            width: auto;
+            margin-right: 10px;
+            @include profile-pic();
+          }
+        }
+      }
+
       #confirm-row {
         padding: 10px;
+        margin-bottom: 0;
 
         p {
           font-size: 24px;

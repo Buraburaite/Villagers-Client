@@ -39,4 +39,9 @@ export class HomeRouteComponent implements OnInit {
     this.vilToVisit = vil;
     this.visitModal.show();
   }
+
+  confirmVisit(vil: Villager) {
+    this.state.visit(vil.vilname);
+    this.visitModal.hide();
+  }
 }

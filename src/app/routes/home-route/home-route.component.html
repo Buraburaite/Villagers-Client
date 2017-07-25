@@ -37,13 +37,14 @@
             </p>
           </div>
         </div>
-        <div id="blurb" class="row user-level">
-          <div class="col col-sm-12">
-            <p>
-              &ldquo;
-              A mom on a mission; she'll stop at nothing for that D.
-              &rdquo;
-            </p>
+        <h2> Students </h2>
+        <div id="students" class="row">
+          <div class="pic-container">
+            <div *ngFor="let vil of vilToVisit?.students">
+              <a (click)="confirmVisit(vil)">
+                <img class="visit-pic" [src]="picPath + vil.profilePic" [alt]="vil.fullname"/>
+              </a>
+            </div>
           </div>
         </div>
         <div id="confirm-row" class="row user-level">
@@ -51,7 +52,7 @@
             <p> Enter this account? </p>
           </div>
           <div class="col col-sm-4">
-            <a class="btn btn-lg btn-success" (click)="state.visit(vilToVisit.vilname); visitModal.hide();">Visit</a>
+            <a class="btn btn-lg btn-success" (click)="confirmVisit(vil)">Visit</a>
           </div>
         </div>
       </div>

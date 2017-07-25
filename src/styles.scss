@@ -4,9 +4,26 @@ $page-grey: #e8eef7;
 $matrix: #02E148;
 $off-black: lighten(black, 6%);
 
-.user-level {
-  color: $matrix;
-  background-color: $off-black;
+a:not([href]){
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none
+}
+
+// Pure-css background for the navbar
+/* Modified Japanese Cube pattern, source: http://lea.verou.me/css3patterns/  */
+
+@mixin japanese-cubes-bg() {
+  background-color: white;
+  background-image: linear-gradient(30deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
+  linear-gradient(150deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
+  linear-gradient(30deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
+  linear-gradient(150deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
+  linear-gradient(60deg, $page-grey 25%, transparent 25.5%, transparent 75%, $page-grey 75%, $page-grey),
+  linear-gradient(60deg, $page-grey 25%, transparent 25.5%, transparent 75%, $page-grey 75%, $page-grey);
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }
 
 @mixin border($size, $style, $color) {
@@ -81,4 +98,10 @@ $off-black: lighten(black, 6%);
 @mixin profile-pic-reverse() {
   @include back-leaf();
   @include box-shadow(0.6vw, 0.4vh, 10px, black);
+}
+
+.user-level {
+  color: $matrix;
+  background-color: $off-black;
+  @include border-radius(6px);
 }

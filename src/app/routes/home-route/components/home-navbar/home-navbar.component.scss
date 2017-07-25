@@ -22,18 +22,8 @@ may be used.
     display: flex;
     flex-direction: row; // makes sections align into a row
     padding: 0px 6vw 0px 6vw;
+    @include japanese-cubes-bg();
 
-    // Pure-css background for the navbar
-    /* Modified Japanese Cube pattern, source: http://lea.verou.me/css3patterns/  */
-    background-color: white;
-    background-image: linear-gradient(30deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
-    linear-gradient(150deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
-    linear-gradient(30deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
-    linear-gradient(150deg, lighten(#445, 60%) 12%, transparent 12.5%, transparent 87%, lighten(#445, 60%) 87.5%, lighten(#445, 60%)),
-    linear-gradient(60deg, $page-grey 25%, transparent 25.5%, transparent 75%, $page-grey 75%, $page-grey),
-    linear-gradient(60deg, $page-grey 25%, transparent 25.5%, transparent 75%, $page-grey 75%, $page-grey);
-    background-size: 80px 140px;
-    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
     /*-------------------------------------------------------------------*/
 
     section {
