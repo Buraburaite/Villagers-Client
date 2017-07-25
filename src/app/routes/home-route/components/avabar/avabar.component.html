@@ -4,7 +4,7 @@
     <ul id="avatar-ul">
       <li *ngFor="let vil of vilList">
         <a>
-          <img *ngIf="vil" [src]="picPath + vil.profilePic" alt="vil.fullname"
+          <img *ngIf="vil" [src]="picPath + vil?.profilePic" alt="vil?.fullname"
           (click)="fireVisitModalRequested(vil)">
       </a>
     </ul>

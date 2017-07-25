@@ -1,6 +1,6 @@
 <div id="comp">
   <div class="header-div">
-    <img *ngIf="post" [src]="picPath + post.author.profilePic">
+    <img [src]="picPath + post.author.profilePic">
     <span class="teacher-name-span">
       {{ post?.author.fullname }}
     </span>
@@ -10,7 +10,7 @@
   </div>
   <div class="my-hr"></div>
   <div class="comments-div">
-    <post-comments [comments]="post?.comments" [avil]="avil"></post-comments>
+    <post-comments [comments]="post.comments" [avil]="avil"></post-comments>
   </div>
 
 </div>

@@ -6,11 +6,11 @@
         {{ comment.author.fullname }}
       </a>
       {{ comment.content }}
-      <p class="date"> {{ comment?.updatedAt | date: 'medium' }} </p>
+      <p class="date"> {{ comment.updatedAt | date: 'medium' }} </p>
     </div>
   </div>
   <div class="new-comment">
-    <img id="new-comment-img" [src]="picPath + avil.profilePic">
+    <img id="new-comment-img" [src]="picPath + avil?.profilePic">
 
     <textarea [(ngModel)]="newCommentText" class="comment-textarea comment-text" #textarea (keyup.enter)="submitComment(textarea.value)">
     </textarea>

@@ -14,7 +14,7 @@
       <div class="dropdown-div" dropdown (onToggle)="profileToggled($event)">
         <!-- button showing the active villager -->
         <a dropdownToggle>
-          <img *ngIf="avil" [src]="picPath + avil.profilePic">
+          <img *ngIf="avil" [src]="picPath + avil?.profilePic">
         </a>
         <!-- dropdown items -->
         <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown" role="menu">
