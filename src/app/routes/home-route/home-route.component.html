@@ -22,7 +22,7 @@
 <div bsModal #visitModal="bs-modal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <div class="container"> <!-- !!!!!!!!1-->
+      <div class="container">
         <div id="visit-header" class="row">
           <div class="col col-sm-4">
             <img [src]="picPath + vilToVisit?.vilname + '.jpg'">
@@ -37,26 +37,47 @@
             </p>
           </div>
         </div>
-        <div *ngIf="vilToVisit?.students[0]">
-          <h2> Students </h2>
-          <div id="students" class="row">
-            <div class="pic-container">
-              <div *ngFor="let vil of vilToVisit?.students">
-                <a (click)="confirmVisit(vil)">
-                  <img class="visit-pic" [src]="picPath + vil.profilePic" [alt]="vil.fullname"/>
-                </a>
-              </div>
+        <div *ngIf="vilToVisit?.parents[0]" class="row">
+          <h2 class="pic-header"> Parents </h2>
+        </div>
+        <div id="parents" class="row">
+          <div class="pic-container">
+            <div *ngFor="let vil of vilToVisit?.parents">
+              <a (click)="vilToVisit=vil">
+                <img class="visit-pic" [src]="picPath + vil.profilePic" [alt]="vil.fullname"/>
+              </a>
             </div>
           </div>
         </div>
-        <div id="confirm-row" class="row user-level">
-          <div class="col col-sm-8">
-            <p> Enter this account? </p>
-          </div>
-          <div class="col col-sm-4">
-            <a class="btn btn-lg btn-success" (click)="confirmVisit(vil)">Visit</a>
+        <div *ngIf="vilToVisit?.students[0]" class="row">
+          <h2 class="pic-header"> Students </h2>
+        </div>
+        <div id="students" class="row">
+          <div class="pic-container">
+            <div *ngFor="let vil of vilToVisit?.students">
+              <a (click)="vilToVisit=vil">
+                <img class="visit-pic" [src]="picPath + vil.profilePic" [alt]="vil.fullname"/>
+              </a>
+            </div>
           </div>
         </div>
+        <div *ngIf="vilToVisit?.teachers[0]" class="row">
+          <h2 class="pic-header"> Teachers </h2>
+        </div>
+        <div id="teachers" class="row">
+          <div class="pic-container">
+            <div *ngFor="let vil of vilToVisit?.teachers">
+              <a (click)="vilToVisit=vil">
+                <img class="visit-pic" [src]="picPath + vil.profilePic" [alt]="vil.fullname"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="confirm-div">
+        <a class="btn user-level" (click)="confirmVisit(vilToVisit)">
+          Enter Account
+        </a>
       </div>
     </div>
   </div>

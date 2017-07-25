@@ -19,7 +19,7 @@
   ::-webkit-scrollbar {
     width: 0px;
 
-    
+
   }
 
   div {
@@ -39,7 +39,7 @@
 }
 
 .modal-dialog {
-  width: 460px;
+  width: 500px;
   height: auto;
 
   .modal-content {
@@ -54,7 +54,6 @@
       height: auto;
 
       .row {
-        margin-bottom: 10px;
 
         .col {
           display: flex;
@@ -100,31 +99,31 @@
         }
       }
 
-      #students {
-
-        .pic-container {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-
-          .visit-pic {
-            height: 60px;
-            width: auto;
-            margin-right: 10px;
-            @include profile-pic();
-          }
-        }
+      .pic-header {
+        font-weight: bold;
       }
 
-      #confirm-row {
-        padding: 10px;
-        margin-bottom: 0;
+      .pic-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
 
-        p {
-          font-size: 24px;
-          font-weight: bold;
+        .visit-pic {
+          height: 60px;
+          width: auto;
+          margin-right: 10px;
+          @include profile-pic();
         }
       }
+    }
+
+    #confirm-div {
+      width: 100%;
+      height: auto;
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }

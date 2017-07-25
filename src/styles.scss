@@ -5,10 +5,10 @@ $matrix: #02E148;
 $off-black: lighten(black, 6%);
 
 a:not([href]){
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none
 }
 
 // Pure-css background for the navbar
@@ -104,4 +104,8 @@ a:not([href]){
   color: $matrix;
   background-color: $off-black;
   @include border-radius(6px);
+}
+
+.user-level.btn {
+  @include box-shadow(0.6vw, 0.4vh, 10px, black);
 }
