@@ -37,13 +37,15 @@
             </p>
           </div>
         </div>
-        <h2> Students </h2>
-        <div id="students" class="row">
-          <div class="pic-container">
-            <div *ngFor="let vil of vilToVisit?.students">
-              <a (click)="confirmVisit(vil)">
-                <img class="visit-pic" [src]="picPath + vil.profilePic" [alt]="vil.fullname"/>
-              </a>
+        <div *ngIf="vilToVisit?.students[0]">
+          <h2> Students </h2>
+          <div id="students" class="row">
+            <div class="pic-container">
+              <div *ngFor="let vil of vilToVisit?.students">
+                <a (click)="confirmVisit(vil)">
+                  <img class="visit-pic" [src]="picPath + vil.profilePic" [alt]="vil.fullname"/>
+                </a>
+              </div>
             </div>
           </div>
         </div>
