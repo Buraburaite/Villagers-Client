@@ -34,10 +34,12 @@ export class SignupFormComponent {
     });
   }
 
+  // Empty the confirm-password input
   clearConfirm(): void {
     this.confirmPassword = '';
   }
 
+  // Returns if password and confirmPassword match
   pwMatch(): boolean {
     return this.password === this.confirmPassword;
   }

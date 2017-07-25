@@ -3,25 +3,42 @@
   <!-- # is an element ref, it gives you the relevant object from the ngForm object, is different than [(ngModel)] -->
   <!-- novalidate prevents the default browser checks, which only happen on submit anyway -->
   <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
-    <div id="form-container">
-      <label for="username">Username</label>
-      <input id="username" type="text" name="username"
-      [(ngModel)]="username" #usernameRef="ngModel" required minlength="4" />
-      <!-- Error message is invisible if the value hasn't been visited or if the input is valid -->
-      <div class="error" [ngClass]="{ 'invisible': (usernameRef.valid || usernameRef.untouched) }">
-        Username must be at least four characters
+    <div id="form-container" class="container">
+      <div class="row">
+        <div class="col col-sm-4">
+          <label for="username">Username</label>
+        </div>
+        <div class="col col-sm-8">
+          <input id="username" type="text" name="username" placeholder="Username >= 4 characters"
+          [(ngModel)]="username" #usernameRef="ngModel"
+          required minlength="4" pattern="^\S*$" />
+          <!-- Error message is invisible if the value hasn't been visited or if the input is valid -->
+          <div class="error" [ngClass]="{ 'invisible': (usernameRef.untouched || usernameRef.valid) }">
+            Username must be at least four characters long
+          </div>
+        </div>
       </div>
 
-      <label for="password">Password</label>
-      <input id="password" type="password" name="password"
-      [(ngModel)]="password" #passwordRef="ngModel" required minlength="8" />
-      <div class="error" [ngClass]="{ 'invisible': (passwordRef.valid || passwordRef.untouched) }">
-        Password must be at least eight characters
+      <div class="row">
+        <div class="col col-sm-4">
+          <label for="password">Password</label>
+        </div>
+        <div class="col col-sm-8">
+          <input id="password" type="password" name="password" placeholder="Password >= 8 characters"
+          [(ngModel)]="password" #passwordRef="ngModel"
+          required minlength="8" />
+          <div class="error" [ngClass]="{ 'invisible': (passwordRef.untouched || passwordRef.valid) }">
+            Password must be at least eight characters long
+          </div>
+        </div>
       </div>
 
-      <button id="submitBtn" class="btn" type="submit"
-      [disabled]="!f.valid" [ngClass]="{ 'btn-success': f.valid, 'btn-danger': !f.valid }"
-      > Login </button>
+      <div class="row">
+        <button id="submitBtn" class="btn" type="submit"
+        [disabled]="!f.valid"
+        [ngClass]="{ 'btn-success': f.valid, 'btn-danger': !f.valid }"
+        > Login </button>
+      </div>
     </div>
   </form>
 </div>

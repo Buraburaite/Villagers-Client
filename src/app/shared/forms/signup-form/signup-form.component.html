@@ -43,17 +43,18 @@
           <input id="confirm-password" type="password" name="confirm-password" placeholder="Confirm password"
           [(ngModel)]="confirmPassword" #confirmPasswordRef="ngModel"
           mustMatch="password" /> <!-- mustMatch is a custom validator -->
-          <div class="error" [ngClass]="{ 'invisible': (confirmPasswordRef.untouched || confirmPasswordRef.valid) }">
-            Does not match password field
-          </div>
+          <div class="error" [ngClass]="{ 'invisible': (confirmPasswordRef.untouched || confirmPasswordRef.valid) }" >
+          Does not match password field
         </div>
       </div>
-
-      <div class="row">
-        <button id="submitBtn" class="btn" type="submit"
-        [disabled]="!f.valid || !pwMatch()" [ngClass]="{ 'btn-success': f.valid, 'btn-danger': !f.valid }"
-        > Sign Up </button>
-      </div>
     </div>
-  </form>
+
+    <div class="row">
+      <button id="submitBtn" class="btn" type="submit"
+      [disabled]="!f.valid"
+      [ngClass]="{ 'btn-success': f.valid, 'btn-danger': !f.valid }"
+      > Sign Up </button>
+    </div>
+  </div>
+</form>
 </div>
