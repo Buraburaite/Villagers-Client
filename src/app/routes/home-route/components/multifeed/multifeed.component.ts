@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FeedComponent } from '../feed/feed.component'
+import { StateService } from '../../../../services/state.service';
 
 @Component({
   selector: 'home-multifeed',
@@ -7,6 +7,8 @@ import { FeedComponent } from '../feed/feed.component'
   styleUrls: ['./multifeed.component.scss']
 })
 export class MultiFeedComponent implements OnInit {
+
+  private activeTab: String = "Parents";
 
   constructor() {
   }
@@ -16,10 +18,10 @@ export class MultiFeedComponent implements OnInit {
 
 
   changeTab(e: any): void {
-    console.log(e.target.text);
+    this.activeTab = e.target.text;
   }
 
-  isActiveTab(e: any): Boolean {
-
+  isActiveTab(name: String): Boolean {
+    return name === this.activeTab;
   }
 }
