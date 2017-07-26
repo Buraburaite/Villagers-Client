@@ -16,7 +16,6 @@ import { Post } from '../../../../models/post.model';
 })
 export class FeedComponent implements OnInit {
 
-
   get avil(): Villager { return this.state.activeVillager; }
   get posts(): Post[] { return this.state.posts; }
 
