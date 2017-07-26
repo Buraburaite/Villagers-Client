@@ -16,7 +16,7 @@ import { HomeRouteComponent } from './routes/home-route/home-route.component';
 import { HomeNavbarComponent } from './routes/home-route/components/home-navbar/home-navbar.component';
 import { AvabarComponent } from './routes/home-route/components/avabar/avabar.component';
 import { MultiFeedComponent } from './routes/home-route/components/multifeed/multifeed.component';
-import { FeedComponent } from './routes/home-route/components/feed/feed.component';
+import { FeedComponent } from './routes/home-route/components/multifeed/feed/feed.component';
 import { PostComponent } from './routes/home-route/components/multifeed/feed/post/post.component';
 import { CommentsComponent } from './routes/home-route/components/multifeed/feed/post/comments/comments.component';
 

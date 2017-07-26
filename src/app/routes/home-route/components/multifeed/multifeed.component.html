@@ -1,18 +1,17 @@
 <div id="comp">
-  <ul class="nav nav-tabs nav-justified">
-    <li class="active" (click)="changeTab($event)" [ngClass]="{ 'active': isActiveTab('Parents') }">
-      <a data-toggle="tab">Parents</a>
-    </li>
-    <li (click)="changeTab($event)" [ngClass]="{ 'active': isActiveTab('Students') }">
-      <a data-toggle="tab">Students</a>
-    </li>
-  </ul>
-  <div class="tab-content">
-    <div id="Students" class="tab-pane" [ngClass]="{ 'active': isActiveTab('Parents') }">
-      <home-feed [filter]="parents"></home-feed>
-    </div>
-    <div id="Parents" class="tab-pane" [ngClass]="{ 'active': isActiveTab('Students') }">
-      <home-feed [filter]="students"></home-feed>
-    </div>
-  </div>
+  <tabset [justified]="true">
+    <tab heading="All" customClass="tab-style">
+      <multifeed-feed [avil]="avil" [filter]="none"></multifeed-feed>
+    </tab>
+    <tab heading="Parents" customClass="tab-style">
+      <multifeed-feed [avil]="avil" [filter]="parents"></multifeed-feed>
+    </tab>
+    <tab heading="Students" customClass="tab-style">
+      <multifeed-feed [avil]="avil" [filter]="students"></multifeed-feed>
+    </tab>
+    <tab heading="Teachers" customClass="tab-style">
+      <multifeed-feed [avil]="avil" [filter]="teachers"></multifeed-feed>
+    </tab>
+  </tabset>
+  <a class"scroll-me" (click)="scrollToBottom()">Scroll</a>
 </div>

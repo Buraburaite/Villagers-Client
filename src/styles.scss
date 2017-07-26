@@ -109,3 +109,15 @@ a:not([href]){
 .user-level.btn {
   @include box-shadow(0.6vw, 0.4vh, 10px, black);
 }
+
+// Hack: Style ngx-bootstrap tabs
+:host /deep/ .tab-style {
+  background: linear-gradient(185deg, $page-grey, darken($page-grey, 20%));
+  @include box-shadow(0px, 2px, 0, $off-black);
+
+  a {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Villager } from '../../../../../../models/villager.model';
-import { Comment } from '../../../../../../models/comment.model';
+import { Villager } from '../../../../../../../models/villager.model';
+import { Comment } from '../../../../../../../models/comment.model';
 
 @Component({
   selector: 'post-comments',
@@ -30,7 +30,7 @@ export class CommentsComponent implements OnInit {
         updatedAt: new Date()
       })
     );
-    
+
     this.newCommentText = '';
   }
 

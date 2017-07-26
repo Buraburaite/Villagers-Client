@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Villager } from '../../../../../models/villager.model';
-import { Post } from '../../../../../models/post.model';
+import { Villager } from '../../../../../../models/villager.model';
+import { Post } from '../../../../../../models/post.model';
 
 @Component({
-  selector: 'page-post',
+  selector: 'feed-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })

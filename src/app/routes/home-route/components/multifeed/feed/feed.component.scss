@@ -1,4 +1,4 @@
-@import "../../../../../../src/styles";
+@import "../../../../../../../src/styles";
 
 #comp {
   width: 100%;
@@ -8,6 +8,12 @@
   flex-direction: column;
 
   #feed {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('../../../../../../assets/background.png');
 
     .post {
       height: auto;
