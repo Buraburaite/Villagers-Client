@@ -5,6 +5,9 @@
       <feed-post [post]="post" [avil]="avil"></feed-post>
     </div>
   </div>
+  <div id="no-posts" *ngIf="!posts || !posts.length">
+    Sorry, no posts here
+  </div>
   <a scrollTo scrollTargetSelector="#hi-there" scrollableElementSelector="#multifeed-div">
     <i class="fa fa-arrow-up"></i>
   </a>
