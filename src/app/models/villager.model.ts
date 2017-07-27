@@ -35,7 +35,6 @@ export class Villager {
   }
   get subscribedPosts(): Post[] {
     return this.subscribingTo.reduce((acc, vil) => {
-      console.log(vil.vilname);
       return acc.concat(vil.posts);
     }, []);
   }

@@ -15,14 +15,20 @@ import { Post } from '../../../../../models/post.model';
 export class FeedComponent {
 
   @Input() avil: Villager;
-  @Input() filter: any = 'none';
+  @Input() filters: String[] = [];
 
-  get posts(): Post[] { return this.avil.subscribedPosts; }
+  get posts(): Post[] {
+    if (!this.filters || !this.filters.length) {
+      return this.avil.subscribedPosts;
+    }
+    return this.avil.subscribedPosts.filter((post) => {
+      return this.filters.includes(post.author.kind);
+    });
+  }
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.avil.vilname, this.posts);
   }
 
   scrollToTop(e: Event): void {
