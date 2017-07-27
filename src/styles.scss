@@ -90,15 +90,20 @@ a:not([href]){
   @include border-radius-4(0px, 30%, 0px, 30%);
 }
 
+@mixin button-shadow() {
+  @include box-shadow(0.6vw, 0.4vh, 10px, black);
+}
+
 @mixin profile-pic() {
   @include forward-leaf();
-  @include box-shadow(0.6vw, 0.4vh, 10px, black);
+  @include button-shadow();
 }
 
 @mixin profile-pic-reverse() {
   @include back-leaf();
-  @include box-shadow(0.6vw, 0.4vh, 10px, black);
+  @include button-shadow();
 }
+
 
 .user-level {
   color: $matrix;
@@ -107,7 +112,7 @@ a:not([href]){
 }
 
 .user-level.btn {
-  @include box-shadow(0.6vw, 0.4vh, 10px, black);
+  @include button-shadow();
 }
 
 // Hack: Style ngx-bootstrap tabs

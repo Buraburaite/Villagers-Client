@@ -13,11 +13,32 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-image: url('../../../../../../assets/background.png');
 
     .post {
       height: auto;
       width: auto;
+    }
+  }
+
+  #hi-there {
+    width: auto;
+    height: auto;
+  }
+
+  a {
+    width: auto;
+    height: auto;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+
+    i {
+      padding: 10px;
+      font-size: 14px;
+      color: black;
+      background-color: $page-grey;
+      @include border-radius(10px);
+      @include button-shadow();
     }
   }
 }

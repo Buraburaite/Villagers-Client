@@ -23,9 +23,22 @@ export class Villager {
   private _students: string[];
   private _teachers: string[];
 
-  get parents() :Villager[] { return this._parents.map( this.user.getVillager); }
-  get students():Villager[] { return this._students.map(this.user.getVillager); }
-  get teachers():Villager[] { return this._teachers.map(this.user.getVillager); }
+  public onVillageComplete(): void {
+    // turn _parents into Vil objects (then deprecate getters);
+  }
+
+  get parents()  :Villager[] { return this._parents.map( this.user.getVillager); }
+  get students() :Villager[] { return this._students.map(this.user.getVillager); }
+  get teachers() :Villager[] { return this._teachers.map(this.user.getVillager); }
+  get subscribingTo(): Villager[] {
+    return this.parents.concat(this.students, this.teachers);
+  }
+  get subscribedPosts(): Post[] {
+    return this.subscribingTo.reduce((acc, vil) => {
+      console.log(vil.vilname);
+      return acc.concat(vil.posts);
+    }, []);
+  }
 
   constructor(vilInfo: any, user: User) {
     this.user = user;

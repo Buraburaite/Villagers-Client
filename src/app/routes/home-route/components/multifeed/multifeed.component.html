@@ -1,6 +1,7 @@
 <div id="comp">
   <tabset [justified]="true">
     <tab heading="All" customClass="tab-style">
+      <span></span>
       <multifeed-feed [avil]="avil" [filter]="none"></multifeed-feed>
     </tab>
     <tab heading="Parents" customClass="tab-style">
@@ -13,5 +14,4 @@
       <multifeed-feed [avil]="avil" [filter]="teachers"></multifeed-feed>
     </tab>
   </tabset>
-  <a class"scroll-me" (click)="scrollToBottom()">Scroll</a>
 </div>

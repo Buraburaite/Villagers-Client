@@ -1,7 +1,11 @@
 <div #comp id="comp">
+  <span id="hi-there">Hi</span>
   <div id="feed">
     <div *ngFor="let post of posts" class="post">
       <feed-post [post]="post" [avil]="avil"></feed-post>
     </div>
   </div>
+  <a scrollTo scrollTargetSelector="#hi-there" scrollableElementSelector="#multifeed-div">
+    <i class="fa fa-arrow-up"></i>
+  </a>
 </div>

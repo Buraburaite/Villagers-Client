@@ -26,8 +26,11 @@
     "dotenv": "^4.0.0",
     "express-session": "^1.15.3",
     "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "ng2-scroll-to": "^1.0.7",
     "ngx-bootstrap": "^1.7.1",
     "rxjs": "^5.4.1",
+    "underscore": "^1.8.3",
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
@@ -35,7 +38,9 @@
     "@angular/compiler-cli": "^2.4.0",
     "@types/jasmine": "2.5.38",
     "@types/jquery": "^3.2.2",
+    "@types/lodash": "^4.14.71",
     "@types/node": "^6.0.78",
+    "@types/underscore": "^1.8.1",
     "codelyzer": "~2.0.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",

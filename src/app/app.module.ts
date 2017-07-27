@@ -8,6 +8,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
+import { ScrollToModule } from 'ng2-scroll-to';
+
 import { AppComponent } from './app.component';
 
 import { IndexRouteComponent } from './routes/index-route/index-route.component';
@@ -52,6 +54,7 @@ import { MustMatchValidator } from './shared/forms/must-match.validator';
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     TabsModule.forRoot(),
+    ScrollToModule.forRoot(),
   ],
   providers: [
     SessionService,

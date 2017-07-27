@@ -10,8 +10,6 @@ import { Villager } from '../../../../models/villager.model';
 })
 export class MultiFeedComponent implements OnInit {
 
-  private activeTab: String = "Parents";
-
   get avil(): Villager { return this.state.activeVillager; }
 
   constructor(private state: StateService) {
@@ -20,12 +18,4 @@ export class MultiFeedComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  changeTab(e: any): void {
-    this.activeTab = e.target.text;
-  }
-
-  isActiveTab(name: String): Boolean {
-    return name === this.activeTab;
-  }
 }
