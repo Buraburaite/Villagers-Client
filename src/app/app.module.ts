@@ -26,6 +26,7 @@ import { CommentsComponent } from './home-route/multifeed/feed/post/comments/com
 // Services
 import { SessionService } from '../services/session.service';
 import { StateService } from '../services/state.service';
+import { ScrollerService } from '../services/scroller.service';
 
 // Guards
 import { LoggedInGuard } from '../guards/loggedin.guard';
@@ -37,7 +38,7 @@ import { SignupFormComponent } from '../forms/signup-form/signup-form.component'
 import { MustMatchValidator } from '../forms/must-match.validator';
 
 // Directives
-import { ScrollTrackerDirective } from '../directives/scroll-tracker.directive';
+import { RecordScrollDirective } from '../directives/record-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { ScrollTrackerDirective } from '../directives/scroll-tracker.directive';
     LoginFormComponent,
     SignupFormComponent,
     MustMatchValidator,
-    ScrollTrackerDirective,
+    RecordScrollDirective,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +68,7 @@ import { ScrollTrackerDirective } from '../directives/scroll-tracker.directive';
   providers: [
     SessionService,
     StateService,
+    ScrollerService,
     LoggedInGuard,
     LoggedOutGuard
   ],

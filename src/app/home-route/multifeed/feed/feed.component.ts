@@ -15,7 +15,7 @@ import { Post } from '../../../../models/post.model';
 export class FeedComponent {
 
   @Input() avil: Villager;
-  @Input() filters: String[] = [];
+  @Input() filters: string[] = [];
 
   get posts(): Post[] {
     if (!this.filters || !this.filters.length) {
