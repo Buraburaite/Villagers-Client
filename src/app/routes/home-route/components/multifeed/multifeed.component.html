@@ -1,17 +1,9 @@
 <div id="comp">
   <tabset [justified]="true">
-    <tab heading="All" customClass="tab-style">
-      <span></span>
-      <multifeed-feed [avil]="avil"></multifeed-feed>
-    </tab>
-    <tab heading="Parents" customClass="tab-style">
-      <multifeed-feed [avil]="avil" [filters]="['parent']"></multifeed-feed>
-    </tab>
-    <tab heading="Students" customClass="tab-style">
-      <multifeed-feed [avil]="avil" [filters]="['student']"></multifeed-feed>
-    </tab>
-    <tab heading="Teachers" customClass="tab-style">
-      <multifeed-feed [avil]="avil" [filters]="['teacher']"></multifeed-feed>
-    </tab>
-  </tabset>
+    <tab *ngFor="let tab of tabs[avil.kind]"
+    [heading]="tab.heading"
+    customClass="tab-style">
+    <multifeed-feed [avil]="avil" [filters]="tab.filters"></multifeed-feed>
+  </tab>
+</tabset>
 </div>

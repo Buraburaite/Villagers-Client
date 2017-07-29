@@ -10,6 +10,25 @@ import { Villager } from '../../../../models/villager.model';
 })
 export class MultiFeedComponent implements OnInit {
 
+  private tabs: any = {
+    parent: [
+      { heading: 'All' },
+      { heading: 'Students', filters: ['student'] },
+      { heading: 'Teachers', filters: ['teacher'] }
+    ],
+    student: [
+      { heading: 'All' },
+      { heading: 'Parents',    filters: ['parent'] },
+      { heading: 'Classmates', filter: ['student'] },
+      { heading: 'Teachers',   filters: ['teacher'] }
+    ],
+    teacher: [
+      { heading: 'All' },
+      { heading: 'Parents',  filters: ['parent'] },
+      { heading: 'Students', filters: ['student'] }
+    ]
+  };
+
   get avil(): Villager { return this.state.activeVillager; }
 
   constructor(private state: StateService) {
