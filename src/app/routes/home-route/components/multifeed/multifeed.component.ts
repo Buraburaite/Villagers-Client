@@ -14,18 +14,18 @@ export class MultiFeedComponent implements OnInit {
     parent: [
       { heading: 'All' },
       { heading: 'Students', filters: ['student'] },
-      { heading: 'Teachers', filters: ['teacher'] }
+      { heading: 'Teachers', filters: ['teacher'] },
     ],
     student: [
       { heading: 'All' },
       { heading: 'Parents',    filters: ['parent'] },
-      { heading: 'Classmates', filter: ['student'] },
-      { heading: 'Teachers',   filters: ['teacher'] }
+      { heading: 'Classmates', filters: ['student'] },
+      { heading: 'Teachers',   filters: ['teacher'] },
     ],
     teacher: [
       { heading: 'All' },
       { heading: 'Parents',  filters: ['parent'] },
-      { heading: 'Students', filters: ['student'] }
+      { heading: 'Students', filters: ['student'] },
     ]
   };
 
@@ -35,6 +35,7 @@ export class MultiFeedComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.state.currentTab = this.tabs[this.avil.kind][0].heading;
   }
 
 }

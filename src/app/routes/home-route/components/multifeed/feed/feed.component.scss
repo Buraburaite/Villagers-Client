@@ -1,11 +1,17 @@
 @import "../../../../../../../src/styles";
 
+// Hide scrollbar
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 #comp {
   width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
+
 
   #feed {
     width: 100%;
@@ -20,9 +26,9 @@
     }
   }
 
-  #hi-there {
-    width: auto;
-    height: auto;
+  #buffer {
+    width: 100%;
+    height: 80px;
   }
 
   #no-posts {

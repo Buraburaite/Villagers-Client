@@ -31,7 +31,4 @@ export class FeedComponent {
   ngOnInit() {
   }
 
-  scrollToTop(e: Event): void {
-  }
-
 }

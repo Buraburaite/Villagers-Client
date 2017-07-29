@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { DOCUMENT } from '@angular/platform-browser';
 
 import { User } from '../models/user.model';
 import { Villager } from '../models/villager.model';
@@ -24,7 +25,11 @@ export class StateService {
     );
   }
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    @Inject(DOCUMENT) private document: any
+  ) {
+  }
 
   getVillager(vilname: string): Villager {
     return this.user.getVillager(vilname);
@@ -34,4 +39,18 @@ export class StateService {
     this.activeVillager = this.user.getVillager(vilname);
     this.router.navigate(['', vilname]);
   }
+
+  // This, combined with the scrollTracker directive,
+  // is a hack meant to allow multifeed tabs
+  // 'remember' their scroll positions.
+  // It's temporary and fragile, but functional.
+  private _currentTab: string = '';
+  get currentTab (): string { return this._currentTab; }
+  set currentTab(value: string) {
+    this._currentTab = value;
+
+    const multifeedDiv = this.document.getElementById('multifeed-div');
+    multifeedDiv.scrollTop = this.tabs[value];
+  }
+  tabs: any = {};
 }

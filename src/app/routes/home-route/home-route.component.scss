@@ -10,7 +10,7 @@
 
 #content-div {
   width: 100vw;
-  height: 84vh;
+  height: 84vh; // ensures correct scrolling behavior
   display: flex;
   background-image: url('../../../assets/background.png');
   @include color-overlay($page-grey);
@@ -18,23 +18,21 @@
   // Hide scrollbars
   ::-webkit-scrollbar {
     width: 0px;
-
-
   }
 
   div {
-    overflow-x: hidden;
-    overflow-y: scroll;
   }
 
   #avabar-div {
     width: 100px;
     height: 100%;
+    overflow-x: hidden;
   }
 
   #multifeed-div {
     width: calc(100% - 100px);
     height: 100%;
+    overflow-x: hidden;
   }
 }
 

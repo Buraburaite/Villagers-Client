@@ -2,7 +2,8 @@
   <tabset [justified]="true">
     <tab *ngFor="let tab of tabs[avil.kind]"
     [heading]="tab.heading"
-    customClass="tab-style">
+    customClass="tab-style"
+    (select)="state.currentTab = tab.heading;">
     <multifeed-feed [avil]="avil" [filters]="tab.filters"></multifeed-feed>
   </tab>
 </tabset>

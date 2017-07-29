@@ -30,6 +30,7 @@ import { LoggedOutGuard } from './guards/loggedout.guard';
 import { LoginFormComponent } from './shared/forms/login-form/login-form.component';
 import { SignupFormComponent } from './shared/forms/signup-form/signup-form.component';
 import { MustMatchValidator } from './shared/forms/must-match.validator';
+import { ScrollTrackerDirective } from './shared/directives/scroll-tracker.directive';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MustMatchValidator } from './shared/forms/must-match.validator';
     LoginFormComponent,
     SignupFormComponent,
     MustMatchValidator,
+    ScrollTrackerDirective,
   ],
   imports: [
     BrowserModule,
