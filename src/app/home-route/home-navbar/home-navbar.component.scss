@@ -1,0 +1,151 @@
+// !compileOnSave
+@import "../../../../src/styles";
+
+/*===
+#left-section: contains the left dropdown and accompanying info div
+#center-section: contains just the logo currently
+#right-section: contains the right dropdown (profile)
+
+Sections are all height: 100%, with their contents centered
+vertically and with their own heights. The size of each section is based
+on the flex property. Within each section, additional aligning
+may be used.
+===*/
+
+#comp {
+  width: 100%;
+  height: 100%;
+
+  #top-bar {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: row; // makes sections align into a row
+    padding: 0px 6vw 0px 6vw;
+    @include japanese-cubes-bg();
+
+    /*-------------------------------------------------------------------*/
+
+    section {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .dropdown-div {
+        width: auto;
+        height: 83%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        a {
+          width: auto;
+          height: 100%;
+
+          img {
+            width: auto;
+            height: 100%;
+          }
+        }
+
+        .dropdown-menu {
+          min-width: auto;
+
+          .dropdown-item {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    #left-section {
+      flex: 2;
+      justify-content: flex-start;
+
+      img {
+        @include profile-pic();
+      }
+
+      .dropdown-div {
+
+        .dropdown-menu {
+          left: 6vw; // aligns dropdown menu with button
+        }
+      }
+
+      #student-info {
+        // flex: 2;
+        margin-left: 2vw;
+        display: flex;
+        flex-direction: column;
+        color: lighten(black, 10%);
+
+        #top-info {
+          font-size: 20px;
+          font-weight: bold;
+          border-bottom: 0.6vh double black;
+        }
+
+        #bottom-info {
+          font-size: 16px;
+          font-style: italic;
+        }
+      }
+    }
+
+    #center-section {
+      flex: 2;
+      justify-content: center;
+
+      img {
+        width: auto;
+        height: 60%;
+      }
+
+      // Removed temporarily
+      // #search-bar {
+      //   flex: 2;
+      //   height: auto;
+      //   padding-left: 0.4vw;
+      //   margin: 0px 6vw 0px 2vw;
+      //   @include border-radius(2px);
+      //   font-size: 1vw;
+      //   font-weight: bold;
+      //   font-style: italic;
+      //   outline: none;
+      // }
+
+    }
+
+    #right-section {
+      flex: 1;
+      justify-content: flex-end;
+
+      img {
+        @include profile-pic-reverse();
+      }
+
+      .dropdown-div {
+
+        .dropdown-menu {
+          right: 6vw; // aligns dropdown menu with button
+        }
+
+        .dropdown-item {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  #bottom-bar {
+    width: 100%;
+    height: auto;
+    min-height: 25%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: $matrix;
+    background-color: $off-black;
+  }
+}

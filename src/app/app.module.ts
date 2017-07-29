@@ -1,36 +1,43 @@
+// Angular Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
+// NGX BootStrap modules
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
-import { ScrollToModule } from 'ng2-scroll-to';
-
+// My View Components
 import { AppComponent } from './app.component';
 
-import { IndexRouteComponent } from './routes/index-route/index-route.component';
+import { IndexRouteComponent } from './index-route/index-route.component';
 
-import { HomeRouteComponent } from './routes/home-route/home-route.component';
-import { HomeNavbarComponent } from './routes/home-route/components/home-navbar/home-navbar.component';
-import { AvabarComponent } from './routes/home-route/components/avabar/avabar.component';
-import { MultiFeedComponent } from './routes/home-route/components/multifeed/multifeed.component';
-import { FeedComponent } from './routes/home-route/components/multifeed/feed/feed.component';
-import { PostComponent } from './routes/home-route/components/multifeed/feed/post/post.component';
-import { CommentsComponent } from './routes/home-route/components/multifeed/feed/post/comments/comments.component';
+import { HomeRouteComponent } from './home-route/home-route.component';
+import { HomeNavbarComponent } from './home-route/home-navbar/home-navbar.component';
+import { AvabarComponent } from './home-route/avabar/avabar.component';
+import { MultiFeedComponent } from './home-route/multifeed/multifeed.component';
+import { FeedComponent } from './home-route/multifeed/feed/feed.component';
+import { PostComponent } from './home-route/multifeed/feed/post/post.component';
+import { CommentsComponent } from './home-route/multifeed/feed/post/comments/comments.component';
 
-import { SessionService } from './services/session.service';
-import { StateService } from './services/state.service';
-import { LoggedInGuard } from './guards/loggedin.guard';
-import { LoggedOutGuard } from './guards/loggedout.guard';
+// Services
+import { SessionService } from '../services/session.service';
+import { StateService } from '../services/state.service';
 
-import { LoginFormComponent } from './shared/forms/login-form/login-form.component';
-import { SignupFormComponent } from './shared/forms/signup-form/signup-form.component';
-import { MustMatchValidator } from './shared/forms/must-match.validator';
-import { ScrollTrackerDirective } from './shared/directives/scroll-tracker.directive';
+// Guards
+import { LoggedInGuard } from '../guards/loggedin.guard';
+import { LoggedOutGuard } from '../guards/loggedout.guard';
+
+// Forms & Validators
+import { LoginFormComponent } from '../forms/login-form/login-form.component';
+import { SignupFormComponent } from '../forms/signup-form/signup-form.component';
+import { MustMatchValidator } from '../forms/must-match.validator';
+
+// Directives
+import { ScrollTrackerDirective } from '../directives/scroll-tracker.directive';
 
 @NgModule({
   declarations: [
@@ -56,7 +63,6 @@ import { ScrollTrackerDirective } from './shared/directives/scroll-tracker.direc
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     TabsModule.forRoot(),
-    ScrollToModule.forRoot(),
   ],
   providers: [
     SessionService,
