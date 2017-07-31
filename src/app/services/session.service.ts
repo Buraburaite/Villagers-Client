@@ -5,7 +5,7 @@ Service for communcating authentication information
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/toPromise';
 
 import { User } from '../models/user.model';

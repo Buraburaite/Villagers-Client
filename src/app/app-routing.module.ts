@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoggedInGuard } from '../guards/loggedin.guard';
-import { LoggedOutGuard } from '../guards/loggedout.guard';
+import { LoggedInGuard } from './guards/loggedin.guard';
+import { LoggedOutGuard } from './guards/loggedout.guard';
 
-import { IndexRouteComponent } from './index-route/index-route.component';
-import { HomeRouteComponent }  from './home-route/home-route.component';
+import { IndexRouteComponent } from './routes/index-route/index-route.component';
+import { HomeRouteComponent }  from './routes/home-route/home-route.component';
 
 const routes: Routes = [
   {

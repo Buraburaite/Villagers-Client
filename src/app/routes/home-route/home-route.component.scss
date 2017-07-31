@@ -1,5 +1,5 @@
 // !compileOnSave
-@import "../../../src/styles";
+@import "../../../../src/styles";
 
 #navbar-div {
   width: 100vw;
@@ -13,7 +13,7 @@
   width: 100vw;
   height: 84vh; // ensures correct scrolling behavior
   display: flex;
-  background-image: url('../../assets/background.png');
+  background-image: url('../../../assets/background.png');
   @include color-overlay($page-grey);
 
   // Hide scrollbars

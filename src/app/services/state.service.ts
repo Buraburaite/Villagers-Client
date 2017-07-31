@@ -41,10 +41,8 @@ export class StateService {
     .map(vil => vil.vilname)
     .includes(vilname);
 
-    console.log(vilname, hasBeenVisited);
     if (!hasBeenVisited) {
       this.visitedVils.push(this.user.getVillager(vilname));
-      console.log(this.user.getVillager(vilname));
     }
   }
 }

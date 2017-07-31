@@ -1,5 +1,5 @@
 // !compileOnSave
-@import "../../../src/styles";
+@import "../../../../src/styles";
 
 #comp {
   width: 100%;
@@ -33,6 +33,7 @@
       }
 
       #submitBtn {
+        margin: 20px 0 0 50px;
       }
     }
 
