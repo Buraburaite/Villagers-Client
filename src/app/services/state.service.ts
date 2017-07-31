@@ -9,8 +9,8 @@ import { Post } from '../models/post.model';
 export class StateService {
 
   user: User;
-  activeVillager: Villager;
-  visitedVils: Villager[] = [];
+  activeVillager: Villager; // the Villager whose account is being accessed
+  visitedVils: Villager[] = []; // villagers that have been visited already
 
   // all the villagers
   get villagers(): Villager[] {
@@ -27,19 +27,20 @@ export class StateService {
 
   constructor(private router: Router) { }
 
+  // cast vilname string to Villager obj
   getVillager(vilname: string): Villager {
     return this.user.getVillager(vilname);
   }
 
+  // change the active villager
   visit(vilname): void {
     const vilToVisit = this.user.getVillager(vilname);
     this.activeVillager = vilToVisit;
     this.router.navigate(['', vilname]);
 
     const hasBeenVisited =
-    this.visitedVils
-    .map(vil => vil.vilname)
-    .includes(vilname);
+    !!this.visitedVils
+    .find(vil => vil.vilname === vilname);
 
     if (!hasBeenVisited) {
       this.visitedVils.push(this.user.getVillager(vilname));

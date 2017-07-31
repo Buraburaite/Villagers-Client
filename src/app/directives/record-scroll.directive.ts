@@ -1,3 +1,8 @@
+/*====
+This directive transmits the scroll position of the div it is placed
+on to the ScrollerService.
+====*/
+
 import { Directive, HostListener } from '@angular/core';
 
 import { ScrollerService } from '../services/scroller.service';
