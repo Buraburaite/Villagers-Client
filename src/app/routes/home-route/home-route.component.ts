@@ -16,7 +16,7 @@ export class HomeRouteComponent implements OnInit {
   @ViewChild('visitModal') private visitModal:ModalDirective;
 
   private vilToVisit: Villager;
-  private picPath: string = 'src/assets/profile-pictures/'
+  private picPath: string = 'assets/profile-pictures/'
 
   constructor (
     private session : SessionService,
