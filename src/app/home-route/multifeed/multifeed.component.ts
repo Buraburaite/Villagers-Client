@@ -16,18 +16,30 @@ Tabs are recreated (with the scroll position reset to 0)
 whenever avil changes.
 ====*/
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { StateService } from '../../../services/state.service';
 import { ScrollerService } from '../../../services/scroller.service';
 
 import { Villager } from '../../../models/villager.model';
+
+class Tab {
+  heading: string;
+  filters: string[];
+  scrollPos: Number;
+
+  constructor(heading?: string, filters?: any, scrollPos?: Number) {
+    this.heading = heading || 'All';
+    this.scrollPos = scrollPos || 0;
+    this.filters = (!filters || Array.isArray(filters)) ? filters : [filters];
+  }
+}
 
 @Component({
   selector: 'home-multifeed',
   templateUrl: './multifeed.component.html',
   styleUrls: ['./multifeed.component.scss']
 })
-export class MultiFeedComponent implements OnInit {
+export class MultiFeedComponent implements OnInit, AfterViewChecked {
 
   private prevAvilName: string;
   get avil(): Villager {
@@ -40,57 +52,69 @@ export class MultiFeedComponent implements OnInit {
       // ...reset the tabs...
       this.tabs = this.getDefaultTabArray(newAvil.kind);
       // ...and set their scroll position.
-      // this.scroll.currentTab = this.tabs[0].heading;
+      // this.currentTab = this.tabs[0];
     }
 
     return newAvil;
   }
 
-  get scrollPos(): Number { return this.scroll.state['multifeed-div']; }
-  private tabs: any;
-  private defaultTabs: any = {
+  private tabs: Tab[];
+  private defaultTabs = {
     parent: [
-      { heading: 'All' },
-      { heading: 'Students', filters: ['student'] },
-      { heading: 'Teachers', filters: ['teacher'] },
+      new Tab('All'),
+      new Tab('Students', 'student'),
+      new Tab('Teachers', 'teacher'),
     ],
     student: [
-      { heading: 'All' },
-      { heading: 'Parents',    filters: ['parent'] },
-      { heading: 'Classmates', filters: ['student'] },
-      { heading: 'Teachers',   filters: ['teacher'] },
+      new Tab('All'),
+      new Tab('Parents',    'parent'),
+      new Tab('Classmates', 'student'),
+      new Tab('Teachers',   'teacher'),
     ],
     teacher: [
-      { heading: 'All' },
-      { heading: 'Parents',  filters: ['parent'] },
-      { heading: 'Students', filters: ['student'] },
+      new Tab('All'),
+      new Tab('Parents',  'parent'),
+      new Tab('Students', 'student'),
     ]
   };
 
-  private _currentTab: any = 'All';
-  get currentTab(): string { return this._currentTab; }
-  set currentTab(value: string) {
-    this.scroll.scroll
-    this._currentTab = value;
+  private _currentTab: Tab = new Tab();
+  get currentTab(): Tab { console.log(this._currentTab.scrollPos); return this._currentTab; }
+  set currentTab(newTab: Tab) {
+    if (!newTab || newTab.heading === this._currentTab.heading) { return; } // <tab (select)> can start null for some reason
+    this._currentTab = newTab;
+
+    const targetDiv = 'multifeed-div';
+    const newPos = newTab.scrollPos;
+    this.scroller.scroll(targetDiv, newPos);
   }
 
   constructor(
     private state : StateService,
-    private scroll: ScrollerService
+    private scroller: ScrollerService
   ) { }
 
   ngOnInit() {
     this.tabs = this.getDefaultTabArray('parent');
   }
 
+  // The issue may be that the view is checked before currentTab setter is done;
+  ngAfterViewChecked() {
+    this.currentTab.scrollPos = this.getDivPos();
+  }
+
+  private getDivPos() { return this.scroller.state['multifeed-div']; }
+
   private getDefaultTabArray(kind: string) {
     return this.defaultTabs[kind].map(tab => {
-      return {
-        heading: tab.heading,
-        filters: tab.filters ? tab.filters.map(x => x) : null,
-        scrollPos: 0
-      }
+      return new Tab(
+        tab.heading,
+        tab.filters ? tab.filters.map(x => x) : null
+      );
     });
   }
 
+  private getTab(heading: string): Tab {
+    return this.tabs.find(tab => tab.heading === heading);
+  }
 }

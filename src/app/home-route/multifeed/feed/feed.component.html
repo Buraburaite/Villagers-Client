@@ -8,7 +8,7 @@
   <div id="no-posts" *ngIf="!posts || !posts.length">
     Sorry, no posts here
   </div>
-  <a>
+  <a (click)="scrollUp();">
     <i class="fa fa-arrow-up"></i>
   </a>
 </div>
