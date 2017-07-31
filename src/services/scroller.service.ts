@@ -12,23 +12,11 @@ import { DOCUMENT } from '@angular/platform-browser';
 @Injectable()
 export class ScrollerService {
 
-  // private _currentTab: string = '';
-  // get currentTab (): string { return this._currentTab; }
-  // set currentTab(newTab: string) {
-  //   console.log(this.currentTab, newTab, this.tabs[newTab]);
-  //
-  //   const multifeedDiv = this.document.getElementById('multifeed-div');
-  //   multifeedDiv.scrollTop = this.tabs[newTab];
-  //
-  //   this._currentTab = newTab;
-  // }
-  // tabs: any = {};
-
   state = {};
 
   constructor(@Inject(DOCUMENT) private document: any) { }
 
-  scroll(id: string, newPos: Number): void {
+  scroll(id: string, newPos: number): void {
     const el = this.document.getElementById(id);
     el.scrollTop = newPos;
   }

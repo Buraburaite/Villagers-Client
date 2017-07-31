@@ -9,18 +9,6 @@ export class RecordScrollDirective {
 
   constructor(private scroll: ScrollerService) { }
 
-  // NOTE: Change this to work with an id system
-  // @HostListener('scroll', ['$event'])
-  // do (e: any) {
-  //   const tabState = this.scroll.tabs;
-  //   const cTab = this.scroll.currentTab;
-  //   const pos = e.target.scrollTop;
-  //
-  //   if (tabState[cTab] === undefined) { tabState[cTab] = 0; }
-  //   tabState[cTab] = pos;
-  //   console.log(pos);
-  // }
-
   @HostListener('scroll', ['$event'])
   transmitPos(e: any) {
     const id = e.target.id;
@@ -30,4 +18,3 @@ export class RecordScrollDirective {
   }
 
 }
-;

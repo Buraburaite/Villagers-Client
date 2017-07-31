@@ -25,12 +25,12 @@ import { Villager } from '../../../models/villager.model';
 class Tab {
   heading: string;
   filters: string[];
-  scrollPos: Number;
+  scrollPos: number;
 
-  constructor(heading?: string, filters?: any, scrollPos?: Number) {
+  constructor(heading?: string, filters?: any) {
     this.heading = heading || 'All';
-    this.scrollPos = scrollPos || 0;
     this.filters = (!filters || Array.isArray(filters)) ? filters : [filters];
+    this.scrollPos = 0;
   }
 }
 
@@ -49,10 +49,12 @@ export class MultiFeedComponent implements OnInit, AfterViewChecked {
     if (this.prevAvilName !== newAvil.vilname) {
       this.prevAvilName = newAvil.vilname;
 
-      // ...reset the tabs...
-      this.tabs = this.getDefaultTabArray(newAvil.kind);
-      // ...and set their scroll position.
-      // this.currentTab = this.tabs[0];
+      // Reset tabs
+      console.log(newAvil.kind);
+        setTimeout(() => {
+          this.tabs = this.getDefaultTabArray(newAvil.kind);
+        }, 400);
+      console.log(this.tabs);
     }
 
     return newAvil;
@@ -78,15 +80,26 @@ export class MultiFeedComponent implements OnInit, AfterViewChecked {
     ]
   };
 
-  private _currentTab: Tab = new Tab();
-  get currentTab(): Tab { console.log(this._currentTab.scrollPos); return this._currentTab; }
+  private _currentTab: Tab = new Tab(); // This might be where the inconsistencies are coming from
+  get currentTab(): Tab {
+    return this._currentTab;
+  }
   set currentTab(newTab: Tab) {
-    if (!newTab || newTab.heading === this._currentTab.heading) { return; } // <tab (select)> can start null for some reason
+    // Make sure the tab is actually being changed
+    if (!newTab || newTab.heading === this._currentTab.heading) { return; }
+
+    // Record the old scroll position, then switch _currentTab
+    const targetDiv = 'multifeed-div';
+    this._currentTab.scrollPos = this.scroller.state[targetDiv];
     this._currentTab = newTab;
 
-    const targetDiv = 'multifeed-div';
+    // Scroll to the position of the new tab
     const newPos = newTab.scrollPos;
     this.scroller.scroll(targetDiv, newPos);
+
+    //NOTE: Scroll recording behavior is very inconsistent
+    // Likely an issue with lifecycle checks, a timeout might work.
+    // No more time to work on this before the job fair.
   }
 
   constructor(
@@ -100,10 +113,7 @@ export class MultiFeedComponent implements OnInit, AfterViewChecked {
 
   // The issue may be that the view is checked before currentTab setter is done;
   ngAfterViewChecked() {
-    this.currentTab.scrollPos = this.getDivPos();
   }
-
-  private getDivPos() { return this.scroller.state['multifeed-div']; }
 
   private getDefaultTabArray(kind: string) {
     return this.defaultTabs[kind].map(tab => {
