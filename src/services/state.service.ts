@@ -10,6 +10,7 @@ export class StateService {
 
   user: User;
   activeVillager: Villager;
+  visitedVils: Villager[] = [];
 
   // all the villagers
   get villagers(): Villager[] {
@@ -31,7 +32,19 @@ export class StateService {
   }
 
   visit(vilname): void {
-    this.activeVillager = this.user.getVillager(vilname);
+    const vilToVisit = this.user.getVillager(vilname);
+    this.activeVillager = vilToVisit;
     this.router.navigate(['', vilname]);
+
+    const hasBeenVisited =
+    this.visitedVils
+    .map(vil => vil.vilname)
+    .includes(vilname);
+
+    console.log(vilname, hasBeenVisited);
+    if (!hasBeenVisited) {
+      this.visitedVils.push(this.user.getVillager(vilname));
+      console.log(this.user.getVillager(vilname));
+    }
   }
 }

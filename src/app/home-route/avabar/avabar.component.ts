@@ -18,14 +18,15 @@ export class AvabarComponent implements OnInit {
   @Output() onVisitModalRequested: EventEmitter<Villager> = new EventEmitter<Villager>();
 
   avil: Villager;
-  vilList: Villager[];
+  vilList: Villager[] = [];
   picPath: string = 'assets/profile-pictures/';
 
-  constructor(private state: StateService) { }
+  constructor(private state: StateService) {
+    this.vilList = this.state.visitedVils;
+  }
 
   ngOnInit() {
     this.avil = this.state.activeVillager;
-    this.vilList = this.state.user.villagers;
   }
 
   fireVisitModalRequested(vil: Villager) {

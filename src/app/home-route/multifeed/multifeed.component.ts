@@ -50,11 +50,9 @@ export class MultiFeedComponent implements OnInit, AfterViewChecked {
       this.prevAvilName = newAvil.vilname;
 
       // Reset tabs
-      console.log(newAvil.kind);
-        setTimeout(() => {
+        setTimeout(() => { // Hack for dealing with lifecycle checks
           this.tabs = this.getDefaultTabArray(newAvil.kind);
         }, 400);
-      console.log(this.tabs);
     }
 
     return newAvil;
