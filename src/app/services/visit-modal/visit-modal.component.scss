@@ -1,79 +1,97 @@
 // !compileOnSave
 @import "../../../../src/styles";
 
-.container {
-  width: 100%;
+.modal-dialog {
+  width: 500px;
   height: auto;
 
-  .row {
-
-    .col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+  .modal-content {
+    width: 100%;
+    height: auto;
+    // background-color: $page-grey;
   }
+}
 
-  #visit-header {
+#comp {
+  width: 100%;
+  height: auto;
+  padding: 30px 50px;
+  @include japanese-cubes-bg();
 
-    .col {
-      display: flex;
-      flex-direction: column;
+  .container {
+    width: 100%;
+    height: auto;
+
+    .row {
+
+      .col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
-    img {
+    #visit-header {
+
+      .col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        @include profile-pic();
+      }
+
+      p {
+        font-size: 14px;
+
+        span {
+          padding: 2px 4px;
+        }
+      }
+    }
+
+    #blurb {
+      padding: 20px;
+      margin: 20px 0;
+
+      .col {
+        text-align: justify;
+        font-size: 30px;
+        font-style: italic;
+        font-weight: bold;
+        line-height: 1;
+        // @include border-radius(20%);
+      }
+    }
+
+    .pic-header {
+      font-weight: bold;
+    }
+
+    .pic-container {
       width: 100%;
-      height: auto;
-      @include profile-pic();
-    }
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
 
-    p {
-      font-size: 14px;
-
-      span {
-        padding: 2px 4px;
+      .visit-pic {
+        height: 60px;
+        width: auto;
+        margin-right: 10px;
+        @include profile-pic();
       }
     }
   }
 
-  #blurb {
-    padding: 20px;
-    margin: 20px 0;
-
-    .col {
-      text-align: justify;
-      font-size: 30px;
-      font-style: italic;
-      font-weight: bold;
-      line-height: 1;
-      // @include border-radius(20%);
-    }
-  }
-
-  .pic-header {
-    font-weight: bold;
-  }
-
-  .pic-container {
+  #confirm-div {
     width: 100%;
+    height: auto;
+    margin-top: 10px;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    .visit-pic {
-      height: 60px;
-      width: auto;
-      margin-right: 10px;
-      @include profile-pic();
-    }
+    justify-content: flex-end;
   }
-}
-
-#confirm-div {
-  width: 100%;
-  height: auto;
-  margin-top: 10px;
-  display: flex;
-  justify-content: flex-end;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../state.service';
 import { ModalDirective } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap';
 
 import { Villager } from '../../models/villager.model';
 
@@ -14,19 +15,17 @@ export class VisitModalComponent implements OnInit {
   vilToVisit: Villager;
   private picPath: string = 'assets/profile-pictures/';
 
-  constructor(private state: StateService) { }
+  constructor(
+    private state: StateService,
+    public modalRef: BsModalRef // reference to the modal itself
+  ) { }
 
   ngOnInit() {
   }
 
-  onVisitModalRequested(vil: Villager) {
-    this.vilToVisit = vil;
-    // this.visitModal.show();
-  }
-
-  confirmVisit(vil: Villager) {
-    this.state.visit(vil.vilname);
-    // this.visitModal.hide();
+  confirmVisit() {
+    this.state.visit(this.vilToVisit.vilname);
+    this.modalRef.hide();
   }
 
 }
