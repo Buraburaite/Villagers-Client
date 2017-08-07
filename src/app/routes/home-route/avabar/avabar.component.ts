@@ -3,6 +3,9 @@ Component for a scrolling sidebar of users
 ====*/
 
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap';
+// import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+
 import { StateService } from '../../../services/state.service';
 
 import { Villager } from '../../../models/villager.model';

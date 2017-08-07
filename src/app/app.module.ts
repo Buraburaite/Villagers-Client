@@ -42,13 +42,12 @@ import { MustMatchValidator } from './forms/must-match.validator';
 import { RecordScrollDirective } from './directives/record-scroll.directive';
 
 @NgModule({
-  declarations: [
+  declarations: [ // directives that we want to share across the module
     AppComponent,
     IndexRouteComponent,
     HomeRouteComponent,
     HomeNavbarComponent,
     AvabarComponent,
-    VisitModalComponent,
     MultiFeedComponent,
     FeedComponent,
     PostComponent,
@@ -57,8 +56,12 @@ import { RecordScrollDirective } from './directives/record-scroll.directive';
     SignupFormComponent,
     MustMatchValidator,
     RecordScrollDirective,
+    VisitModalComponent,
   ],
-  imports: [
+  entryComponents: [ // directives called only from controllers
+    VisitModalComponent
+  ],
+  imports: [ // other modules whose declarations we want to use
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -67,7 +70,7 @@ import { RecordScrollDirective } from './directives/record-scroll.directive';
     ModalModule.forRoot(),
     TabsModule.forRoot(),
   ],
-  providers: [
+  providers: [ // singleton objects we want to dependency inject across the module
     SessionService,
     StateService,
     ScrollerService,
