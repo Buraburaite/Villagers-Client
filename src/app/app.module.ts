@@ -39,6 +39,7 @@ import { MustMatchValidator } from './forms/must-match.validator';
 
 // Directives
 import { RecordScrollDirective } from './directives/record-scroll.directive';
+import { VisitModalComponent } from './routes/home-route/visit-modal/visit-modal.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { RecordScrollDirective } from './directives/record-scroll.directive';
     SignupFormComponent,
     MustMatchValidator,
     RecordScrollDirective,
+    VisitModalComponent,
   ],
   imports: [
     BrowserModule,
