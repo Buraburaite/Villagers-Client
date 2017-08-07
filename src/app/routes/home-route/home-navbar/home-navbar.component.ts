@@ -4,6 +4,7 @@ Component for the navbar
 
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../../services/session.service';
+import { StateService } from '../../../services/state.service';
 import { VisitationService } from '../../../services/visitation/visitation.service';
 
 import { Villager } from '../../../models/villager.model';
@@ -21,6 +22,7 @@ export class HomeNavbarComponent implements OnInit {
 
   constructor(
     private session: SessionService,
+    private state: StateService,
     private visitation: VisitationService
   ) { }
 
