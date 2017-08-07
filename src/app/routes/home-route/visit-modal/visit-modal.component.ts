@@ -5,7 +5,7 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
 import { Villager } from '../../../models/villager.model';
 
 @Component({
-  selector: 'app-visit-modal',
+  selector: 'home-visit-modal',
   templateUrl: './visit-modal.component.html',
   styleUrls: ['./visit-modal.component.scss']
 })

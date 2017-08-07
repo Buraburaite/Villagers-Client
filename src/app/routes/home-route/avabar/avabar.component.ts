@@ -15,8 +15,6 @@ import { Villager } from '../../../models/villager.model';
 
 export class AvabarComponent implements OnInit {
 
-  @Output() onVisitModalRequested: EventEmitter<Villager> = new EventEmitter<Villager>();
-
   avil: Villager;
   vilList: Villager[] = [];
   picPath: string = 'assets/profile-pictures/';
@@ -29,8 +27,5 @@ export class AvabarComponent implements OnInit {
     this.avil = this.state.activeVillager;
   }
 
-  fireVisitModalRequested(vil: Villager) {
-    this.onVisitModalRequested.emit(vil);
-  }
 
 }
