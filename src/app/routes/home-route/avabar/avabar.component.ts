@@ -21,7 +21,10 @@ export class AvabarComponent implements OnInit {
   vilList: Villager[] = [];
   picPath: string = 'assets/profile-pictures/';
 
-  constructor(private state: StateService) {
+  constructor(
+    private state: StateService,
+    private visitModal: VisitModalService
+  ) {
     this.vilList = this.state.visitedVils;
   }
 
@@ -29,7 +32,8 @@ export class AvabarComponent implements OnInit {
     this.avil = this.state.activeVillager;
   }
 
-  openModal(): void {
+  showVisitModal(vilToVisit: Villager): void {
+    this.visitModal.show(vilToVisit);
   }
 
 

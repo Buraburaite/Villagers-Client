@@ -1,6 +1,8 @@
 <div id="comp">
   <div class="header-div">
-    <img [src]="picPath + post.author.profilePic">
+    <a (click)="showVisitModal(post.author)">
+      <img [src]="picPath + post.author.profilePic">
+    </a>
     <span class="teacher-name-span">
       {{ post?.author.fullname }}
     </span>

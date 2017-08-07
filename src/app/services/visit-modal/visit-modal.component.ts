@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { StateService } from '../../../services/state.service';
+import { StateService } from '../state.service';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 
-import { Villager } from '../../../models/villager.model';
+import { Villager } from '../../models/villager.model';
 
 @Component({
-  selector: 'home-visit-modal',
+  selector: 'visit-modal',
   templateUrl: './visit-modal.component.html',
   styleUrls: ['./visit-modal.component.scss']
 })

@@ -27,7 +27,9 @@ export class FeedComponent {
     });
   }
 
-  constructor(private scroller: ScrollerService) { }
+  constructor(
+    private scroller: ScrollerService
+  ) { }
 
   ngOnInit() {
   }

@@ -5,7 +5,7 @@
       <li *ngFor="let vil of vilList">
         <a>
           <img *ngIf="vil" [src]="picPath + vil?.profilePic" alt="vil?.fullname"
-          (click)="openModal()">
+          (click)="showVisitModal(vil)">
       </a>
     </ul>
   </div>
