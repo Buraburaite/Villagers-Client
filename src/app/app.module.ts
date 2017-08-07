@@ -27,8 +27,8 @@ import { CommentsComponent } from './routes/home-route/multifeed/feed/post/comme
 import { SessionService } from './services/session.service';
 import { StateService } from './services/state.service';
 import { ScrollerService } from './services/scroller.service';
-import { VisitModalService } from './services/visit-modal/visit-modal.service';
-import { VisitModalComponent } from './services/visit-modal/visit-modal.component';
+import { VisitService } from './services/visit/visit.service';
+import { VisitComponent } from './services/visit/visit.component';
 
 // Guards
 import { LoggedInGuard } from './guards/loggedin.guard';
@@ -57,10 +57,10 @@ import { RecordScrollDirective } from './directives/record-scroll.directive';
     SignupFormComponent,
     MustMatchValidator,
     RecordScrollDirective,
-    VisitModalComponent,
+    VisitComponent,
   ],
   entryComponents: [ // directives called only from controllers
-    VisitModalComponent
+    VisitComponent
   ],
   imports: [ // other modules whose declarations we want to use
     BrowserModule,
@@ -75,7 +75,7 @@ import { RecordScrollDirective } from './directives/record-scroll.directive';
     SessionService,
     StateService,
     ScrollerService,
-    VisitModalService,
+    VisitService,
     LoggedInGuard,
     LoggedOutGuard
   ],

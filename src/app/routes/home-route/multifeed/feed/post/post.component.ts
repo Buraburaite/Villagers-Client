@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { VisitModalService } from '../../../../../services/visit-modal/visit-modal.service';
+import { VisitService } from '../../../../../services/visit/visit.service';
 
 import { Villager } from '../../../../../models/villager.model';
 import { Post } from '../../../../../models/post.model';
@@ -16,11 +16,11 @@ export class PostComponent implements OnInit {
 
   picPath: string = 'assets/profile-pictures/';
 
-  constructor(private visitModal: VisitModalService) { }
+  constructor(private visitModal: VisitService) { }
 
   ngOnInit() {
   }
-  
+
   showVisitModal(vilToVisit: Villager): void {
     this.visitModal.show(vilToVisit);
   }

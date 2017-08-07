@@ -5,7 +5,7 @@ Component for a scrolling sidebar of users
 import { Component, OnInit } from '@angular/core';
 
 import { StateService } from '../../../services/state.service';
-import { VisitModalService } from '../../../services/visit-modal/visit-modal.service';
+import { VisitService } from '../../../services/visit/visit.service';
 
 import { Villager } from '../../../models/villager.model';
 
@@ -23,7 +23,7 @@ export class AvabarComponent implements OnInit {
 
   constructor(
     private state: StateService,
-    private visitModal: VisitModalService
+    private visitModal: VisitService
   ) {
     this.vilList = this.state.visitedVils;
   }
