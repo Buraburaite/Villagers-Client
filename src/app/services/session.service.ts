@@ -11,6 +11,7 @@ import 'rxjs/add/operator/toPromise';
 import { User } from '../models/user.model';
 
 import { StateService } from '../services/state.service';
+import { VisitationService } from '../services/visitation/visitation.service';
 
 @Injectable()
 export class SessionService {
@@ -22,7 +23,8 @@ export class SessionService {
   constructor(
     private http: Http,
     private router: Router,
-    private state: StateService
+    private state: StateService,
+    private visitation: VisitationService
   ) { }
 
   login (userCred): any {
@@ -36,7 +38,7 @@ export class SessionService {
     .then(res => {
       let resData = res.json();
       this.state.user = new User(resData); // save the user's information into state
-      this.state.visit('timonGomez'); // NOTE: temporary, for testing
+      this.visitation.visit('timonGomez'); // NOTE: temporary, for testing
       return resData;
     });
 

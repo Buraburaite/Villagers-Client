@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { SessionService } from '../../services/session.service';
-import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -19,8 +18,7 @@ export class SignupFormComponent {
   private confirmPassword: string;// = 'testtest';
 
   constructor(
-    private session: SessionService,
-    private state: StateService
+    private session: SessionService
   ) { }
 
   submitForm(form): void {

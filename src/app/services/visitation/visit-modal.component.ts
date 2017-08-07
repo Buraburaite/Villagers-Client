@@ -6,11 +6,11 @@ import { BsModalRef } from 'ngx-bootstrap';
 import { Villager } from '../../models/villager.model';
 
 @Component({
-  selector: 'visit',
+  selector: 'visit-modal',
   templateUrl: './visit.component.html',
   styleUrls: ['./visit.component.scss']
 })
-export class VisitComponent implements OnInit {
+export class VisitModalComponent implements OnInit {
 
   vilToVisit: Villager;
   private picPath: string = 'assets/profile-pictures/';

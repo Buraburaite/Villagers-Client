@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session.service';
-import { StateService } from '../../services/state.service';
+import { VisitationService } from '../../services/visitation/visitation.service';
 
 @Component({
   selector: 'home-route',
@@ -11,7 +11,7 @@ export class HomeRouteComponent implements OnInit {
 
   constructor (
     private session : SessionService,
-    private state : StateService
+    private visitation : VisitationService
   ) {
 
     // this.session.login({
@@ -19,7 +19,7 @@ export class HomeRouteComponent implements OnInit {
     //   password: 'test'
     // })
     // .then((avil) => {
-    //   this.state.visit(avil.vilname);
+    //   this.visitation.visit(avil.vilname);
     // });
   }
 

@@ -17,7 +17,7 @@ whenever avil changes.
 ====*/
 
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
-import { StateService } from '../../../services/state.service';
+import { VisitationService } from '../../../services/visitation/visitation.service';
 import { ScrollerService } from '../../../services/scroller.service';
 
 import { Villager } from '../../../models/villager.model';
@@ -45,7 +45,7 @@ export class MultiFeedComponent implements OnInit, AfterViewChecked {
   get avil(): Villager {
 
     // If avil has changed...
-    const newAvil = this.state.activeVillager;
+    const newAvil = this.visitation.activeVillager;
     if (this.prevAvilName !== newAvil.vilname) {
       this.prevAvilName = newAvil.vilname;
 
@@ -101,7 +101,7 @@ export class MultiFeedComponent implements OnInit, AfterViewChecked {
   }
 
   constructor(
-    private state : StateService,
+    private visitation: VisitationService,
     private scroller: ScrollerService
   ) { }
 

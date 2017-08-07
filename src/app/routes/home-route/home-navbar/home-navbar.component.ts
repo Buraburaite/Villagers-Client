@@ -4,7 +4,7 @@ Component for the navbar
 
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../../services/session.service';
-import { StateService } from '../../../services/state.service';
+import { VisitationService } from '../../../services/visitation/visitation.service';
 
 import { Villager } from '../../../models/villager.model';
 
@@ -15,13 +15,13 @@ import { Villager } from '../../../models/villager.model';
 })
 export class HomeNavbarComponent implements OnInit {
 
-  get avil(): Villager { return this.state.activeVillager; }
+  get avil(): Villager { return this.visitation.activeVillager; }
   logoImage: string = 'assets/logo.png';
   picPath: string = 'assets/profile-pictures/';
 
   constructor(
     private session: SessionService,
-    private state: StateService
+    private visitation: VisitationService
   ) { }
 
   ngOnInit() {
