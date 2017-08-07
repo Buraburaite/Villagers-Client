@@ -18,7 +18,6 @@ import { IndexRouteComponent } from './routes/index-route/index-route.component'
 import { HomeRouteComponent } from './routes/home-route/home-route.component';
 import { HomeNavbarComponent } from './routes/home-route/home-navbar/home-navbar.component';
 import { AvabarComponent } from './routes/home-route/avabar/avabar.component';
-import { VisitModalComponent } from './routes/home-route/visit-modal/visit-modal.component';
 import { MultiFeedComponent } from './routes/home-route/multifeed/multifeed.component';
 import { FeedComponent } from './routes/home-route/multifeed/feed/feed.component';
 import { PostComponent } from './routes/home-route/multifeed/feed/post/post.component';
@@ -28,6 +27,8 @@ import { CommentsComponent } from './routes/home-route/multifeed/feed/post/comme
 import { SessionService } from './services/session.service';
 import { StateService } from './services/state.service';
 import { ScrollerService } from './services/scroller.service';
+import { VisitModalService } from './services/visit-modal/visit-modal.service';
+import { VisitModalComponent } from './services/visit-modal/visit-modal.component';
 
 // Guards
 import { LoggedInGuard } from './guards/loggedin.guard';
@@ -74,6 +75,7 @@ import { RecordScrollDirective } from './directives/record-scroll.directive';
     SessionService,
     StateService,
     ScrollerService,
+    VisitModalService,
     LoggedInGuard,
     LoggedOutGuard
   ],
