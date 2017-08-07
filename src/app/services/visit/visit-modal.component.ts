@@ -17,7 +17,11 @@ export class VisitModalComponent implements OnInit {
 
   constructor(
     private state: StateService,
-    public modalRef: BsModalRef // reference to the modal itself
+    /*====
+    BsModalRef is a singleton, like all providers
+    It references whichever BsModal is currently open
+    ====*/
+    private modalRef: BsModalRef
   ) { }
 
   ngOnInit() {
