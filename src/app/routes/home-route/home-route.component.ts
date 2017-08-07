@@ -1,10 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../services/session.service';
 import { StateService } from '../../services/state.service';
-
-import { ModalDirective } from 'ngx-bootstrap/modal';
-
-import { Villager } from './../../models/villager.model';
 
 @Component({
   selector: 'home-route',
@@ -12,11 +8,6 @@ import { Villager } from './../../models/villager.model';
   styleUrls: ['./home-route.component.scss']
 })
 export class HomeRouteComponent implements OnInit {
-
-  @ViewChild('visitModal') private visitModal:ModalDirective;
-
-  private vilToVisit: Villager;
-  private picPath: string = 'assets/profile-pictures/'
 
   constructor (
     private session : SessionService,
@@ -33,15 +24,5 @@ export class HomeRouteComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  onVisitModalRequested(vil: Villager) {
-    this.vilToVisit = vil;
-    this.visitModal.show();
-  }
-
-  confirmVisit(vil: Villager) {
-    this.state.visit(vil.vilname);
-    this.visitModal.hide();
   }
 }
