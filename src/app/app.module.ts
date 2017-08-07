@@ -18,6 +18,7 @@ import { IndexRouteComponent } from './routes/index-route/index-route.component'
 import { HomeRouteComponent } from './routes/home-route/home-route.component';
 import { HomeNavbarComponent } from './routes/home-route/home-navbar/home-navbar.component';
 import { AvabarComponent } from './routes/home-route/avabar/avabar.component';
+import { VisitModalComponent } from './routes/home-route/visit-modal/visit-modal.component';
 import { MultiFeedComponent } from './routes/home-route/multifeed/multifeed.component';
 import { FeedComponent } from './routes/home-route/multifeed/feed/feed.component';
 import { PostComponent } from './routes/home-route/multifeed/feed/post/post.component';
@@ -39,7 +40,6 @@ import { MustMatchValidator } from './forms/must-match.validator';
 
 // Directives
 import { RecordScrollDirective } from './directives/record-scroll.directive';
-import { VisitModalComponent } from './routes/home-route/visit-modal/visit-modal.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ import { VisitModalComponent } from './routes/home-route/visit-modal/visit-modal
     HomeRouteComponent,
     HomeNavbarComponent,
     AvabarComponent,
+    VisitModalComponent,
     MultiFeedComponent,
     FeedComponent,
     PostComponent,
@@ -56,7 +57,6 @@ import { VisitModalComponent } from './routes/home-route/visit-modal/visit-modal
     SignupFormComponent,
     MustMatchValidator,
     RecordScrollDirective,
-    VisitModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,92 @@
+// !compileOnSave
+@import "../../../../../src/styles";
+
+.modal-dialog {
+  width: 500px;
+  height: auto;
+
+  .modal-content {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    // background-color: $page-grey;
+    @include japanese-cubes-bg();
+
+    .container {
+      width: 100%;
+      height: auto;
+
+      .row {
+
+        .col {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      #visit-header {
+
+        .col {
+          display: flex;
+          flex-direction: column;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          @include profile-pic();
+        }
+
+        p {
+          font-size: 14px;
+
+          span {
+            padding: 2px 4px;
+          }
+        }
+      }
+
+      #blurb {
+        padding: 20px;
+        margin: 20px 0;
+
+        .col {
+          text-align: justify;
+          font-size: 30px;
+          font-style: italic;
+          font-weight: bold;
+          line-height: 1;
+          // @include border-radius(20%);
+        }
+      }
+
+      .pic-header {
+        font-weight: bold;
+      }
+
+      .pic-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .visit-pic {
+          height: 60px;
+          width: auto;
+          margin-right: 10px;
+          @include profile-pic();
+        }
+      }
+    }
+
+    #confirm-div {
+      width: 100%;
+      height: auto;
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
