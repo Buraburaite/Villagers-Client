@@ -11,7 +11,7 @@ import { Villager } from '../../../models/villager.model';
 })
 export class VisitModalComponent implements OnInit {
 
-  private vilToVisit: Villager;
+  vilToVisit: Villager;
   private picPath: string = 'assets/profile-pictures/';
 
   constructor(private state: StateService) { }
