@@ -15,13 +15,12 @@ export class VisitationService {
   activeVillager: Villager; // the Villager whose account is being accessed
   visitedVils: Villager[] = []; // villagers that have been visited already
 
-  private modalRef: BsModalRef;
-
+  private modal: BsModalRef;
 
   constructor(
     private state: StateService,
     private router: Router,
-    private modalMaker: BsModalService
+    private bsModal: BsModalService
   ) { }
 
   // change the active villager
@@ -45,10 +44,13 @@ export class VisitationService {
   }
 
   showModal(vilToVisit: Villager) {
-    this.modalRef = this.modalMaker.show(VisitModalComponent);
-    const content = this.modalRef.content;
+    // Create and open a visit modal
+    this.modal = this.bsModal.show(VisitModalComponent);
 
+    // Provide functionality to that modal's inner component
+    // (avoids circular imports)
+    const content = this.modal.content;
     content.vilToVisit = vilToVisit;
+    content.visitation = this;
   }
-
 }
