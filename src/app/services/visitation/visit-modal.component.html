@@ -1,5 +1,6 @@
-<div *ngIf="vilToVisit" id="comp">
+<div *ngIf="vilToVisit?.vilname" id="comp">
   <div class="container">
+    <!-- Header - Villager's profile picture and profile info -->
     <div id="visit-header" class="row">
       <div class="col col-sm-4">
         <img [src]="picPath + vilToVisit.vilname + '.jpg'">
@@ -14,46 +15,23 @@
         </p>
       </div>
     </div>
-    <div *ngIf="vilToVisit.parents[0]" class="row">
-      <h2 class="pic-header"> Parents </h2>
-    </div>
-    <div id="parents" class="row">
-      <div class="pic-container">
-        <div *ngFor="let vil of vilToVisit?.parents">
-          <a (click)="vilToVisit=vil">
-            <img class="visit-pic" [src]="picPath + vil.profilePic" [alt]="vil.fullname"/>
-          </a>
-        </div>
+    <!-- Relationships to other villagers -->
+    <div *ngFor="let group of relationGroups">
+      <div class="row">
+        <h2 class="pic-header"> {{ group.title }} </h2>
       </div>
-    </div>
-    <div *ngIf="vilToVisit.students[0]" class="row">
-      <h2 class="pic-header">
-        <span *ngIf="vilToVisit.kind !== 'student'">Students</span>
-        <span *ngIf="vilToVisit.kind === 'student'">Classmates</span>
-      </h2>
-    </div>
-    <div id="students" class="row">
-      <div class="pic-container">
-        <div *ngFor="let vil of vilToVisit.students">
-          <a (click)="vilToVisit=vil">
-            <img class="visit-pic" [src]="picPath + vil.profilePic" [alt]="vil.fullname"/>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div *ngIf="vilToVisit.teachers[0]" class="row">
-      <h2 class="pic-header"> Teachers </h2>
-    </div>
-    <div id="teachers" class="row">
-      <div class="pic-container">
-        <div *ngFor="let vil of vilToVisit.teachers">
-          <a (click)="vilToVisit=vil">
-            <img class="visit-pic" [src]="picPath + vil.profilePic" [alt]="vil.fullname"/>
-          </a>
+      <div class="row">
+        <div class="pic-container">
+          <div *ngFor="let vil of group.vilList">
+            <a (click)="vilToVisit=vil">
+              <img class="visit-pic" [src]="picPath + vil.profilePic" [alt]="vil.fullname"/>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- Visit button -->
   <div id="confirm-div">
     <a class="btn user-level" (click)="confirmVisit(vilToVisit)">
       Enter Account

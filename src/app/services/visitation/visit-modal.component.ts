@@ -4,6 +4,17 @@ import { BsModalRef } from 'ngx-bootstrap';
 
 import { Villager } from '../../models/villager.model';
 
+class RelationGroup {
+
+  title: string;
+  vilList: Villager[];
+
+  constructor(title: string, vilList: Villager[]) {
+    this.title = title;
+    this.vilList = vilList;
+  }
+}
+
 @Component({
   selector: 'visit-modal',
   templateUrl: './visit-modal.component.html',
@@ -11,10 +22,44 @@ import { Villager } from '../../models/villager.model';
 })
 export class VisitModalComponent implements OnInit {
 
-  public visitation: any; // Must be a VisitationService
-                          // (avoiding circular imports)
-  public vilToVisit: Villager;
+  /*====
+  Must be a VisitationService
+  (avoiding circular imports)
+  ====*/
+  public visitation: any;
 
+
+  private _vilToVisit: Villager;
+  get vilToVisit(): Villager { return this._vilToVisit; }
+  set vilToVisit(vil: Villager) {
+    const newGroups = [];
+
+    // Give parent relations to students and teachers
+    if (['student', 'teacher'].includes(vil.kind)) {
+      newGroups.push(new RelationGroup('Parents', vil.parents));
+    }
+
+    // Give teacher relations to parents and students
+    if (['parent', 'students'].includes(vil.kind)) {
+      newGroups.push(new RelationGroup('Teachers', vil.teachers));
+    }
+
+    // All vils have student relations, what changes is the name
+    newGroups.push(
+      new RelationGroup(
+        vil.kind === 'student' ? 'Classmates' : 'Students',
+        vil.students
+      )
+    );
+    // Sort groups alphabetically by title
+    this.relationGroups = newGroups.sort(
+      (a,b) => (a.title > b.title) ? 1 : -1
+    );
+
+    this._vilToVisit = vil;
+  }
+
+  private relationGroups: RelationGroup[];
   private picPath: string = 'assets/profile-pictures/';
 
   constructor(
