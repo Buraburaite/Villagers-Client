@@ -21,8 +21,4 @@ export class PostComponent implements OnInit {
   ngOnInit() {
   }
 
-  showVisitModal(vilToVisit: Villager): void {
-    this.visitation.showModal(vilToVisit);
-  }
-
 }

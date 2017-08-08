@@ -30,8 +30,9 @@
       @include profile-pic();
     }
 
-    .teacher-name-span {
-      font-size: 40px;
+    .teacher-name {
+      color: $off-black;
+      font-size: 60px;
       font-weight: bold;
     }
   }

@@ -1,8 +1,10 @@
 <div id="comp">
   <div *ngFor="let comment of comments" class="comment">
-    <img [src]="picPath + comment.author.profilePic" [alt]="comment.author.fullname">
+    <a (click)="visitation.showModal(comment.author)">
+      <img [src]="picPath + comment.author.profilePic" [alt]="comment.author.fullname">
+    </a>
     <div class="comment-text">
-      <a class="author-name">
+      <a class="author-name" (click)="visitation.showModal(comment.author)">
         {{ comment.author.fullname }}
       </a>
       {{ comment.content }}

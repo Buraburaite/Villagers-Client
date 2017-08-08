@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { VisitationService } from '../../../../../../services/visitation/visitation.service';
 
 import { Villager } from '../../../../../../models/villager.model';
 import { Comment } from '../../../../../../models/comment.model';
@@ -16,7 +17,7 @@ export class CommentsComponent implements OnInit {
   newCommentText: string;
   picPath: string = 'assets/profile-pictures/';
 
-  constructor() { }
+  constructor(private visitation: VisitationService) { }
 
   ngOnInit() {
   }

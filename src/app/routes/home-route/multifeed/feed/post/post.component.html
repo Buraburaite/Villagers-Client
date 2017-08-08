@@ -1,11 +1,11 @@
 <div id="comp">
   <div class="header-div">
-    <a (click)="showVisitModal(post.author)">
+    <a (click)="visitation.showModal(post.author)">
       <img [src]="picPath + post.author.profilePic">
     </a>
-    <span class="teacher-name-span">
+    <a class="teacher-name" (click)="visitation.showModal(post.author)">
       {{ post?.author.fullname }}
-    </span>
+    </a>
   </div>
   <div class="content-div">
     {{ post?.content }}

@@ -35,6 +35,4 @@ export class AvabarComponent implements OnInit {
   showVisitModal(vilToVisit: Villager): void {
     this.visitation.showModal(vilToVisit);
   }
-
-
 }
