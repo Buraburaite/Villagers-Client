@@ -4,11 +4,14 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --progress=false",
+    "dev": "sudo service mongod start && concurrently --kill-others-on-fail -p \"[{name}]\" -n \"NG,EXPRESS\" -c \"bgRed.bold,bgMagenta.bold\" \"ng serve --progress=false\" \"cd ../Server && npm run dev\"",
+    "build": "ng build --progress=false --aot",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "stage": "ng build --progress=false --env='staging' --aot",
+    "prod": "ng build --progress=false --prod --aot"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +44,7 @@
     "@types/node": "^6.0.85",
     "@types/underscore": "^1.8.1",
     "codelyzer": "~2.0.0",
+    "concurrently": "^3.5.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",
