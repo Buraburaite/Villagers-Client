@@ -64,13 +64,11 @@ export class VisitModalComponent implements OnInit {
 
   constructor(
     /*====
-    BsModalRef is a singleton, like all providers
+    BsModalRef is a singleton
     It references whichever BsModal is currently open
     ====*/
     private modalRef: BsModalRef
-  ) {
-
-  }
+  ) { }
 
   ngOnInit() {
   }
