@@ -13,9 +13,7 @@
   width: 100vw;
   height: 84vh; // ensures correct scrolling behavior
   display: flex;
-  // background-image: url('../../../assets/background.png');
   background-color: darken($page-grey, 20%);
-  // @include color-overlay($page-grey);
 
   // Hide scrollbars
   ::-webkit-scrollbar {
